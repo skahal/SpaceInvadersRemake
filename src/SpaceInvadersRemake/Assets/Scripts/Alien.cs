@@ -10,8 +10,6 @@ public class Alien : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		Debug.Log ("collision" + collider.tag);
-
 		if (collider.tag == "VerticalEdge") {
 			m_wave.Flip ();
 		}

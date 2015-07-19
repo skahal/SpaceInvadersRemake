@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -39,8 +39,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7a3c1eba3e644f291a9ed9cfacf96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Cannon: {fileID: 157318, guid: 8b29d4142105448c681dd43e3d78faf6, type: 2}
+  CannonDeployPosition: {x: 0, y: -4}
+  Bunkers: []
   VerticalEdge: {fileID: 179098, guid: c06860de295264e06adab6e6df1fd178, type: 2}
-  VerticalEdgeDistance: 1
+  VerticalEdgeDistance: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

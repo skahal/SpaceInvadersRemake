@@ -13,7 +13,7 @@ public class AliensWave : MonoBehaviour {
 	public GameObject[] Aliens;
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
-	public float MoveDelay = .5f;
+	public float MoveDelay = 2f;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
@@ -28,7 +28,7 @@ public class AliensWave : MonoBehaviour {
 		// Last column should not be count.
 		var columnsToWidth = (Columns - 1);
 
-		// The wave width is equal columns and padding
+		// The wave width is equal columns and padding sum.
 		var width = columnsToWidth + columnsToWidth * Padding.x;
 
 		Left = width * -.5f;
