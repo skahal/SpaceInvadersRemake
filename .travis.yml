@@ -3,7 +3,10 @@ osx_image: xcode61
 rvm:
 - 2.1.2
 install:
+- chmod 777 ./tools/install-unity.sh
 - ./tools/install-unity.sh
 script:
+- chmod 777 ./tools/buildOSX.sh
 - ./tools/buildOSX.sh
+- chmod 777 ./tools/buildWIN.sh
 - ./tools/buildWIN.sh
