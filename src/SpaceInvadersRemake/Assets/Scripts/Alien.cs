@@ -2,14 +2,18 @@
 using System.Collections;
 
 public class Alien : MonoBehaviour {
+	private AliensWave m_wave;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Start()
+	{
+		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		Debug.Log ("collision" + collider.tag);
+
+		if (collider.tag == "VerticalEdge") {
+			m_wave.Flip ();
+		}
 	}
 }
