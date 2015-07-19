@@ -3,7 +3,7 @@ osx_image: xcode61
 rvm:
 - 2.1.2
 install:
-- ./tools/install-unirty.sh
+- ./tools/install-unity.sh
 script:
 - ./tools/buildOSX.sh
 - ./tools/buildWIN.sh
