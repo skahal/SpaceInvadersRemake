@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 4134e4dc4f40545f5b6905c927e2077a
+timeCreated: 1437236373
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpaceInvadersAtari2600SpriteSheetWhite_0
+    21300002: SpaceInvadersAtari2600SpriteSheetWhite_1
+    21300004: SpaceInvadersAtari2600SpriteSheetWhite_2
+    21300006: SpaceInvadersAtari2600SpriteSheetWhite_3
+    21300008: SpaceInvadersAtari2600SpriteSheetWhite_4
+    21300010: SpaceInvadersAtari2600SpriteSheetWhite_5
+    21300012: SpaceInvadersAtari2600SpriteSheetWhite_6
+    21300014: SpaceInvadersAtari2600SpriteSheetWhite_7
+    21300016: SpaceInvadersAtari2600SpriteSheetWhite_8
+    21300018: SpaceInvadersAtari2600SpriteSheetWhite_9
+    21300020: SpaceInvadersAtari2600SpriteSheetWhite_10
+    21300022: SpaceInvadersAtari2600SpriteSheetWhite_11
+    21300024: SpaceInvadersAtari2600SpriteSheetWhite_12
+    21300026: SpaceInvadersAtari2600SpriteSheetWhite_13
+    21300028: SpaceInvadersAtari2600SpriteSheetWhite_14
+    21300030: SpaceInvadersAtari2600SpriteSheetWhite_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 50
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 38
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 38
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_2
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 36
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 36
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 36
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_5
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 36
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 39
+        width: 4
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 9
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_9
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 9
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 9
+        width: 38
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_11
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 7
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 7
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_13
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 18
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_14
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 3
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: SpaceInvadersAtari2600SpriteSheetWhite_15
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 0
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
