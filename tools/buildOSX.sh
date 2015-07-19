@@ -1,0 +1,1 @@
+/Applications/Unity/Unity.app/Contents/MacOS/Unity -buildOSXPlayer /Users/giacomelli/Dropbox/Skahal/games/SpaceInvadersRemake/build/SpaceInvadersRemake-osx.app -projectPath /Users/giacomelli/Dropbox/Skahal/games/SpaceInvadersRemake/src/SpaceInvadersRemake/ -batchmode -quit

@@ -1,0 +1,1 @@
+/Applications/Unity/Unity.app/Contents/MacOS/Unity -buildWindowsPlayer /Users/giacomelli/Dropbox/Skahal/games/SpaceInvadersRemake/build/SpaceInvadersRemake-win.exe -projectPath /Users/giacomelli/Dropbox/Skahal/games/SpaceInvadersRemake/src/SpaceInvadersRemake/ -batchmode -quit
