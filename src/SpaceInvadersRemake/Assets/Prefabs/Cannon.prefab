@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: .0299999993
+  ProjectilePrefab: {fileID: 156112, guid: 9086feefee9b641148373944c8e09789, type: 2}
 --- !u!212 &21224008
 SpriteRenderer:
   m_ObjectHideFlags: 1
