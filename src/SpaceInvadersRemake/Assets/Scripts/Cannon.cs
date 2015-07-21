@@ -11,7 +11,7 @@ public class Cannon: MonoBehaviour {
 	void Awake() {
 		var goProjectile = Instantiate (ProjectilePrefab, transform.position, Quaternion.identity) as GameObject;
 		m_projectile = goProjectile.GetComponent<Projectile> ();
-		m_projectile.gameObject.SetActive (false);
+		m_projectile.Setup (transform.position.y + 1);
 	}
 
 	void Update () {
@@ -33,7 +33,7 @@ public class Cannon: MonoBehaviour {
 
 	void Fire() {
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			m_projectile.SetTarget (new Vector2 (transform.position.x, 100));
+			m_projectile.Shoot (transform.position.x);
 			m_projectile.gameObject.SetActive (true);
 		}
 	}

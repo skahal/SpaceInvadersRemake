@@ -13,5 +13,12 @@ public class Alien : MonoBehaviour {
 		if (collider.tag == "VerticalEdge") {
 			m_wave.Flip ();
 		}
+		else if (collider.tag == "Projectile") {
+			Die ();
+		}
+	}
+
+	void Die() {
+		gameObject.SetActive (false);
 	}
 }

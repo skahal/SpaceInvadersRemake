@@ -7,8 +7,9 @@ public class Game : MonoBehaviour {
 	public GameObject Cannon;
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
 	public GameObject[] Bunkers;
-	public GameObject VerticalEdge;
+	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = .5f;
+	public GameObject HorizontalEdgePrefab;
 
 	private AliensWave m_aliensWave;
 
@@ -40,11 +41,14 @@ public class Game : MonoBehaviour {
 		var left =  m_aliensWave.Left - VerticalEdgeDistance - 1;
 		var right = m_aliensWave.Right + VerticalEdgeDistance + 1;
 
-		var leftEdge = Instantiate (VerticalEdge, new Vector3(left, 1f, 0), Quaternion.identity);
+		var leftEdge = Instantiate (VerticalEdgePrefab, new Vector3(left, 1f, 0), Quaternion.identity);
 		leftEdge.name = "LeftEdge";
 
-		var rightEdge = Instantiate (VerticalEdge, new Vector3(right, 1f, 0), Quaternion.identity);
+		var rightEdge = Instantiate (VerticalEdgePrefab, new Vector3(right, 1f, 0), Quaternion.identity);
 		rightEdge.name = "RightEdge";
+
+		var topEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, VerticalEdgeDistance, 0), Quaternion.identity);
+		topEdge.name = "TopEdge";
 	}
 
 	void SetupCannon()
