@@ -45,6 +45,7 @@ MonoBehaviour:
   VerticalEdgePrefab: {fileID: 179098, guid: c06860de295264e06adab6e6df1fd178, type: 2}
   VerticalEdgeDistance: 3
   HorizontalEdgePrefab: {fileID: 176334, guid: 294cce9a33bdb4a358ac5be5debce416, type: 2}
+  ScoreText: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

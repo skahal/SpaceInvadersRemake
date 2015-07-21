@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour {
 
+	private int m_score;
 	public static Game Instance;
 	public GameObject Cannon;
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
@@ -10,6 +12,7 @@ public class Game : MonoBehaviour {
 	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = .5f;
 	public GameObject HorizontalEdgePrefab;
+	public Text ScoreText;
 
 	private AliensWave m_aliensWave;
 
@@ -54,5 +57,11 @@ public class Game : MonoBehaviour {
 	void SetupCannon()
 	{
 		Instantiate (Cannon, CannonDeployPosition, Quaternion.identity);
+	}
+
+	public void AddToScore(int value)
+	{
+		m_score += value;
+		ScoreText.text = m_score.ToString ("D4");
 	}
 }

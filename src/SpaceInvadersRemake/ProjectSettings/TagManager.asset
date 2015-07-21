@@ -9,7 +9,7 @@ TagManager:
   - Alien
   - Cannon
   - Projectile
-  - HorizontalEdege
+  - HorizontalEdge
   layers:
   - Default
   - TransparentFX

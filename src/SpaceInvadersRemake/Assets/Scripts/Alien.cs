@@ -14,6 +14,7 @@ public class Alien : MonoBehaviour {
 			m_wave.Flip ();
 		}
 		else if (collider.tag == "Projectile") {
+			Game.Instance.AddToScore (10);
 			Die ();
 		}
 	}
