@@ -32,9 +32,8 @@ public class Cannon: MonoBehaviour {
 	}
 
 	void Fire() {
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.X)) {
 			m_projectile.Shoot (transform.position.x);
-			m_projectile.gameObject.SetActive (true);
 		}
 	}
 
