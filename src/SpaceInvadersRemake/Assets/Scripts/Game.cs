@@ -11,8 +11,11 @@ public class Game : MonoBehaviour {
 	public GameObject[] Bunkers;
 	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = .5f;
+	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
 	public Text ScoreText;
+	public float AlienShootInterval = -5;
+	public float AlienShootProbability = 0.5f;
 
 	private AliensWave m_aliensWave;
 
@@ -52,6 +55,9 @@ public class Game : MonoBehaviour {
 
 		var topEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, VerticalEdgeDistance, 0), Quaternion.identity);
 		topEdge.name = "TopEdge";
+
+		var bottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity);
+		bottomEdge.name = "BottomEdge";
 	}
 
 	void SetupCannon()

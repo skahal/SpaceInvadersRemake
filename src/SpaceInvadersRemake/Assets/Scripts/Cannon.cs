@@ -1,22 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Cannon: MonoBehaviour {
+public class Cannon: ShooterBase {
 
 	private bool m_canMove = true;
-	private Projectile m_projectile;
 	public float Speed = 0.1f;
-	public GameObject ProjectilePrefab;
 
-	void Awake() {
-		var goProjectile = Instantiate (ProjectilePrefab, transform.position, Quaternion.identity) as GameObject;
-		m_projectile = goProjectile.GetComponent<Projectile> ();
-		m_projectile.Setup (transform.position.y + 1);
-	}
-
-	void Update () {
+	protected override void Update ()
+	{
+		base.Update ();
 		Move ();
-		Fire ();
 	}
 
 	void Move ()
@@ -31,15 +24,21 @@ public class Cannon: MonoBehaviour {
 		transform.position = new Vector3 (x + direction, transform.position.y);
 	}
 
-	void Fire() {
-		if (Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown(KeyCode.X)) {
-			m_projectile.Shoot (transform.position.x);
-		}
+	protected override bool CanShoot ()
+	{
+		return Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.X);
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.tag == "VerticalEdge") {
 			m_canMove = false;
+		}
+		else if (collider.tag == "Projectile") {
+			var projectile = collider.GetComponent<Projectile> ();
+
+			if (projectile.TargetTag == "Cannon") {
+				Die ();
+			}
 		}
 	}
 
@@ -47,5 +46,9 @@ public class Cannon: MonoBehaviour {
 		if (collider.tag == "VerticalEdge") {
 			m_canMove = true;
 		}
+	}
+
+	void Die() {
+		transform.position = new Vector2 (0, transform.position.y);
 	}
 }
