@@ -20,17 +20,15 @@ public class Bunker : MonoBehaviour {
 	}
 
 	void DestroyPoint(RaycastHit2D hit) {
-		//var point = transform.InverseTransformPoint (hit.point);
-		var scale = m_renderer.sprite.pixelsPerUnit;
 		var point = hit.point;
-		var x = Mathf.RoundToInt(point.x * scale + m_renderer.sprite.rect.x);
-		var y = Mathf.RoundToInt(point.y * scale + m_renderer.sprite.rect.y);
+
+		var scale = m_renderer.sprite.pixelsPerUnit;	
+		var x = Mathf.RoundToInt(point.x * scale + m_renderer.sprite.rect.center.x);
+		var y = Mathf.RoundToInt(point.y * scale - m_renderer.sprite.rect.center.y);
 		var size = scale * hit.collider.bounds.size;
 		var halfWidth = Mathf.RoundToInt (size.x * .5f);
 		var halfHeight = Mathf.RoundToInt (size.y * .5f);
-		//x = 0;
-		Debug.Log (point);
-
+	
 		for(int i = x - halfWidth; i < x + halfWidth; i++) {
 			for(int j = y - halfHeight; j < y + halfHeight; j++) {
 				m_texture.SetPixel(i, j, Color.clear);
@@ -40,7 +38,8 @@ public class Bunker : MonoBehaviour {
 		RefreshSprite ();
 		var collider = m_renderer.gameObject.GetComponent<PolygonCollider2D> ();
 		Component.Destroy (collider);
-		m_renderer.gameObject.AddComponent<PolygonCollider2D> ();
+		collider = m_renderer.gameObject.AddComponent<PolygonCollider2D> ();
+		//collider.set
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {

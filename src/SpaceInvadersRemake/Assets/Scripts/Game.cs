@@ -35,7 +35,7 @@ public class Game : MonoBehaviour {
 	{
 		Debug.Log ("Begin game setup...");
 
-		m_aliensWave.Setup ();
+		//m_aliensWave.Setup ();
 		SetupEdges ();
 		SetupCannon ();
 
