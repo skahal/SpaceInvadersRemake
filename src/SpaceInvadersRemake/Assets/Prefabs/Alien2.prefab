@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 2
 --- !u!50 &5071912
 Rigidbody2D:
   serializedVersion: 2
@@ -118,7 +118,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aeb21f3204043f997c4c8ac871e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: -.0500000007
+  Speed: -.0199999996
   TargetTag: Cannon
 --- !u!114 &11469704
 MonoBehaviour:
@@ -272,7 +272,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: -.0500000007
+      value: -.0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

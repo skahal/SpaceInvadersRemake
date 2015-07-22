@@ -34,13 +34,13 @@ public class Alien : ShooterBase {
 		var result = false;
 
 		if (m_canShoot && Random.Range (0, 1) <= Game.Instance.AlienShootProbability) {
+			// TODO: Physics2D.Linecast was returning null collider. Why?
 			var hit = Physics2D.LinecastAll (
 				          transform.position, 
 				          new Vector2 (transform.position.x, m_cannon.transform.position.y));
 
 			var count = hit.Count (h => h.collider.gameObject.layer == gameObject.layer);
 
-			Debug.Log (gameObject.name + ": " + count);
 			result = count == 1;
 		} 
 

@@ -28,11 +28,9 @@ public class Projectile: MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		Debug.Log ("Projectile :: OnTriggerEnter2D :: " + collider.tag);
-
-		if (collider.tag == TargetTag) {
-			DestroyIt ();
-		} else if (collider.tag == "HorizontalEdge") {
+		if (collider.tag == TargetTag
+			|| collider.tag == "Bunker"
+			|| collider.tag == "HorizontalEdge") {
 			DestroyIt ();
 		}
 	}

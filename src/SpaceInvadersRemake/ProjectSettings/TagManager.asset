@@ -10,6 +10,7 @@ TagManager:
   - Cannon
   - Projectile
   - HorizontalEdge
+  - Bunker
   layers:
   - Default
   - TransparentFX
