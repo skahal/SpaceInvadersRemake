@@ -20,5 +20,4 @@ deploy:
     - "build/SpaceInvadersRemake-win.exe"
   skip_cleanup: true
   on:
-    repo: skahal/SpaceInvadersRemake
 	tags: true
