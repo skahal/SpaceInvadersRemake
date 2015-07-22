@@ -53,7 +53,7 @@ public class Alien : ShooterBase {
 	}
 
 	IEnumerator CanShootAgain() {
-		yield return new WaitForSeconds (Game.Instance.AlienShootInterval);
+		yield return new WaitForSeconds (Random.Range(0, Game.Instance.AlienShootInterval));
 		m_canShoot = true;
 	}
 
