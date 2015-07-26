@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{F0ABD12B-C8C5-C7E8-94A7-9C64D969C671}</ProjectGuid>
+	<ProjectGuid>{7C0C28EF-770C-2351-A735-6CB04A4C96FA}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,15 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Alien.cs" />
-     <Compile Include="Assets\Scripts\AliensWave.cs" />
-     <Compile Include="Assets\Scripts\Bunker.cs" />
-     <Compile Include="Assets\Scripts\Bunkers.cs" />
-     <Compile Include="Assets\Scripts\Cannon.cs" />
-     <Compile Include="Assets\Scripts\Game.cs" />
-     <Compile Include="Assets\Scripts\Ovni.cs" />
-     <Compile Include="Assets\Scripts\Projectile.cs" />
-     <Compile Include="Assets\Scripts\ShooterBase.cs" />
+     <Compile Include="Assets\Plugins\CSG\CSG.cs" />
+     <Compile Include="Assets\Plugins\CSG\geom\IVertex.cs" />
+     <Compile Include="Assets\Plugins\CSG\geom\Node.cs" />
+     <Compile Include="Assets\Plugins\CSG\geom\Plane.cs" />
+     <Compile Include="Assets\Plugins\CSG\geom\Polygon.cs" />
+     <Compile Include="Assets\Plugins\CSG\geom\Vertex.cs" />
+     <Compile Include="Assets\Plugins\CSG\utils\CSGUtils.cs" />
+     <Compile Include="Assets\Plugins\CSG\utils\VectorExtensionMethods.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

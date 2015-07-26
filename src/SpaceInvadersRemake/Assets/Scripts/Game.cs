@@ -8,9 +8,8 @@ public class Game : MonoBehaviour {
 	public static Game Instance;
 	public GameObject Cannon;
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
-	public GameObject[] Bunkers;
 	public GameObject VerticalEdgePrefab;
-	public float VerticalEdgeDistance = .5f;
+	public float VerticalEdgeDistance = 3;
 	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
 	public Text ScoreText;
@@ -18,6 +17,7 @@ public class Game : MonoBehaviour {
 	public float AlienShootProbability = 0.5f;
 
 	private AliensWave m_aliensWave;
+	private Bunkers m_bunkers;
 
 	void Awake () {
 		if (Instance == null)
@@ -28,6 +28,8 @@ public class Game : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 
 		m_aliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
+		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
+
 		Setup ();
 	}
 
@@ -35,8 +37,9 @@ public class Game : MonoBehaviour {
 	{
 		Debug.Log ("Begin game setup...");
 
-		//m_aliensWave.Setup ();
+		m_aliensWave.Setup ();
 		SetupEdges ();
+		m_bunkers.Setup ();
 		SetupCannon ();
 
 		Debug.Log ("Game setup done");

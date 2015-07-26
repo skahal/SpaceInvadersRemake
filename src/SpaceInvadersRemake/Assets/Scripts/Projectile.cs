@@ -29,13 +29,12 @@ public class Projectile: MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.tag == TargetTag
-			|| collider.tag == "Bunker"
 			|| collider.tag == "HorizontalEdge") {
 			DestroyIt ();
 		}
 	}
 
-	void DestroyIt() {
+	public void DestroyIt() {
 		m_target = null;
 		gameObject.SetActive (false);
 	}

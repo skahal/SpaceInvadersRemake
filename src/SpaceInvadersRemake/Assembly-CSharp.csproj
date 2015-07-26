@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Alien.cs" />
      <Compile Include="Assets\Scripts\AliensWave.cs" />
      <Compile Include="Assets\Scripts\Bunker.cs" />
+     <Compile Include="Assets\Scripts\Bunkers.cs" />
      <Compile Include="Assets\Scripts\Cannon.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\Ovni.cs" />

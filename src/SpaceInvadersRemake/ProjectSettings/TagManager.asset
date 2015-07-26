@@ -11,6 +11,7 @@ TagManager:
   - Projectile
   - HorizontalEdge
   - Bunker
+  - Bunkers
   layers:
   - Default
   - TransparentFX

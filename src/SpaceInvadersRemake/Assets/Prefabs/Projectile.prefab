@@ -27,6 +27,7 @@ GameObject:
   - 114: {fileID: 11431418}
   - 61: {fileID: 6198248}
   - 50: {fileID: 5042150}
+  - 60: {fileID: 6029228}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.94005775, y: -4.45645332, z: 0}
+  m_LocalPosition: {x: .767217398, y: -.360461384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488532}
@@ -75,13 +76,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
+--- !u!60 &6029228
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156112}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .0395116806, y: .173891544}
+      - {x: .0428363681, y: -.0141545832}
+      - {x: .0609053373, y: -.0816178918}
+      - {x: .0675540566, y: -.0808259845}
+      - {x: .0422841311, y: -.0117376149}
+      - {x: .0436714888, y: -.17175141}
+      - {x: -.0436717272, y: -.174465209}
+      - {x: -.0331581831, y: .176431835}
 --- !u!61 &6198248
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156112}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0

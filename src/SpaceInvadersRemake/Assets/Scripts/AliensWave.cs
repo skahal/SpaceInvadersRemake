@@ -33,7 +33,7 @@ public class AliensWave : MonoBehaviour {
 
 		Left = width * -.5f;
 		Right = Left + width;
-		var top = Rows * -.5f;
+		var top = transform.position.y;
 
 		// Deploy the aliens.
 		for (int x = 0; x < Columns; x++) {
