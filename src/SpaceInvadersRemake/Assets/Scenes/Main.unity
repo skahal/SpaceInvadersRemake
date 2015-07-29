@@ -548,8 +548,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1726197804}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
-      propertyPath: CannonDeployPosition.y
-      value: -4.5
+      propertyPath: BottomEdgeDistanceY
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: TopEdgeDistanceY
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: AlienShootInterval
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20aead53629a54574975e74154db1d38, type: 2}

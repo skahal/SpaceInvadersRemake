@@ -40,13 +40,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cannon: {fileID: 157318, guid: 8b29d4142105448c681dd43e3d78faf6, type: 2}
-  CannonDeployPosition: {x: 0, y: -4}
-  BunkerPrefab: {fileID: 162998, guid: a995c5fa9e5314a01b21da937f1246e1, type: 2}
-  BunkersCount: 3
-  BunkerInterval: 3
+  CannonDeployPosition: {x: 0, y: -4.5}
   VerticalEdgePrefab: {fileID: 179098, guid: c06860de295264e06adab6e6df1fd178, type: 2}
   VerticalEdgeDistance: 3
-  BottomEdgeDistanceY: -5
+  BottomEdgeDistanceY: -6
   HorizontalEdgePrefab: {fileID: 176334, guid: 294cce9a33bdb4a358ac5be5debce416, type: 2}
   ScoreText: {fileID: 0}
   AlienShootInterval: 10

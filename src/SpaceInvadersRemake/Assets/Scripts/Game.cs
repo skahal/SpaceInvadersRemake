@@ -10,6 +10,7 @@ public class Game : MonoBehaviour {
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
 	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = 3;
+	public float TopEdgeDistanceY = 5f;
 	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
 	public Text ScoreText;
@@ -56,7 +57,7 @@ public class Game : MonoBehaviour {
 		var rightEdge = Instantiate (VerticalEdgePrefab, new Vector3(right, 1f, 0), Quaternion.identity);
 		rightEdge.name = "RightEdge";
 
-		var topEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, VerticalEdgeDistance, 0), Quaternion.identity);
+		var topEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, TopEdgeDistanceY, 0), Quaternion.identity);
 		topEdge.name = "TopEdge";
 
 		var bottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity);

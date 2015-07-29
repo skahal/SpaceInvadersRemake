@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxShootSupportedInPoint: 4
+  HorizontalPixelsDestroyedPerShoot: 8
 --- !u!212 &21228134
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -135,6 +136,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: MaxShootSupportedInPoint
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HorizontalPixelsDestroyedPerShoot
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

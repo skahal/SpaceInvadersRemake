@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11453820}
   - 61: {fileID: 6111690}
   - 50: {fileID: 5075492}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422270}
   - 212: {fileID: 21246476}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
