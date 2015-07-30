@@ -4,7 +4,30 @@ using System.Collections;
 public class Cannon: ShooterBase {
 
 	private bool m_canMove = true;
-	public float Speed = 0.1f;
+	private SpriteRenderer m_renderer;
+	public float Speed = .1f;
+	public float SpawnTime = 1f;
+	public float SpawnFlashTime = .15f;
+
+	protected override void Awake ()
+	{
+		base.Awake ();
+		m_renderer = GetComponentInChildren<SpriteRenderer> ();
+
+		StartCoroutine (Spawn ());
+	}
+
+	private IEnumerator Spawn () {
+		var flashes = SpawnTime / SpawnFlashTime;
+
+		Debug.Log (flashes);
+		for (int i = 0; i < flashes; i++) {
+			m_renderer.enabled = !m_renderer.enabled;
+			yield return new WaitForSeconds (SpawnFlashTime);
+		}
+
+		m_renderer.enabled = true;
+	}
 
 	protected override void Update ()
 	{
