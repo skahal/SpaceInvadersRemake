@@ -3,14 +3,25 @@ using System.Collections;
 
 public class Cannon: ShooterBase {
 
-	private bool m_canMove = true;
+	private bool m_touchingEdge;
 	private SpriteRenderer m_renderer;
+	public static Cannon Instance;
 	public float Speed = .1f;
 	public float SpawnTime = 1f;
 	public float SpawnFlashTime = .15f;
+	public int Lifes = 3;
+
+	[HideInInspector] public bool CanInteract;
 
 	protected override void Awake ()
 	{
+		if (Instance == null)
+			Instance = this;
+		else if (Instance != this)
+			Destroy (gameObject);
+
+		DontDestroyOnLoad (gameObject);
+
 		base.Awake ();
 		m_renderer = GetComponentInChildren<SpriteRenderer> ();
 
@@ -18,6 +29,9 @@ public class Cannon: ShooterBase {
 	}
 
 	private IEnumerator Spawn () {
+		Game.Instance.RaiseMessage ("OnSpawnBegin");
+		transform.position = new Vector2 (0, transform.position.y);
+
 		var flashes = SpawnTime / SpawnFlashTime;
 
 		Debug.Log (flashes);
@@ -27,6 +41,9 @@ public class Cannon: ShooterBase {
 		}
 
 		m_renderer.enabled = true;
+
+		CanInteract = true;
+		Game.Instance.RaiseMessage ("OnSpawnEnd");
 	}
 
 	protected override void Update ()
@@ -37,24 +54,28 @@ public class Cannon: ShooterBase {
 
 	void Move ()
 	{
-		var direction = (float)(Input.GetAxisRaw ("Horizontal"));
-		var x = transform.position.x;
+		if (CanInteract) {
+			var direction = (float)(Input.GetAxisRaw ("Horizontal"));
+			var x = transform.position.x;
 
-		if (!m_canMove && direction > 0 == x > 0)
-			return;
+			// If is touching edge and is trying to move to edge direction again, 
+			// abort the movement.
+			if (m_touchingEdge && direction > 0 == x > 0)
+				return;
 
-		direction *= Speed;
-		transform.position = new Vector3 (x + direction, transform.position.y);
+			direction *= Speed;
+			transform.position = new Vector3 (x + direction, transform.position.y);
+		}
 	}
 
 	protected override bool CanShoot ()
 	{
-		return Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.X);
+		return CanInteract && Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.X);
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.IsVerticalEdge()) {
-			m_canMove = false;
+			m_touchingEdge = true;
 		}
 		else if (collider.IsProjectile()) {
 			var projectile = collider.GetComponent<Projectile> ();
@@ -67,11 +88,16 @@ public class Cannon: ShooterBase {
 
 	void OnTriggerExit2D(Collider2D collider) {
 		if (collider.IsVerticalEdge()) {
-			m_canMove = true;
+			m_touchingEdge = false;
 		}
 	}
 
 	void Die() {
-		transform.position = new Vector2 (0, transform.position.y);
+		CanInteract = false;
+
+		if (Lifes > 0) {
+			Lifes--;
+			StartCoroutine (Spawn ());
+		}
 	}
 }

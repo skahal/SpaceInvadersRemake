@@ -9,7 +9,9 @@ public abstract class ShooterBase: MonoBehaviour {
 	}
 
 	protected virtual void Update() {
-		Shoot ();
+		if (Cannon.Instance.CanInteract) {
+			Shoot ();
+		}
 	}
 
 	void SetupShooter() {

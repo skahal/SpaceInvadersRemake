@@ -4,13 +4,14 @@ using System.Collections.Generic;
 
 public class AliensWave : MonoBehaviour {
 
-	private List<GameObject> m_aliens = new List<GameObject>();
 	private bool m_moving;
 	private bool m_isFliping;
 
+	[HideInInspector] public List<GameObject> Aliens = new List<GameObject>();
+
 	public float Columns = 6;
 	public float Rows = 6;
-	public GameObject[] Aliens;
+	public GameObject[] AlienPrefabs;
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
 	public float MoveDelay = 2f;
@@ -20,8 +21,8 @@ public class AliensWave : MonoBehaviour {
 
 	public void Setup () {
 
-		if (Aliens.Length < Rows) {
-			Rows = Aliens.Length;
+		if (AlienPrefabs.Length < Rows) {
+			Rows = AlienPrefabs.Length;
 		}
 
 		// Keep the wave in center.
@@ -41,21 +42,23 @@ public class AliensWave : MonoBehaviour {
 
 			for(int y = 0; y < Rows; y++) {
 				var inc = new Vector2(xInc, top + y * Padding.y);
-				var alien = Instantiate(Aliens[y], new Vector2(x, y) + inc, Quaternion.identity) as GameObject;
-				m_aliens.Add (alien);
+				var alien = Instantiate(AlienPrefabs[y], new Vector2(x, y) + inc, Quaternion.identity) as GameObject;
+				Aliens.Add (alien);
 				alien.transform.parent = gameObject.transform;
 			}
 		}
 	}
 
 	void Update() {
-		StartCoroutine (MoveAliens ());
+		if (Cannon.Instance.CanInteract) {
+			StartCoroutine (MoveAliens ());
+		}
 	}
 
 	IEnumerator MoveAliens() {
 		if (!m_moving) {
 			m_moving = true;
-			foreach (var alien in m_aliens) {
+			foreach (var alien in Aliens) {
 				alien.transform.position += new Vector3 (MoveSize.x, 0);
 			}
 

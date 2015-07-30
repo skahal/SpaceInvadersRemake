@@ -51,8 +51,6 @@ public class Bunker : MonoBehaviour
 		var spriteRect = sprite.rect;
 		var translatedX = (point.x - transform.position.x) + .5f;
 		var projectileX = Mathf.RoundToInt (spriteRect.x + translatedX * bunkerScale);
-
-		var projectileRenderer = hit.collider.GetComponentInChildren<SpriteRenderer> ();
 	
 		var halfWidth = HorizontalPixelsDestroyedPerShoot / 2;
 		var projectileWidth = HorizontalPixelsDestroyedPerShoot;

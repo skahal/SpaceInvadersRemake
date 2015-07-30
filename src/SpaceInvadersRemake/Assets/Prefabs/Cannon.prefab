@@ -202,6 +202,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: .0299999993
+  SpawnTime: 1
+  SpawnFlashTime: .150000006
+  Lifes: 3
+  CanInteract: 0
 --- !u!212 &21224008
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -288,6 +292,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: SpawnFlashTime
+      value: .150000006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

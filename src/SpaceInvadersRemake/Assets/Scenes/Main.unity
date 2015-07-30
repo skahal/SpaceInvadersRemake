@@ -569,6 +569,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -613,6 +617,30 @@ Prefab:
       propertyPath: Padding.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
     m_RemovedComponents:
     - {fileID: 5031366, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
     - {fileID: 6160038, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}

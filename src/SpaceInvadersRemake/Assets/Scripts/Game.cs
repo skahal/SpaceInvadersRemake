@@ -17,7 +17,7 @@ public class Game : MonoBehaviour {
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
 
-	private AliensWave m_aliensWave;
+	[HideInInspector] public AliensWave AliensWave;
 	private Bunkers m_bunkers;
 
 	void Awake () {
@@ -28,7 +28,7 @@ public class Game : MonoBehaviour {
 		
 		DontDestroyOnLoad (gameObject);
 
-		m_aliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
+		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
 
 		Setup ();
@@ -38,7 +38,7 @@ public class Game : MonoBehaviour {
 	{
 		Debug.Log ("Begin game setup...");
 
-		m_aliensWave.Setup ();
+		AliensWave.Setup ();
 		SetupEdges ();
 		m_bunkers.Setup ();
 		SetupCannon ();
@@ -48,8 +48,8 @@ public class Game : MonoBehaviour {
 
 	void SetupEdges() 
 	{
-		var left =  m_aliensWave.Left - VerticalEdgeDistance - 1;
-		var right = m_aliensWave.Right + VerticalEdgeDistance + 1;
+		var left =  AliensWave.Left - VerticalEdgeDistance - 1;
+		var right = AliensWave.Right + VerticalEdgeDistance + 1;
 
 		var leftEdge = Instantiate (VerticalEdgePrefab, new Vector3(left, 1f, 0), Quaternion.identity);
 		leftEdge.name = "LeftEdge";
@@ -73,5 +73,13 @@ public class Game : MonoBehaviour {
 	{
 		m_score += value;
 		ScoreText.text = m_score.ToString ("D4");
+	}
+
+	public void RaiseMessage(string message) {
+		Debug.Log ("RaiseMessage: " + message);
+
+		foreach (var alien in AliensWave.Aliens) {
+			alien.SendMessage (message, SendMessageOptions.DontRequireReceiver);
+		}
 	}
 }
