@@ -6,7 +6,7 @@ public class Game : MonoBehaviour {
 
 	private int m_score;
 	public static Game Instance;
-	public GameObject Cannon;
+	public GameObject CannonPrefab;
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
 	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = 3;
@@ -14,6 +14,7 @@ public class Game : MonoBehaviour {
 	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
 	public Text ScoreText;
+	public Text LifesText;
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
 
@@ -21,12 +22,7 @@ public class Game : MonoBehaviour {
 	private Bunkers m_bunkers;
 
 	void Awake () {
-		if (Instance == null)
-			Instance = this;
-		else if (Instance != this)
-			Destroy (gameObject);
-		
-		DontDestroyOnLoad (gameObject);
+		Instance = this;
 
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
@@ -66,7 +62,7 @@ public class Game : MonoBehaviour {
 
 	void SetupCannon()
 	{
-		Instantiate (Cannon, CannonDeployPosition, Quaternion.identity);
+		Instantiate (CannonPrefab, CannonDeployPosition, Quaternion.identity);
 	}
 
 	public void AddToScore(int value)
@@ -75,11 +71,28 @@ public class Game : MonoBehaviour {
 		ScoreText.text = m_score.ToString ("D4");
 	}
 
+	void Update() {
+		if (Input.GetKeyDown (KeyCode.Return)) {
+			Application.LoadLevel (Application.loadedLevelName);
+		}
+	}
+
+	void OnSpawnBegin() {
+		LifesText.enabled = true;
+		LifesText.text = Cannon.Instance.Lifes.ToString ();
+	}
+
+	void OnSpawnEnd() {
+		LifesText.enabled = false;
+	}
+
 	public void RaiseMessage(string message) {
 		Debug.Log ("RaiseMessage: " + message);
 
 		foreach (var alien in AliensWave.Aliens) {
 			alien.SendMessage (message, SendMessageOptions.DontRequireReceiver);
 		}
+
+		gameObject.SendMessage (message);
 	}
 }

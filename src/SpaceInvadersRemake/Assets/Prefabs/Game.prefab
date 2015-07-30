@@ -39,15 +39,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7a3c1eba3e644f291a9ed9cfacf96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cannon: {fileID: 157318, guid: 8b29d4142105448c681dd43e3d78faf6, type: 2}
+  CannonPrefab: {fileID: 157318, guid: 8b29d4142105448c681dd43e3d78faf6, type: 2}
   CannonDeployPosition: {x: 0, y: -4.5}
   VerticalEdgePrefab: {fileID: 179098, guid: c06860de295264e06adab6e6df1fd178, type: 2}
   VerticalEdgeDistance: 3
-  BottomEdgeDistanceY: -6
+  TopEdgeDistanceY: 4
+  BottomEdgeDistanceY: -5
   HorizontalEdgePrefab: {fileID: 176334, guid: 294cce9a33bdb4a358ac5be5debce416, type: 2}
   ScoreText: {fileID: 0}
+  LifesText: {fileID: 0}
   AlienShootInterval: 10
   AlienShootProbability: .100000001
+  AliensWave: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

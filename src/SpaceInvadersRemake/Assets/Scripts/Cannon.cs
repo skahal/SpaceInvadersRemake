@@ -13,15 +13,9 @@ public class Cannon: ShooterBase {
 
 	[HideInInspector] public bool CanInteract;
 
-	protected override void Awake ()
-	{
-		if (Instance == null)
-			Instance = this;
-		else if (Instance != this)
-			Destroy (gameObject);
-
-		DontDestroyOnLoad (gameObject);
-
+	protected override void Awake () {
+		Instance = this;
+	
 		base.Awake ();
 		m_renderer = GetComponentInChildren<SpriteRenderer> ();
 
@@ -29,12 +23,13 @@ public class Cannon: ShooterBase {
 	}
 
 	private IEnumerator Spawn () {
+		CanInteract = false;
 		Game.Instance.RaiseMessage ("OnSpawnBegin");
+
 		transform.position = new Vector2 (0, transform.position.y);
 
 		var flashes = SpawnTime / SpawnFlashTime;
 
-		Debug.Log (flashes);
 		for (int i = 0; i < flashes; i++) {
 			m_renderer.enabled = !m_renderer.enabled;
 			yield return new WaitForSeconds (SpawnFlashTime);
@@ -42,8 +37,10 @@ public class Cannon: ShooterBase {
 
 		m_renderer.enabled = true;
 
-		CanInteract = true;
-		Game.Instance.RaiseMessage ("OnSpawnEnd");
+		if (Lifes > 0) {
+			CanInteract = true;
+			Game.Instance.RaiseMessage ("OnSpawnEnd");
+		}
 	}
 
 	protected override void Update ()
@@ -93,11 +90,7 @@ public class Cannon: ShooterBase {
 	}
 
 	void Die() {
-		CanInteract = false;
-
-		if (Lifes > 0) {
-			Lifes--;
-			StartCoroutine (Spawn ());
-		}
+		Lifes--;
+		StartCoroutine (Spawn ());
 	}
 }
