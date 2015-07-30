@@ -7,6 +7,22 @@ public class Projectile: MonoBehaviour {
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
 
+	public bool IsTargetingCannon
+	{
+		get 
+		{
+			return "Cannon".Equals (TargetTag);
+		}
+	}
+
+	public bool IsTargetingAlien
+	{
+		get 
+		{
+			return "Alien".Equals (TargetTag);
+		}
+	}
+
 	public void Setup(float shootFromY)
 	{
 		m_shootFromY = shootFromY;
@@ -28,8 +44,8 @@ public class Projectile: MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.tag == TargetTag
-			|| collider.tag == "HorizontalEdge") {
+		if (collider.CompareTag(TargetTag)
+			|| collider.IsHorizontalEdge()) {
 			DestroyIt ();
 		}
 	}

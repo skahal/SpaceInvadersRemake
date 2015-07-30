@@ -53,7 +53,6 @@ public class Bunker : MonoBehaviour
 		var projectileX = Mathf.RoundToInt (spriteRect.x + translatedX * bunkerScale);
 
 		var projectileRenderer = hit.collider.GetComponentInChildren<SpriteRenderer> ();
-		var projectileScale = projectileRenderer.sprite.rect.width;
 	
 		var halfWidth = HorizontalPixelsDestroyedPerShoot / 2;
 		var projectileWidth = HorizontalPixelsDestroyedPerShoot;
@@ -89,12 +88,11 @@ public class Bunker : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if (collider.tag == "Projectile") {
+		if (collider.IsProjectile()) {
 			var projectile = collider.GetComponent<Projectile> ();
 			var hit = Physics2D.CircleCast (transform.position, 1f, Vector3.zero, 1f, LayerMask.GetMask ("Projectile"));
-			var isAlienTarget = projectile.TargetTag == "Alien";
-
-			if (DestroyPoint (hit, isAlienTarget)) {
+		
+			if (DestroyPoint (hit, projectile.IsTargetingAlien)) {
 				projectile.DestroyIt ();
 			}	
 		}

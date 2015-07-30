@@ -30,20 +30,20 @@ public class Cannon: ShooterBase {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.tag == "VerticalEdge") {
+		if (collider.IsVerticalEdge()) {
 			m_canMove = false;
 		}
-		else if (collider.tag == "Projectile") {
+		else if (collider.IsProjectile()) {
 			var projectile = collider.GetComponent<Projectile> ();
 
-			if (projectile.TargetTag == "Cannon") {
+			if (projectile.IsTargetingCannon) {
 				Die ();
 			}
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
-		if (collider.tag == "VerticalEdge") {
+		if (collider.IsVerticalEdge()) {
 			m_canMove = true;
 		}
 	}

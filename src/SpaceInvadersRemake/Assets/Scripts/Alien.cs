@@ -16,13 +16,13 @@ public class Alien : ShooterBase {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.tag == "VerticalEdge") {
+		if (collider.IsVerticalEdge()) {
 			m_wave.Flip ();
 		}
-		else if (collider.tag == "Projectile") {
+		else if (collider.IsProjectile()) {
 			var projectile = collider.GetComponent<Projectile> ();
 
-			if (projectile.TargetTag == "Alien") {
+			if (projectile.IsTargetingAlien) {
 				Game.Instance.AddToScore (10);
 				Die ();
 			}
