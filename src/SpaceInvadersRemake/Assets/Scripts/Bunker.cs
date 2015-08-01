@@ -17,32 +17,9 @@ public class Bunker : MonoBehaviour
 		var originalTexture = m_renderer.sprite.texture;
 		m_texture = new Texture2D (originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
 		m_texture.SetPixels32 (originalTexture.GetPixels32 ());
-		RefreshSprite ();	
+		m_renderer.RefreshSprite (m_texture);	
 	}
-
-	void RefreshSprite ()
-	{
-		m_texture.Apply ();
-		m_renderer.sprite = Sprite.Create (m_texture, m_renderer.sprite.rect, new Vector2 (0.5f, 0.5f), m_renderer.sprite.pixelsPerUnit);
-	}
-
-	bool DestroyPoint2 (RaycastHit2D hit)
-	{
-		var point = hit.point;
-		var sprite = m_renderer.sprite;
-		var scale = sprite.rect.width;
-		var spriteRect = sprite.rect;
-		var translatedX = (point.x - transform.position.x) + .5f;
-		var xTexture = spriteRect.x + translatedX * scale;
-
-
-		Debug.Log (xTexture);
-
-		RefreshSprite ();
-
-		return true;
-	}
-
+		
 	bool DestroyPoint (RaycastHit2D hit, bool isAlienTarget)
 	{
 		var point = hit.point;
@@ -69,7 +46,7 @@ public class Bunker : MonoBehaviour
 			}
 		}
 			
-		RefreshSprite ();
+		m_renderer.RefreshSprite (m_texture);
 
 		return hitPixelsCount > 0;	
 	}
