@@ -920,6 +920,14 @@ Prefab:
       propertyPath: MoveDelay
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: Columns
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: Rows
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5031366, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
     - {fileID: 6160038, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}

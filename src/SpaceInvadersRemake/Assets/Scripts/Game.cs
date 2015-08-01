@@ -23,7 +23,6 @@ public class Game : MonoBehaviour {
 
 	void Awake () {
 		Instance = this;
-
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
 
@@ -38,6 +37,17 @@ public class Game : MonoBehaviour {
 		AliensWave.Setup ();
 		SetupEdges ();
 		SetupCannon ();
+
+		// Next level stuffs.
+		if (PlayerPrefs.HasKey ("Score")) {
+			m_score = PlayerPrefs.GetInt ("Score");
+			Cannon.Instance.Lifes = PlayerPrefs.GetInt ("Lifes");
+
+			PlayerPrefs.DeleteAll ();
+
+			RefreshScore ();
+			RefreshLifes ();
+		}
 
 		Debug.Log ("Game setup done");
 	}
@@ -68,17 +78,37 @@ public class Game : MonoBehaviour {
 	public void AddToScore(int value)
 	{
 		m_score += value;
+		RefreshScore ();
+	}
+
+	void RefreshScore() {
 		ScoreText.text = m_score.ToString ("D4");
 	}
 
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Return)) {
-			Application.LoadLevel (Application.loadedLevelName);
+			Restart ();
 		}
+	}
+
+	static void Restart ()
+	{
+		Application.LoadLevel (Application.loadedLevelName);
+	}
+
+	public void NextLevel ()
+	{
+		PlayerPrefs.SetInt ("Score", m_score);
+		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
+		Application.LoadLevel (Application.loadedLevelName);
 	}
 
 	void OnSpawnBegin() {
 		LifesText.enabled = true;
+		RefreshLifes ();
+	}
+
+	void RefreshLifes() {
 		LifesText.text = Cannon.Instance.Lifes.ToString ();
 	}
 

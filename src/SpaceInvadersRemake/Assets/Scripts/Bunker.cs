@@ -5,25 +5,19 @@ using System.Collections.Generic;
 
 public class Bunker : MonoBehaviour
 {
-	private SpriteRenderer m_renderer;
-	private Texture2D m_texture;
+	private SpriteBuilder m_spriteBuilder;
 	public int MaxShootSupportedInPoint = 4;
 	public int HorizontalPixelsDestroyedPerShoot = 6;
 
 	void Awake ()
 	{
-		m_renderer = GetComponentInChildren<SpriteRenderer> ();
-			
-		var originalTexture = m_renderer.sprite.texture;
-		m_texture = new Texture2D (originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
-		m_texture.SetPixels32 (originalTexture.GetPixels32 ());
-		m_renderer.RefreshSprite (m_texture);	
+		m_spriteBuilder = new SpriteBuilder (GetComponentInChildren<SpriteRenderer> ()).Build ();
 	}
 		
 	bool DestroyPoint (RaycastHit2D hit, bool isAlienTarget)
 	{
 		var point = hit.point;
-		var sprite = m_renderer.sprite;
+		var sprite = m_spriteBuilder.Sprite;
 		var bunkerScale = sprite.rect.width;
 		var spriteRect = sprite.rect;
 		var translatedX = (point.x - transform.position.x) + .5f;
@@ -46,7 +40,7 @@ public class Bunker : MonoBehaviour
 			}
 		}
 			
-		m_renderer.RefreshSprite (m_texture);
+		m_spriteBuilder.Rebuild();
 
 		return hitPixelsCount > 0;	
 	}
@@ -54,8 +48,8 @@ public class Bunker : MonoBehaviour
 	void DestroyHorizontalPizels (int pixelY, int x, int halfWidth, int hitPixelsByShoot, ref int hitPixelsCount)
 	{
 		for (int pixelX = x - halfWidth; pixelX < x + halfWidth; pixelX++) {
-			if (hitPixelsCount < hitPixelsByShoot && m_texture.GetPixel (pixelX, pixelY) != Color.clear) {
-				m_texture.SetPixel (pixelX, pixelY, Color.clear);
+			if (hitPixelsCount < hitPixelsByShoot && m_spriteBuilder.HasColor(pixelX, pixelY)) {
+				m_spriteBuilder.ClearColor(pixelX, pixelY);
 				hitPixelsCount++;
 			}
 		}

@@ -56,7 +56,7 @@
      <Compile Include="Assets\Scripts\Ovni.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
-     <Compile Include="Assets\Scripts\SpriteExtensions.cs" />
+     <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
