@@ -35,7 +35,7 @@ public class Projectile: MonoBehaviour {
 	}
 
 	void Update () {
-		if (m_target.HasValue) {
+		if (m_target.HasValue && Cannon.Instance.CanInteract) {
 			transform.position = Vector2.Lerp (transform.position, m_target.Value, Time.deltaTime * Mathf.Abs(Speed));
 		}
 	}
