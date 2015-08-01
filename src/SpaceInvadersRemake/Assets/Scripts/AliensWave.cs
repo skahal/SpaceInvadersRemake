@@ -73,6 +73,7 @@ public class AliensWave : MonoBehaviour {
 		if (!m_isFliping) {
 			m_isFliping = true;
 			MoveSize.x *= -1;
+			transform.position = new Vector3 (transform.position.x, transform.position.y - MoveSize.y, 0);
 		}
 
 		StartCoroutine (EndFlip ());

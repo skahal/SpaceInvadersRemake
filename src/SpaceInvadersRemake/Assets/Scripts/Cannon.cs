@@ -81,6 +81,9 @@ public class Cannon: ShooterBase {
 				Die ();
 			}
 		}
+		else if (collider.IsAlien ()) {
+			Die (Lifes);
+		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
@@ -89,8 +92,8 @@ public class Cannon: ShooterBase {
 		}
 	}
 
-	void Die() {
-		Lifes--;
+	void Die(int lifesLost = 1) {
+		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 	}
 }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Projectile: MonoBehaviour {
 	private Vector2? m_target;
-	private float m_shootFromY;
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
 
@@ -23,16 +22,14 @@ public class Projectile: MonoBehaviour {
 		}
 	}
 
-	public void Setup(float shootFromY)
-	{
-		m_shootFromY = shootFromY;
+	void Awake() {
 		gameObject.SetActive (false);
 	}
 
-	public void Shoot(float x) {
+	public void Shoot(float x, float y) {
 		if (m_target == null) {
 			m_target = new Vector2 (x, Speed > 0 ? 100 : -100);
-			transform.position = new Vector2 (x, m_shootFromY);
+			transform.position = new Vector2 (x, y);
 			gameObject.SetActive (true);
 		}
 	}

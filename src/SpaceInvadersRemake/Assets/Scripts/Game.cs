@@ -34,9 +34,9 @@ public class Game : MonoBehaviour {
 	{
 		Debug.Log ("Begin game setup...");
 
+		m_bunkers.Setup ();
 		AliensWave.Setup ();
 		SetupEdges ();
-		m_bunkers.Setup ();
 		SetupCannon ();
 
 		Debug.Log ("Game setup done");
@@ -93,6 +93,6 @@ public class Game : MonoBehaviour {
 			alien.SendMessage (message, SendMessageOptions.DontRequireReceiver);
 		}
 
-		gameObject.SendMessage (message);
+		gameObject.SendMessage (message, SendMessageOptions.DontRequireReceiver);
 	}
 }

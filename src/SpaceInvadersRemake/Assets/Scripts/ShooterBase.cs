@@ -17,14 +17,13 @@ public abstract class ShooterBase: MonoBehaviour {
 	void SetupShooter() {
 		m_projectile = transform.FindChild("Projectile") .GetComponent<Projectile> ();
 		m_projectile.transform.parent = null;
-		m_projectile.Setup (transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
 	}
 
 	protected abstract bool CanShoot ();
 
 	void Shoot() {
 		if (CanShoot()) {
-			m_projectile.Shoot (transform.position.x);
+			m_projectile.Shoot (transform.position.x, transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
 		}
 	}
 }

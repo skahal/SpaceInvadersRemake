@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21228134}
   - 114: {fileID: 11424912}
   - 60: {fileID: 6014874}
+  - 50: {fileID: 5061298}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Bunker
@@ -58,6 +59,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 481930}
   m_RootOrder: 0
+--- !u!50 &5061298
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132292}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!60 &6014874
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -127,7 +144,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
@@ -140,6 +157,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: HorizontalPixelsDestroyedPerShoot
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SleepingMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

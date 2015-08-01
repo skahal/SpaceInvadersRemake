@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Color: {r: .120570302, g: .632352948, b: .102292374, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: da868116df6d4413a8fcd998421ad014, type: 3}
-    m_FontSize: 130
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -618,6 +618,14 @@ Prefab:
       propertyPath: LifesText
       value: 
       objectReference: {fileID: 1713996577}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: CannonDeployPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: AlienShootProbability
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20aead53629a54574975e74154db1d38, type: 2}
   m_IsPrefabParent: 0
@@ -638,7 +646,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -700,6 +708,14 @@ Prefab:
       propertyPath: AlienPrefabs.Array.data[5]
       value: 
       objectReference: {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: MoveSize.y
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: MoveDelay
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5031366, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
     - {fileID: 6160038, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}

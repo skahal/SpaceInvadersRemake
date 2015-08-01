@@ -17,7 +17,7 @@ public class Bunker : MonoBehaviour
 		var originalTexture = m_renderer.sprite.texture;
 		m_texture = new Texture2D (originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
 		m_texture.SetPixels32 (originalTexture.GetPixels32 ());
-		RefreshSprite ();
+		RefreshSprite ();	
 	}
 
 	void RefreshSprite ()
@@ -86,13 +86,16 @@ public class Bunker : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if (collider.IsProjectile()) {
+		if (collider.IsProjectile ()) {
 			var projectile = collider.GetComponent<Projectile> ();
 			var hit = Physics2D.CircleCast (transform.position, 1f, Vector3.zero, 1f, LayerMask.GetMask ("Projectile"));
 		
 			if (DestroyPoint (hit, projectile.IsTargetingAlien)) {
 				projectile.DestroyIt ();
 			}	
+		}
+		else if (collider.IsAlien ()) {
+			SendMessageUpwards ("OnAlienReachBunker");
 		}
 	}
 }
