@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.ImageEffects;
 
 public class Cannon: ShooterBase {
 
@@ -40,7 +41,7 @@ public class Cannon: ShooterBase {
 		if (Lifes > 0) {
 			CanInteract = true;
 			Game.Instance.RaiseMessage ("OnSpawnEnd");
-		}
+		} 
 	}
 
 	protected override void Update ()
@@ -95,5 +96,9 @@ public class Cannon: ShooterBase {
 	void Die(int lifesLost = 1) {
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
+
+		if (Lifes == 0) {
+			Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
+		}
 	}
 }
