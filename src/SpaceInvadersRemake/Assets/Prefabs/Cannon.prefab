@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8f03dc180034b6aa55302498a54e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: .0299999993
+  Speed: .0450000018
   SpawnTime: 1
   SpawnFlashTime: .150000006
   Lifes: 3
@@ -287,7 +287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: .0700000003
+      value: .0450000018
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
