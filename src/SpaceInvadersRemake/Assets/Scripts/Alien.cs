@@ -7,6 +7,8 @@ public class Alien : ShooterBase {
 	private bool m_canShoot;
 	private Animator m_animator;
 
+	[HideInInspector] public int Row;
+
 	protected override void Awake ()
 	{
 		base.Awake ();
@@ -27,7 +29,7 @@ public class Alien : ShooterBase {
 			var projectile = collider.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Game.Instance.AddToScore (10);
+				Game.Instance.AddToScore (Row * 5);
 				Die ();
 			}
 		}

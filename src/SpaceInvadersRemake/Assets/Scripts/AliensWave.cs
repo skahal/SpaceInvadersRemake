@@ -45,6 +45,7 @@ public class AliensWave : MonoBehaviour {
 				var alien = Instantiate(AlienPrefabs[y], new Vector2(x, y) + inc, Quaternion.identity) as GameObject;
 				Aliens.Add (alien);
 				alien.transform.parent = gameObject.transform;
+				alien.GetComponent<Alien> ().Row = y + 1;
 			}
 		}
 	}
