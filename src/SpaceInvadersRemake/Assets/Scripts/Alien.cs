@@ -116,8 +116,8 @@ public class Alien : ShooterBase {
 	}
 
 	void CheckAliensAlive() {
-		var aliensAlive = m_wave.Aliens.Count (a => a.activeSelf) -1;
-
+		var aliensAlive = m_wave.Aliens.Count (a => a.activeInHierarchy) -1;
+	
 		if (aliensAlive == 0) {
 			Game.Instance.NextLevel ();
 		} else {

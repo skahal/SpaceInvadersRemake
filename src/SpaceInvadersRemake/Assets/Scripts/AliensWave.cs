@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Vexe.Runtime.Types;
 
-public class AliensWave : MonoBehaviour {
+public class AliensWave : BetterBehaviour {
 
 	private bool m_moving;
 	private bool m_isFliping;
+	private float m_currentMoveDelay = 1.5f;
 
 	[HideInInspector] public List<GameObject> Aliens = new List<GameObject>();
 
@@ -14,8 +16,8 @@ public class AliensWave : MonoBehaviour {
 	public GameObject[] AlienPrefabs;
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
-	public float MoveDelay = 2f;
-	public Dictionary<int, float> Acceleration;
+
+	public Dictionary<int, float> AliensAliveMoveDelay;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
@@ -64,7 +66,7 @@ public class AliensWave : MonoBehaviour {
 				alien.transform.position += new Vector3 (MoveSize.x, 0);
 			}
 
-			yield return new WaitForSeconds (MoveDelay);
+			yield return new WaitForSeconds (m_currentMoveDelay);
 			m_moving = false;
 		}
 
@@ -82,10 +84,13 @@ public class AliensWave : MonoBehaviour {
 	}
 
 	IEnumerator EndFlip() {
-		yield return new WaitForSeconds (MoveDelay * 2);
+		yield return new WaitForSeconds (m_currentMoveDelay * 2);
 		m_isFliping = false;
 	}
 
 	void OnAlienDie(int aliensAlive) {
+		if(AliensAliveMoveDelay.ContainsKey(aliensAlive)) {
+			m_currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
+		}
 	}
 }

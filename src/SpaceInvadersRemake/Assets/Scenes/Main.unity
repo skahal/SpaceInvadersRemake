@@ -914,7 +914,7 @@ Prefab:
       objectReference: {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveSize.y
-      value: .25
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveDelay
@@ -927,6 +927,38 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: Rows
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
+      value: 0.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _id
+      value: -1062
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[3]
+      value: '[0,1,2,3,4,5]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[5]
+      value: '{"x":0.5,"y":0.5}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
+      value: '{"$content":[{"Key":36,"Value":1.0},{"Key":24,"Value":0.649999976158142},{"Key":12,"Value":0.300000011920929},{"Key":6,"Value":0.100000001490116}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: MoveSize.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[1]
+      value: 6.0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[2]
+      value: 6.0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5031366, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
