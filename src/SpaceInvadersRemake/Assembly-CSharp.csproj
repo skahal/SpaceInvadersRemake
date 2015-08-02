@@ -57,13 +57,71 @@
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
+     <Compile Include="Assets\VFW Examples\FastSave Examples\GO\GameObjectTest.cs" />
+     <Compile Include="Assets\VFW Examples\FastSave Examples\Hierarchy\HierarchyTest.cs" />
+     <Compile Include="Assets\VFW Examples\FastSave Examples\Marked\MarkedTest.cs" />
+     <Compile Include="Assets\VFW Examples\FastSave Examples\SomeData.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\AnimVarExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\AssignableExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\BetterVectorExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ButtonExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\CategoriesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\CollectionElementExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ComplexDrawingExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ConstraintsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\DecorationsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\DefaultValueExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\DisplayExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\DraggableExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\DrawnByUnityLayoutExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\EnumsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\FiltersExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\InlineExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\OnChangedExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ParagraphExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\PathExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\PopupsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\RandomsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ResourcePathExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\SelectionsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\SequencesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ShowExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\ShowTypeExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\SlidersExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\UsingExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Attributes\VisibleWhenExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\CustomDrawnObjectsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Delegates\DelegatesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Other\CustomDisplayOptionsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Other\GOInliner.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Other\SceneTransition.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\ScriptableObjects\BSOExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\ScriptableObjects\BetterPrefsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\AbstractsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\GenericsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\InterfacesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\NullablesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\PropertiesExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\ReadonlyFieldsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\Rules.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\SerializableDictExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\StaticsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\StructsExample.cs" />
+     <Compile Include="Assets\VFW Examples\Scripts\Serialization\UnityTypesExample.cs" />
+     <Compile Include="Assets\VFW Misc\CachedBehaviour.cs" />
+     <Compile Include="Assets\VFW Misc\Examples\MessageExample.cs" />
+     <Compile Include="Assets\VFW Misc\Examples\RequirementsExample.cs" />
+     <Compile Include="Assets\VFW Misc\Message.cs" />
+     <Compile Include="Assets\VFW Misc\Requirements.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Plugins\Editor\Vexe\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Plugins\Vexe\HISTORY.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
@@ -76,6 +134,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Plugins\Vexe\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
@@ -105,6 +164,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Plugins\Vexe\Runtime\FastSave\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
@@ -141,6 +201,9 @@
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="BasicSerializer">
+ <HintPath>/Users/giacomelli/Dropbox/Skahal/games/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Plugins/Vexe/Runtime/FastSave/Serializer/BasicSerializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
