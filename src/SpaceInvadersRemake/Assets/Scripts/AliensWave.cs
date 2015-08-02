@@ -15,6 +15,7 @@ public class AliensWave : MonoBehaviour {
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
 	public float MoveDelay = 2f;
+	public Dictionary<int, float> Acceleration;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
@@ -83,5 +84,8 @@ public class AliensWave : MonoBehaviour {
 	IEnumerator EndFlip() {
 		yield return new WaitForSeconds (MoveDelay * 2);
 		m_isFliping = false;
+	}
+
+	void OnAlienDie(int aliensAlive) {
 	}
 }

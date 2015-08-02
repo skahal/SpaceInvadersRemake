@@ -109,15 +109,19 @@ public class Alien : ShooterBase {
 			m_spriteBuilder.Rebuild ();
 			yield return new WaitForSeconds (interval);
 		}
-			
-		CheckNextLevel ();
+
+		CheckAliensAlive ();
 
 		gameObject.SetActive (false);
 	}
 
-	void CheckNextLevel() {
-		if(m_wave.Aliens.Count(a => a.activeSelf) == 1) {
-			Game.Instance.NextLevel();
+	void CheckAliensAlive() {
+		var aliensAlive = m_wave.Aliens.Count (a => a.activeSelf) -1;
+
+		if (aliensAlive == 0) {
+			Game.Instance.NextLevel ();
+		} else {
+			SendMessageUpwards ("OnAlienDie", aliensAlive);
 		}
 	}
 }
