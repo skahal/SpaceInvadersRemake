@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class Game : MonoBehaviour {
 
 	private int m_score;
+	private Bunkers m_bunkers;
+
 	public static Game Instance;
 	public GameObject CannonPrefab;
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
@@ -19,7 +21,10 @@ public class Game : MonoBehaviour {
 	public float AlienShootProbability = 0.5f;
 
 	[HideInInspector] public AliensWave AliensWave;
-	private Bunkers m_bunkers;
+	[HideInInspector] public GameObject LeftEdge;
+	[HideInInspector] public GameObject TopEdge;
+	[HideInInspector] public GameObject RightEdge;
+	[HideInInspector] public GameObject BottomEdge;
 
 	void Awake () {
 		Instance = this;
@@ -57,17 +62,17 @@ public class Game : MonoBehaviour {
 		var left =  AliensWave.Left - VerticalEdgeDistance - 1;
 		var right = AliensWave.Right + VerticalEdgeDistance + 1;
 
-		var leftEdge = Instantiate (VerticalEdgePrefab, new Vector3(left, 1f, 0), Quaternion.identity);
-		leftEdge.name = "LeftEdge";
+		LeftEdge = Instantiate (VerticalEdgePrefab, new Vector3(left, 1f, 0), Quaternion.identity) as GameObject;
+		LeftEdge.name = "LeftEdge";
 
-		var rightEdge = Instantiate (VerticalEdgePrefab, new Vector3(right, 1f, 0), Quaternion.identity);
-		rightEdge.name = "RightEdge";
+		RightEdge = Instantiate (VerticalEdgePrefab, new Vector3(right, 1f, 0), Quaternion.identity) as GameObject;
+		RightEdge.name = "RightEdge";
 
-		var topEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, TopEdgeDistanceY, 0), Quaternion.identity);
-		topEdge.name = "TopEdge";
+		TopEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, TopEdgeDistanceY, 0), Quaternion.identity) as GameObject;
+		TopEdge.name = "TopEdge";
 
-		var bottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity);
-		bottomEdge.name = "BottomEdge";
+		BottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity) as GameObject;
+		BottomEdge.name = "BottomEdge";
 	}
 
 	void SetupCannon()

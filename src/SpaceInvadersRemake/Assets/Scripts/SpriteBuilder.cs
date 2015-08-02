@@ -29,6 +29,18 @@ public class SpriteBuilder {
 		return this;
 	}
 
+	public SpriteBuilder Hide() {
+		m_renderer.enabled = false;
+
+		return this;
+	}
+
+	public SpriteBuilder Show() {
+		m_renderer.enabled = true;
+
+		return this;
+	}
+
 	public SpriteBuilder Build() {
 		Sprite = m_renderer.sprite;
 
