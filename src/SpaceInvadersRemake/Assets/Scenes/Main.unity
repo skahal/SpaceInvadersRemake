@@ -126,6 +126,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: Speed
+      value: .0299999993
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
   m_IsPrefabParent: 0
@@ -870,7 +874,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: AlienShootInterval
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: TopEdgeDistanceY

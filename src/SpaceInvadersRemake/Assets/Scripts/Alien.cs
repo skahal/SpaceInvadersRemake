@@ -23,7 +23,7 @@ public class Alien : ShooterBase {
 	{
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 		StartCoroutine (CanShootAgain ());
-		m_spriteBuilder = new SpriteBuilder (GetComponent<SpriteRenderer> ());
+		m_spriteBuilder = GetComponent<SpriteBuilder> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {

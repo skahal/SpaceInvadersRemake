@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpriteBuilder {
+[RequireComponent(typeof(SpriteRenderer))]
+public class SpriteBuilder : MonoBehaviour {
 	private SpriteRenderer m_renderer; 
 	private Texture2D m_texture;
+	private Texture2D m_originalTexture;
 
-	public Sprite Sprite;
 
-	public SpriteBuilder(SpriteRenderer renderer) {
-		if (renderer == null) {
-			Debug.LogError ("Null renderer for SpriteRenderer");
-		}
+	[HideInInspector] public Sprite Sprite;
 
-		m_renderer = renderer;
+	void Awake() {
+		m_renderer = GetComponent<SpriteRenderer>();
 	}
 
 	public bool HasNoColor(int x, int y) {
@@ -48,9 +47,12 @@ public class SpriteBuilder {
 			Debug.LogError ("Null Sprite for SpriteRenderer");
 		}
 
-		var originalTexture = Sprite.texture;
-		m_texture = new Texture2D (originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
-		m_texture.SetPixels32 (originalTexture.GetPixels32 ());
+		if (m_originalTexture == null) {
+			m_originalTexture = Sprite.texture;
+		}
+
+		m_texture = new Texture2D (m_originalTexture.width, m_originalTexture.height, TextureFormat.ARGB32, false);
+		m_texture.SetPixels32 (m_originalTexture.GetPixels32 ());
 		return Rebuild ();	
 	}
 

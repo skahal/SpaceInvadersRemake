@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11424912}
   - 60: {fileID: 6014874}
   - 50: {fileID: 5061298}
+  - 114: {fileID: 11426564}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Bunker
@@ -109,6 +110,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxShootSupportedInPoint: 4
   HorizontalPixelsDestroyedPerShoot: 8
+--- !u!114 &11426564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!212 &21228134
 SpriteRenderer:
   m_ObjectHideFlags: 1

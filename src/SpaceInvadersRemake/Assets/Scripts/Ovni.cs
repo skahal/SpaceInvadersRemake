@@ -4,16 +4,19 @@ using System.Collections;
 public class Ovni : MonoBehaviour
 {
 	private SpriteBuilder m_spriteBuilder;
+	private SpriteDestruction m_spriteDestruction;
 	private bool m_canMove;
 	private BoxCollider2D m_collider;
 
 	public float DeployInterval = 12f;
 	public float Speed = .1f;
 
-	void Awake ()
+	void Start ()
 	{
-		m_spriteBuilder = new SpriteBuilder (GetComponentInChildren<SpriteRenderer> ());
+		m_spriteBuilder = GetComponentInChildren<SpriteBuilder> ();
 		m_spriteBuilder.Build ();
+
+		m_spriteDestruction = GetComponentInChildren<SpriteDestruction> ();
 
 		m_collider = GetComponent<BoxCollider2D> ();
 
@@ -58,8 +61,13 @@ public class Ovni : MonoBehaviour
 		if (collider.IsVerticalEdge ()) {
 			Redeploy ();
 		} else if (collider.IsProjectile ()) {
+			m_canMove = false;
 			Game.Instance.AddToScore (200);
-			Redeploy ();
+			StartCoroutine (m_spriteDestruction.DestroySprite ());
 		}
+	}
+
+	void OnSpriteDestructionEnd() {
+		Redeploy ();
 	}
 }

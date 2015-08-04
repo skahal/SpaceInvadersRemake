@@ -11,7 +11,7 @@ public class Bunker : MonoBehaviour
 
 	void Awake ()
 	{
-		m_spriteBuilder = new SpriteBuilder (GetComponentInChildren<SpriteRenderer> ()).Build ();
+		m_spriteBuilder = GetComponent<SpriteBuilder>().Build ();
 	}
 		
 	bool DestroyPoint (RaycastHit2D hit, bool isAlienTarget)
