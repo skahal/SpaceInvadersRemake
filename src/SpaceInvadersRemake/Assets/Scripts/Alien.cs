@@ -24,16 +24,17 @@ public class Alien : ShooterBase {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.IsVerticalEdge()) {
+		if (collider.IsVerticalEdge ()) {
 			m_wave.Flip ();
-		}
-		else if (collider.IsProjectile()) {
+		} else if (collider.IsProjectile ()) {
 			var projectile = collider.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
 				Game.Instance.AddToScore (Row * 5);
 				Die ();
 			}
+		} else if (collider.IsCannonZone ()) {
+			Cannon.Instance.Die ();
 		}
 	}
 

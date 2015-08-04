@@ -22,4 +22,9 @@ public static class ComponentExtensions {
 	{
 		return component.CompareTag("Projectile");
 	}
+
+	public static bool IsCannonZone(this Component component) 
+	{
+		return component.CompareTag("CannonZone");
+	}
 }

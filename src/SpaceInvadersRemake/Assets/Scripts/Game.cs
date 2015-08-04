@@ -73,6 +73,10 @@ public class Game : MonoBehaviour {
 
 		BottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity) as GameObject;
 		BottomEdge.name = "BottomEdge";
+
+		var cannonZone = Instantiate (HorizontalEdgePrefab, new Vector3 (0f, CannonDeployPosition.y, 0), Quaternion.identity) as GameObject;
+		cannonZone.tag = "CannonZone";
+		cannonZone.name = "CannonZone";
 	}
 
 	void SetupCannon()

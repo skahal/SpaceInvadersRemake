@@ -12,6 +12,7 @@ TagManager:
   - HorizontalEdge
   - Bunker
   - Bunkers
+  - CannonZone
   layers:
   - Default
   - TransparentFX

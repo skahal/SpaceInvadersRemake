@@ -79,11 +79,11 @@ public class Cannon: ShooterBase {
 			var projectile = collider.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingCannon) {
-				Die ();
+				LoseLife ();
 			}
 		}
 		else if (collider.IsAlien ()) {
-			Die (Lifes);
+			Die ();
 		}
 	}
 
@@ -93,12 +93,15 @@ public class Cannon: ShooterBase {
 		}
 	}
 
-	void Die(int lifesLost = 1) {
+	void LoseLife(int lifesLost = 1) {
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 
 		if (Lifes == 0) {
 			Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
 		}
+	}
+	public void Die() {
+		LoseLife (Lifes);
 	}
 }
