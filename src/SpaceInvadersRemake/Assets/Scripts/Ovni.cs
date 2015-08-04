@@ -17,7 +17,6 @@ public class Ovni : MonoBehaviour
 		m_spriteBuilder.Build ();
 
 		m_spriteDestruction = GetComponentInChildren<SpriteDestruction> ();
-
 		m_collider = GetComponent<BoxCollider2D> ();
 
 		StartCoroutine (Deploy ());
@@ -37,18 +36,22 @@ public class Ovni : MonoBehaviour
 		m_canMove = false;
 		yield return new WaitForSeconds (DeployInterval);
 	
-		float x = 0;
+		if (Cannon.Instance.CanInteract) {
+			float x = 0;
 
-		if (Speed > 0) {
-			x = Game.Instance.LeftEdge.transform.position.x + 2;
+			if (Speed > 0) {
+				x = Game.Instance.LeftEdge.transform.position.x + 2;
+			} else {
+				x = Game.Instance.RightEdge.transform.position.x - 2;
+			}
+
+			transform.position = new Vector3 (x, transform.position.y, 0);
+			m_spriteBuilder.Show ();
+			m_canMove = true;
+			m_collider.enabled = true;
 		} else {
-			x = Game.Instance.RightEdge.transform.position.x - 2;
+			Redeploy ();
 		}
-
-		transform.position = new Vector3 (x, transform.position.y, 0);
-		m_spriteBuilder.Show ();
-		m_canMove = true;
-		m_collider.enabled = true;
 	}
 
 	void Redeploy() {

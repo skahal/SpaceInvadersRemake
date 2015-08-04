@@ -6,12 +6,9 @@ public class Alien : ShooterBase {
 	private AliensWave m_wave;
 	private bool m_canShoot;
 	private Animator m_animator;
-	private SpriteBuilder m_spriteBuilder;
+	private SpriteDestruction m_spriteDestruction;
 
 	[HideInInspector] public int Row;
-	public float TimeToDestroy = 1;
-	public int DestroySquarePixelSize = 10;
-	public int DestroySquareCount = 5;
 
 	protected override void Awake ()
 	{
@@ -23,7 +20,7 @@ public class Alien : ShooterBase {
 	{
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 		StartCoroutine (CanShootAgain ());
-		m_spriteBuilder = GetComponent<SpriteBuilder> ();
+		m_spriteDestruction = GetComponent<SpriteDestruction> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -77,41 +74,12 @@ public class Alien : ShooterBase {
 	void Die() {
 
 		GetComponent<BoxCollider2D> ().enabled = false;
-		StartCoroutine(DestroyAlien ());
+		StartCoroutine (m_spriteDestruction.DestroySprite ());
 	}
 
-	IEnumerator DestroyAlien ()
-	{
-		m_animator.enabled = false;
-		m_spriteBuilder.Build ();
-		var rect = m_spriteBuilder.Sprite.rect;
-		var minX = (int) rect.x;
-		var maxX = (int) rect.xMax + 1 - DestroySquarePixelSize;
-		var minY = (int) rect.y;
-		var maxY = (int) rect.yMax + 1 - DestroySquarePixelSize;
-		var interval = TimeToDestroy / DestroySquareCount;
-
-		// Destroy any squares on Alien.
-		for (int i = 0; i < DestroySquareCount; i++) {
-			// Get random points to square.
-			var beginX = Random.Range(minX, maxX);
-			var endX = beginX + DestroySquarePixelSize;
-			var beginY = Random.Range(minY, maxY);
-			var endy = beginY + DestroySquarePixelSize;
-
-			// Draw the square.
-			for (var x = beginX; x <= endX; x++) {
-				for (var y = beginY; y < endy; y++) {
-					m_spriteBuilder.ClearColor(x, y);
-				}
-			}
-
-			m_spriteBuilder.Rebuild ();
-			yield return new WaitForSeconds (interval);
-		}
-
+	void OnSpriteDestructionEnd() {
 		CheckAliensAlive ();
-
+		
 		gameObject.SetActive (false);
 	}
 
