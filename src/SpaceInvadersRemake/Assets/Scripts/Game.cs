@@ -97,6 +97,8 @@ public class Game : MonoBehaviour {
 	void Update() {
 		if (Input.GetKeyDown (KeyCode.Return)) {
 			Restart ();
+		} else if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
 		}
 	}
 
