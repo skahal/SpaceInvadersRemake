@@ -44,9 +44,8 @@ public class Cannon: ShooterBase {
 		} 
 	}
 
-	protected override void Update ()
+	void FixedUpdate ()
 	{
-		base.Update ();
 		Move ();
 	}
 

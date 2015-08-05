@@ -22,7 +22,7 @@ public class Ovni : MonoBehaviour
 		StartCoroutine (Deploy ());
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (m_canMove && Cannon.Instance.CanInteract) {
 			transform.position += new Vector3 (Speed, 0, 0);

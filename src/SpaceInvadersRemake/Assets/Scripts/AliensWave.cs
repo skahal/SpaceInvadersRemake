@@ -53,7 +53,7 @@ public class AliensWave : BetterBehaviour {
 		}
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		if (Cannon.Instance.CanInteract) {
 			StartCoroutine (MoveAliens ());
 		}
