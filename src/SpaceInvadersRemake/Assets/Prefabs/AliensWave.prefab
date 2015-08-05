@@ -32,6 +32,7 @@ Transform:
   m_RootOrder: 0
 --- !u!50 &5031366
 Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -40,11 +41,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
   m_GravityScale: 1
-  m_FixedAngle: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6160038
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -69,8 +70,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2658be486d7d349fdaed5dcd147f0764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Columns: 6
-  Rows: 6
+  _id: 8066
+  dbg: 0
+  _serializationData:
+    serializedObjects:
+    - {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
+    - {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
+    - {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
+    - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
+    - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
+    - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
+    serializedStrings:
+      keys:
+      - List<GameObject> Aliens
+      - float Columns
+      - float Rows
+      - GameObject[] AlienPrefabs
+      - Vector2 Padding
+      - Vector2 MoveSize
+      - Dictionary<int, float> AliensAliveMoveDelay
+      - float Left
+      - float Right
+      values:
+      - '{"$content":[0,1,2,3,4,5]}'
+      - 6.0
+      - 6.0
+      - '[]'
+      - '{"x":0.5,"y":0.0}'
+      - '{"x":1.0,"y":1.0}'
+      - '{}'
+      - 0.0
+      - 0.0
   Aliens:
   - {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
   - {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
@@ -78,9 +108,11 @@ MonoBehaviour:
   - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
   - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
   - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
+  Columns: 6
+  Rows: 6
+  AlienPrefabs: []
   Padding: {x: .5, y: 0}
   MoveSize: {x: 1, y: 1}
-  MoveDelay: 2
   Left: 0
   Right: 0
 --- !u!1001 &100100000
@@ -89,7 +121,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[3]
+      value: '[]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
+      value: '{}'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100636}

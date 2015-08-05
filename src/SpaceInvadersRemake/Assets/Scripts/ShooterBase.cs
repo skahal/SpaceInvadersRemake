@@ -9,9 +9,7 @@ public abstract class ShooterBase: MonoBehaviour {
 	}
 
 	protected virtual void Update() {
-		if (Cannon.Instance.CanInteract) {
-			Shoot ();
-		}
+		Shoot ();
 	}
 
 	void SetupShooter() {
@@ -22,7 +20,7 @@ public abstract class ShooterBase: MonoBehaviour {
 	protected abstract bool CanShoot ();
 
 	void Shoot() {
-		if (CanShoot()) {
+		if (CanShoot() && Cannon.Instance.CanInteract && !m_projectile.gameObject.activeSelf) {
 			m_projectile.Shoot (transform.position.x, transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
 		}
 	}

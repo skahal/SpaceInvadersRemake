@@ -947,6 +947,10 @@ Prefab:
       propertyPath: TopEdgeDistanceY
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: BottomEdgeDistanceY
+      value: -4.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20aead53629a54574975e74154db1d38, type: 2}
   m_IsPrefabParent: 0
