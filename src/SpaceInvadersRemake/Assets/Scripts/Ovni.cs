@@ -61,7 +61,7 @@ public class Ovni : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		if (collider.IsVerticalEdge ()) {
+		if (collider.IsAlienVerticalEdge ()) {
 			Redeploy ();
 		} else if (collider.IsProjectile ()) {
 			m_canMove = false;

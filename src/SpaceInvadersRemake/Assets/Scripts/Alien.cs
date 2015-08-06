@@ -24,7 +24,7 @@ public class Alien : ShooterBase {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.IsVerticalEdge ()) {
+		if (collider.IsAlienVerticalEdge ()) {
 			m_wave.Flip ();
 		} else if (collider.IsProjectile ()) {
 			var projectile = collider.GetComponent<Projectile> ();

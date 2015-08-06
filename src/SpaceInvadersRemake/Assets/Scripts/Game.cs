@@ -12,6 +12,7 @@ public class Game : MonoBehaviour {
 	public Vector2 CannonDeployPosition = new Vector2(0, -5);
 	public GameObject VerticalEdgePrefab;
 	public float VerticalEdgeDistance = 3;
+	public float AlienVerticalEdgeDistance = 5;
 	public float TopEdgeDistanceY = 5f;
 	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
@@ -62,11 +63,27 @@ public class Game : MonoBehaviour {
 		var left =  AliensWave.Left - VerticalEdgeDistance - 1;
 		var right = AliensWave.Right + VerticalEdgeDistance + 1;
 
+		var alienLeft =  AliensWave.Left - AlienVerticalEdgeDistance - 1;
+		var alienRight = AliensWave.Right + AlienVerticalEdgeDistance + 1;
+
 		LeftEdge = Instantiate (VerticalEdgePrefab, new Vector3(left, 1f, 0), Quaternion.identity) as GameObject;
 		LeftEdge.name = "LeftEdge";
 
+		var alienLeftEdge = Instantiate (VerticalEdgePrefab, new Vector3(alienLeft, 1f, 0), Quaternion.identity) as GameObject;
+		alienLeftEdge.name = "AlienLeftEdge";
+		alienLeftEdge.tag = "AlienVerticalEdge";
+		alienLeftEdge.GetComponentInChildren<SpriteRenderer> ().enabled = false;
+
 		RightEdge = Instantiate (VerticalEdgePrefab, new Vector3(right, 1f, 0), Quaternion.identity) as GameObject;
 		RightEdge.name = "RightEdge";
+		// Rotate it to invert sprite position.
+		RightEdge.transform.Rotate(0, 180, 0);
+
+
+		var alienRightEdge = Instantiate (VerticalEdgePrefab, new Vector3(alienRight, 1f, 0), Quaternion.identity) as GameObject;
+		alienRightEdge.name = "AlienRightEdge";
+		alienRightEdge.tag = "AlienVerticalEdge";
+		alienRightEdge.GetComponentInChildren<SpriteRenderer> ().enabled = false;
 
 		TopEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, TopEdgeDistanceY, 0), Quaternion.identity) as GameObject;
 		TopEdge.name = "TopEdge";

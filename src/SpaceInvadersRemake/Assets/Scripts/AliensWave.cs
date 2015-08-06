@@ -33,7 +33,7 @@ public class AliensWave : BetterBehaviour {
 		var columnsToWidth = (Columns - 1);
 
 		// The wave width is equal columns and padding sum.
-		var width = columnsToWidth + columnsToWidth * Padding.x;
+		var width = columnsToWidth * Padding.x;
 
 		Left = width * -.5f;
 		Right = Left + width;
@@ -45,7 +45,7 @@ public class AliensWave : BetterBehaviour {
 
 			for(int y = 0; y < Rows; y++) {
 				var inc = new Vector2(xInc, top + y * Padding.y);
-				var alien = Instantiate(AlienPrefabs[y], new Vector2(x, y) + inc, Quaternion.identity) as GameObject;
+				var alien = Instantiate(AlienPrefabs[y], new Vector2(0, 0) + inc, Quaternion.identity) as GameObject;
 				Aliens.Add (alien);
 				alien.transform.parent = gameObject.transform;
 				alien.GetComponent<Alien> ().Row = y + 1;

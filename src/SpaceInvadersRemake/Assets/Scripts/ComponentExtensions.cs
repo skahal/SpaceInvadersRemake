@@ -17,6 +17,11 @@ public static class ComponentExtensions {
 	{
 		return component.CompareTag("VerticalEdge");
 	}
+		
+	public static bool IsAlienVerticalEdge(this Component component) 
+	{
+		return component.CompareTag("AlienVerticalEdge");
+	}
 
 	public static bool IsProjectile(this Component component) 
 	{
