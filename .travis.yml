@@ -9,8 +9,13 @@ script:
 - cd tools
 - chmod 777 ./buildOSX.sh
 - ./buildOSX.sh
+- cat buildOSX.log
 - chmod 777 ./buildWIN.sh
 - ./buildWIN.sh
+
+notifications:
+  slack: skahal:FAEM5y78ET68PglHiZXXRVqh
+
 deploy:
   provider: releases
   api_key:
