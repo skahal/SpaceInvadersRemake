@@ -1,7 +1,4 @@
 language: objective-c
-osx_image: xcode61
-rvm:
-- 2.1.2
 install:
 - chmod 777 ./tools/install-unity.sh
 - ./tools/install-unity.sh
