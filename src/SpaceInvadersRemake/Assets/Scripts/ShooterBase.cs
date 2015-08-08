@@ -2,7 +2,7 @@
 using System.Collections;
 
 public abstract class ShooterBase: MonoBehaviour {
-	private Projectile m_projectile;
+	protected Projectile Projectile;
 
 	protected virtual void Awake() {
 		SetupShooter ();
@@ -13,20 +13,20 @@ public abstract class ShooterBase: MonoBehaviour {
 	}
 
 	void SetupShooter() {
-		m_projectile = transform.FindChild("Projectile") .GetComponent<Projectile> ();
-		m_projectile.transform.parent = null;
+		Projectile = transform.FindChild("Projectile") .GetComponent<Projectile> ();
+		Projectile.transform.parent = null;
 	}
 
 	protected abstract bool CanShoot ();
 
 	void Shoot() {
-		if (CanShoot() && Cannon.Instance.CanInteract && !m_projectile.IsMoving) {
+		if (CanShoot() && Cannon.Instance.CanInteract && !Projectile.IsMoving) {
 			PerformShoot ();
 		}
 	}
 
 	protected virtual void PerformShoot ()
 	{
-		m_projectile.Shoot (transform.position.x, transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
+		Projectile.Shoot (transform.position.x, transform.position.y + (Projectile.Speed > 0 ? .5f : -.5f));
 	}
 }

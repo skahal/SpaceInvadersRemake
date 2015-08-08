@@ -104,15 +104,16 @@ public class Cannon: ShooterBase {
 	}
 
 	void LoseLife(int lifesLost = 1) {
+		Projectile.DestroyIt ();
 		m_audioSource.PlayOneShot (LoseLifeAudio);
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 
 		if (Lifes == 0) {
-			Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
+			Game.Instance.StartGameOver ();
 		}
 	}
-	public void Die() {
+	public void Die() {		
 		LoseLife (Lifes);
 	}
 }

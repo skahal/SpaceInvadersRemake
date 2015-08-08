@@ -42,6 +42,7 @@ public class Alien : ShooterBase {
 	}
 
 	void OnSpawnBegin() {
+		Projectile.DestroyIt ();
 		m_animator.speed = 0;
 	}
 
