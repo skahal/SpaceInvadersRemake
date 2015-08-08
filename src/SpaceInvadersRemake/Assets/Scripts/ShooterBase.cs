@@ -20,7 +20,7 @@ public abstract class ShooterBase: MonoBehaviour {
 	protected abstract bool CanShoot ();
 
 	void Shoot() {
-		if (CanShoot() && Cannon.Instance.CanInteract && !m_projectile.gameObject.activeInHierarchy) {
+		if (CanShoot() && Cannon.Instance.CanInteract && !m_projectile.IsMoving) {
 			PerformShoot ();
 		}
 	}
