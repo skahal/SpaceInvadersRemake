@@ -39,6 +39,7 @@ public class Ovni : MonoBehaviour
 		m_collider.enabled = false;
 		m_spriteBuilder.Hide ();
 		m_canMove = false;
+		m_audioSource.Stop ();
 		yield return new WaitForSeconds (DeployInterval);
 	
 		if (Cannon.Instance.CanInteract) {
@@ -47,9 +48,9 @@ public class Ovni : MonoBehaviour
 			float x = 0;
 
 			if (Speed > 0) {
-				x = Game.Instance.LeftEdge.transform.position.x + 2;
+				x = Game.Instance.LeftEdge.transform.position.x;
 			} else {
-				x = Game.Instance.RightEdge.transform.position.x - 2;
+				x = Game.Instance.RightEdge.transform.position.x;
 			}
 
 			transform.position = new Vector3 (x, transform.position.y, 0);
@@ -68,11 +69,10 @@ public class Ovni : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
-		m_audioSource.Stop ();
-
 		if (collider.IsAlienVerticalEdge ()) {
 			Redeploy ();
 		} else if (collider.IsProjectile ()) {
+			m_audioSource.Stop ();
 			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;
 			Game.Instance.AddToScore (200);
