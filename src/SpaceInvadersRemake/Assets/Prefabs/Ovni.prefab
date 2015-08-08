@@ -29,6 +29,7 @@ GameObject:
   - 4: {fileID: 445030}
   - 114: {fileID: 11438046}
   - 61: {fileID: 6156136}
+  - 82: {fileID: 8269232}
   m_Layer: 0
   m_Name: Ovni
   m_TagString: Untagged
@@ -74,6 +75,75 @@ BoxCollider2D:
   m_Offset: {x: -.00170469284, y: .00170564651}
   serializedVersion: 2
   m_Size: {x: .62147373, y: .348662049}
+--- !u!82 &8269232
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156662}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1ebeb2afaa9cb4889b62a4e6a6bce3f4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9563806
 Animator:
   serializedVersion: 3
@@ -103,7 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeployInterval: 12
-  Speed: .0199999996
+  Speed: .0299999993
+  MoveSound: {fileID: 8300000, guid: 1ebeb2afaa9cb4889b62a4e6a6bce3f4, type: 3}
+  DieSound: {fileID: 8300000, guid: 48ef15db6bf134440a829a70c89d25e0, type: 3}
 --- !u!114 &11449440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2d3ec68bc6c484db94d7c74e3ef1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDestroy: 1
+  TimeToDestroy: .800000012
   DestroySquarePixelSize: 10
   DestroySquareCount: 5
 --- !u!114 &11463570
@@ -162,7 +234,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: MoveSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ebeb2afaa9cb4889b62a4e6a6bce3f4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: DieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 48ef15db6bf134440a829a70c89d25e0, type: 3}
+    - target: {fileID: 0}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ebeb2afaa9cb4889b62a4e6a6bce3f4, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156662}

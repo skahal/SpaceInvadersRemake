@@ -21,6 +21,7 @@ public class Game : MonoBehaviour {
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
 
+	[HideInInspector] public int WaveNumber = 1;
 	[HideInInspector] public AliensWave AliensWave;
 	[HideInInspector] public GameObject LeftEdge;
 	[HideInInspector] public GameObject TopEdge;
@@ -29,6 +30,7 @@ public class Game : MonoBehaviour {
 
 	void Awake () {
 		Instance = this;
+		Cursor.visible = false;
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
 
@@ -48,14 +50,14 @@ public class Game : MonoBehaviour {
 		if (PlayerPrefs.HasKey ("Score")) {
 			m_score = PlayerPrefs.GetInt ("Score");
 			Cannon.Instance.Lifes = PlayerPrefs.GetInt ("Lifes");
-
+			WaveNumber = PlayerPrefs.GetInt ("WaveNumber") + 1;
 			PlayerPrefs.DeleteAll ();
 
 			RefreshScore ();
 			RefreshLifes ();
 		}
 
-		Debug.Log ("Game setup done");
+		Debug.LogFormat ("Game setup done. Wave number : {0}", WaveNumber);
 	}
 
 	void SetupEdges() 
@@ -91,7 +93,7 @@ public class Game : MonoBehaviour {
 		BottomEdge = Instantiate (HorizontalEdgePrefab, new Vector3(0f, BottomEdgeDistanceY, 0), Quaternion.identity) as GameObject;
 		BottomEdge.name = "BottomEdge";
 
-		var cannonZone = Instantiate (HorizontalEdgePrefab, new Vector3 (0f, CannonDeployPosition.y, 0), Quaternion.identity) as GameObject;
+		var cannonZone = Instantiate (HorizontalEdgePrefab, CannonDeployPosition, Quaternion.identity) as GameObject;
 		cannonZone.tag = "CannonZone";
 		cannonZone.name = "CannonZone";
 	}
@@ -128,6 +130,7 @@ public class Game : MonoBehaviour {
 	{
 		PlayerPrefs.SetInt ("Score", m_score);
 		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
+		PlayerPrefs.SetInt ("WaveNumber", WaveNumber);
 		Application.LoadLevel (Application.loadedLevelName);
 	}
 

@@ -7,13 +7,16 @@ public class Alien : ShooterBase {
 	private bool m_canShoot;
 	private Animator m_animator;
 	private SpriteDestruction m_spriteDestruction;
+	private AudioSource m_audioSource;
 
+	public AudioClip DieAudio;
 	[HideInInspector] public int Row;
 
 	protected override void Awake ()
 	{
 		base.Awake ();
 		m_animator = GetComponent<Animator> ();
+		m_audioSource = GetComponent<AudioSource> ();
 	}
 
 	void Start ()
@@ -73,7 +76,7 @@ public class Alien : ShooterBase {
 	}
 
 	void Die() {
-
+		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
 		StartCoroutine (m_spriteDestruction.DestroySprite ());
 	}

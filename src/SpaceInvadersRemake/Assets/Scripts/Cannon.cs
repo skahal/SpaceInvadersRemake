@@ -6,11 +6,15 @@ public class Cannon: ShooterBase {
 
 	private bool m_touchingEdge;
 	private SpriteRenderer m_renderer;
+	private AudioSource m_audioSource;
+
 	public static Cannon Instance;
 	public float Speed = .1f;
 	public float SpawnTime = 1f;
 	public float SpawnFlashTime = .15f;
 	public int Lifes = 3;
+	public AudioClip LoseLifeAudio;
+	public AudioClip ShootAudio;
 
 	[HideInInspector] public bool CanInteract;
 
@@ -19,6 +23,7 @@ public class Cannon: ShooterBase {
 	
 		base.Awake ();
 		m_renderer = GetComponentInChildren<SpriteRenderer> ();
+		m_audioSource = GetComponent<AudioSource> ();
 
 		StartCoroutine (Spawn ());
 	}
@@ -27,7 +32,7 @@ public class Cannon: ShooterBase {
 		CanInteract = false;
 		Game.Instance.RaiseMessage ("OnSpawnBegin");
 
-		transform.position = new Vector2 (0, transform.position.y);
+		transform.position = Game.Instance.CannonDeployPosition;
 
 		var flashes = SpawnTime / SpawnFlashTime;
 
@@ -70,6 +75,12 @@ public class Cannon: ShooterBase {
 		return CanInteract && Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.X);
 	}
 
+	protected override void PerformShoot ()
+	{
+		base.PerformShoot ();
+		m_audioSource.PlayOneShot (ShootAudio);
+	}
+
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.IsVerticalEdge()) {
 			m_touchingEdge = true;
@@ -93,6 +104,7 @@ public class Cannon: ShooterBase {
 	}
 
 	void LoseLife(int lifesLost = 1) {
+		m_audioSource.PlayOneShot (LoseLifeAudio);
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 

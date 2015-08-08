@@ -21,7 +21,12 @@ public abstract class ShooterBase: MonoBehaviour {
 
 	void Shoot() {
 		if (CanShoot() && Cannon.Instance.CanInteract && !m_projectile.gameObject.activeInHierarchy) {
-			m_projectile.Shoot (transform.position.x, transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
+			PerformShoot ();
 		}
+	}
+
+	protected virtual void PerformShoot ()
+	{
+		m_projectile.Shoot (transform.position.x, transform.position.y + (m_projectile.Speed > 0 ? .5f : -.5f));
 	}
 }

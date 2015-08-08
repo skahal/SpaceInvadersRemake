@@ -9,8 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 414738}
   - 114: {fileID: 11415164}
-  - 50: {fileID: 5031366}
-  - 61: {fileID: 6160038}
+  - 82: {fileID: 8253214}
   m_Layer: 0
   m_Name: AliensWave
   m_TagString: AliensWave
@@ -25,40 +24,80 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.60000002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5031366
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100636}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &6160038
-BoxCollider2D:
+--- !u!82 &8253214
+AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100636}
   m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11415164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2658be486d7d349fdaed5dcd147f0764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 8066
+  _id: -1062
   dbg: 0
   _serializationData:
     serializedObjects:
@@ -80,6 +119,7 @@ MonoBehaviour:
     - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
     - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
     - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
+    - {fileID: 8300000, guid: 2c54d8a0eca934970aac57676af7a884, type: 3}
     serializedStrings:
       keys:
       - List<GameObject> Aliens
@@ -89,30 +129,33 @@ MonoBehaviour:
       - Vector2 Padding
       - Vector2 MoveSize
       - Dictionary<int, float> AliensAliveMoveDelay
+      - AudioClip AlienMoveAudioClip
       - float Left
       - float Right
       values:
-      - '{"$content":[0,1,2,3,4,5]}'
+      - '{"$content":[]}'
       - 6.0
       - 6.0
-      - '[]'
-      - '{"x":0.5,"y":0.0}'
-      - '{"x":1.0,"y":1.0}'
-      - '{}'
+      - '[0,1,2,3,4,5]'
+      - '{"x":1.20000004768372,"y":0.699999988079071}'
+      - '{"x":0.150000005960464,"y":0.25}'
+      - '{"$content":[{"Key":1,"Value":0.0},{"Key":3,"Value":0.5},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
+      - 6
       - 0.0
       - 0.0
-  Aliens:
+  Aliens: []
+  Columns: 6
+  Rows: 6
+  AlienPrefabs:
   - {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
   - {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
   - {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
   - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
   - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
   - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
-  Columns: 6
-  Rows: 6
-  AlienPrefabs: []
-  Padding: {x: .5, y: 0}
-  MoveSize: {x: 1, y: 1}
+  Padding: {x: 1.20000005, y: .699999988}
+  MoveSize: {x: .150000006, y: .25}
+  AlienMoveAudioClip: {fileID: 8300000, guid: 2c54d8a0eca934970aac57676af7a884, type: 3}
   Left: 0
   Right: 0
 --- !u!1001 &100100000

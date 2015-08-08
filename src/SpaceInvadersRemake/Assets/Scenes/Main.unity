@@ -126,10 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
-      propertyPath: Speed
-      value: .0299999993
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
   m_IsPrefabParent: 0
@@ -575,7 +571,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1300880373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -3, z: 0}
+  m_LocalPosition: {x: -3, y: -2.79999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -779,7 +775,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: 0}
   m_AnchorMax: {x: .5, y: 0}
-  m_AnchoredPosition: {x: 60, y: 80}
+  m_AnchoredPosition: {x: 60, y: 120}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1713996577
@@ -933,15 +929,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: AlienShootProbability
-      value: .200000003
+      value: .400000006
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: VerticalEdgeDistance
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: AlienShootInterval
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: TopEdgeDistanceY
@@ -950,6 +946,14 @@ Prefab:
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
       propertyPath: BottomEdgeDistanceY
       value: -4.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: AlienVerticalEdgeDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 2}
+      propertyPath: CannonDeployPosition.x
+      value: -3.70000005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20aead53629a54574975e74154db1d38, type: 2}
@@ -962,8 +966,12 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.size
-      value: 6
+      propertyPath: _serializationData.serializedStrings.keys.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.size
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -998,95 +1006,73 @@ Prefab:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: Padding.x
-      value: 1.20000005
+      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
+      value: '{"x":0.0500000007450581,"y":0.0500000007450581}'
       objectReference: {fileID: 0}
-    - target: {fileID: 100636, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
+      value: '{"$content":[{"Key":1,"Value":0.025000000372529},{"Key":3,"Value":0.0500000007450581},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[8]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: MoveSizeFactor.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: Padding.y
-      value: .699999988
+      propertyPath: MoveSizeFactor.y
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
+      propertyPath: _serializationData.serializedStrings.keys.Array.data[7]
+      value: Dictionary<int, float> AliensAliveMoveDelay
+      objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
+      propertyPath: _serializationData.serializedStrings.keys.Array.data[8]
+      value: AudioClip AlienMoveAudioClip
+      objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
+      propertyPath: _serializationData.serializedStrings.keys.Array.data[9]
+      value: float Left
+      objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[5]
+      value: '{"x":0.150000005960464,"y":0.5}'
+      objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: AlienPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[9]
+      value: 0.0
+      objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveSize.y
       value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: MoveDelay
-      value: 1.5
+      propertyPath: _serializationData.serializedStrings.keys.Array.data[10]
+      value: float Right
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: Columns
-      value: 6
+      propertyPath: _serializationData.serializedStrings.keys.Array.data[11]
+      value: float Right
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: Rows
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
+      propertyPath: _serializationData.serializedStrings.values.Array.data[10]
       value: 0.0
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _id
-      value: -1062
+      propertyPath: _serializationData.serializedStrings.values.Array.data[11]
+      value: 0.0
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[3]
-      value: '[0,1,2,3,4,5]'
+      propertyPath: MoveSizeWaveNumberInc.x
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[5]
-      value: '{"x":0.5,"y":0.5}'
+      propertyPath: MoveSizeWaveNumberInc.y
+      value: .0500000007
       objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
-      value: '{"$content":[{"Key":36,"Value":1.0},{"Key":24,"Value":0.649999976158142},{"Key":12,"Value":0.300000011920929},{"Key":6,"Value":0.100000001490116}]}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: MoveSize.x
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[1]
-      value: 6.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[2]
-      value: 6.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[4]
-      value: '{"x":1.20000004768372,"y":0.699999988079071}'
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5031366, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-    - {fileID: 6160038, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
   m_IsPrefabParent: 0

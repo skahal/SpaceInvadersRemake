@@ -7,9 +7,12 @@ public class Ovni : MonoBehaviour
 	private SpriteDestruction m_spriteDestruction;
 	private bool m_canMove;
 	private BoxCollider2D m_collider;
+	private AudioSource m_audioSource;
 
 	public float DeployInterval = 12f;
 	public float Speed = .1f;
+	public AudioClip MoveSound;
+	public AudioClip DieSound;
 
 	void Start ()
 	{
@@ -18,6 +21,8 @@ public class Ovni : MonoBehaviour
 
 		m_spriteDestruction = GetComponentInChildren<SpriteDestruction> ();
 		m_collider = GetComponent<BoxCollider2D> ();
+
+		m_audioSource = GetComponent<AudioSource> ();
 
 		StartCoroutine (Deploy ());
 	}
@@ -37,6 +42,8 @@ public class Ovni : MonoBehaviour
 		yield return new WaitForSeconds (DeployInterval);
 	
 		if (Cannon.Instance.CanInteract) {
+			m_audioSource.Play ();
+
 			float x = 0;
 
 			if (Speed > 0) {
@@ -61,9 +68,12 @@ public class Ovni : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collider)
 	{
+		m_audioSource.Stop ();
+
 		if (collider.IsAlienVerticalEdge ()) {
 			Redeploy ();
 		} else if (collider.IsProjectile ()) {
+			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;
 			Game.Instance.AddToScore (200);
 			StartCoroutine (m_spriteDestruction.DestroySprite ());

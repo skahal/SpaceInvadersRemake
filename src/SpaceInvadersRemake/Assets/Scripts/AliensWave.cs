@@ -8,6 +8,8 @@ public class AliensWave : BetterBehaviour {
 	private bool m_moving;
 	private bool m_isFliping;
 	private float m_currentMoveDelay = 1.5f;
+	private int m_totalAliens;
+	private AudioSource m_audioSource;
 
 	[HideInInspector] public List<GameObject> Aliens = new List<GameObject>();
 
@@ -16,16 +18,27 @@ public class AliensWave : BetterBehaviour {
 	public GameObject[] AlienPrefabs;
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
-
+	public Vector2 MoveSizeWaveNumberInc = new Vector2(0.1f, 0.1f);
 	public Dictionary<int, float> AliensAliveMoveDelay;
+	public AudioClip AlienMoveAudioClip;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
+
+	void Awake() {
+		m_audioSource = GetComponent<AudioSource> ();
+	}
 
 	public void Setup () {
 
 		if (AlienPrefabs.Length < Rows) {
 			Rows = AlienPrefabs.Length;
+		}
+
+		var waveNumber = Game.Instance.WaveNumber;
+
+		if (waveNumber > 1) {
+			MoveSize = MoveSize + (MoveSizeWaveNumberInc * waveNumber);
 		}
 
 		// Keep the wave in center.
@@ -51,6 +64,9 @@ public class AliensWave : BetterBehaviour {
 				alien.GetComponent<Alien> ().Row = y + 1;
 			}
 		}
+
+		m_totalAliens = Aliens.Count;
+		SetDelay (m_totalAliens);
 	}
 
 	void FixedUpdate() {
@@ -65,6 +81,8 @@ public class AliensWave : BetterBehaviour {
 			foreach (var alien in Aliens) {
 				alien.transform.position += new Vector3 (MoveSize.x, 0);
 			}
+
+			m_audioSource.PlayOneShot (AlienMoveAudioClip);
 
 			yield return new WaitForSeconds (m_currentMoveDelay);
 			m_moving = false;
@@ -89,8 +107,14 @@ public class AliensWave : BetterBehaviour {
 	}
 
 	void OnAlienDie(int aliensAlive) {
+		SetDelay (aliensAlive);
+	}
+
+	void SetDelay(int aliensAlive) {
 		if(AliensAliveMoveDelay.ContainsKey(aliensAlive)) {
 			m_currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
 		}
+
+		Debug.LogFormat ("Move delay for {0} aliens alive is {1}", aliensAlive, m_currentMoveDelay);
 	}
 }
