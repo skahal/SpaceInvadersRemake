@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class Game : MonoBehaviour {
 
 	private int m_score;
 	private Bunkers m_bunkers;
+	private GameObject m_ovni;
 
 	public static Game Instance;
 	public GameObject CannonPrefab;
@@ -33,6 +35,7 @@ public class Game : MonoBehaviour {
 		Cursor.visible = false;
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
+		m_ovni = GameObject.Find ("Ovni");
 
 		Setup ();
 	}
@@ -153,7 +156,13 @@ public class Game : MonoBehaviour {
 		foreach (var alien in AliensWave.Aliens) {
 			alien.SendMessage (message, SendMessageOptions.DontRequireReceiver);
 		}
-
+			
+		m_ovni.SendMessage (message, SendMessageOptions.DontRequireReceiver);
 		gameObject.SendMessage (message, SendMessageOptions.DontRequireReceiver);
+	}
+
+	public void StartGameOver() {
+		Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
+		RaiseMessage ("OnGameOver");
 	}
 }

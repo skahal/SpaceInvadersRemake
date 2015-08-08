@@ -83,4 +83,9 @@ public class Ovni : MonoBehaviour
 	void OnSpriteDestructionEnd() {
 		Redeploy ();
 	}
+
+	void OnGameOver() {
+		m_canMove = false;
+		m_audioSource.Stop ();
+	}
 }
