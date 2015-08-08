@@ -8,6 +8,7 @@ public class Bunker : MonoBehaviour
 	private SpriteBuilder m_spriteBuilder;
 	public int MaxShootSupportedInPoint = 4;
 	public int HorizontalPixelsDestroyedPerShoot = 6;
+	public int MinimumHitPixelsToBlockProjectile = 20;
 
 	void Awake ()
 	{
@@ -42,7 +43,8 @@ public class Bunker : MonoBehaviour
 			
 		m_spriteBuilder.Rebuild();
 
-		return hitPixelsCount > 0;	
+		Debug.LogFormat ("hitPixelsCount: {0}", hitPixelsCount);
+		return hitPixelsCount >= MinimumHitPixelsToBlockProjectile;	
 	}
 
 	void DestroyHorizontalPizels (int pixelY, int x, int halfWidth, int hitPixelsByShoot, ref int hitPixelsCount)
