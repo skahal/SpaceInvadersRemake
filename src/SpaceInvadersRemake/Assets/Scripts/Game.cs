@@ -117,20 +117,22 @@ public class Game : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetKeyDown (KeyCode.Return)) {
+		if (PlayerInput.Instance.IsRestart) {
 			Restart ();
-		} else if (Input.GetKeyDown (KeyCode.Escape)) {
+		} else if (PlayerInput.Instance.IsQuit) {
 			Application.Quit ();
 		}
 	}
 
 	static void Restart ()
 	{
+		PlayerInput.DisableInput ();
 		Application.LoadLevel (Application.loadedLevelName);
 	}
 
 	public void NextLevel ()
 	{
+		PlayerInput.DisableInput ();
 		PlayerPrefs.SetInt ("Score", m_score);
 		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
 		PlayerPrefs.SetInt ("WaveNumber", WaveNumber);
@@ -138,6 +140,7 @@ public class Game : MonoBehaviour {
 	}
 
 	void OnSpawnBegin() {
+		PlayerInput.DisableInput ();
 		LifesText.enabled = true;
 		RefreshLifes ();
 	}
@@ -148,6 +151,7 @@ public class Game : MonoBehaviour {
 
 	void OnSpawnEnd() {
 		LifesText.enabled = false;
+		PlayerInput.EnableInput ();
 	}
 
 	public void RaiseMessage(string message) {
@@ -162,6 +166,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void StartGameOver() {
+		PlayerInput.EnableInput ();
 		Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
 		RaiseMessage ("OnGameOver");
 	}

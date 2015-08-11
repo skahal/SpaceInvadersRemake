@@ -26,7 +26,6 @@ GameObject:
   - 4: {fileID: 441032}
   - 114: {fileID: 11431418}
   - 61: {fileID: 6198248}
-  - 50: {fileID: 5042150}
   - 60: {fileID: 6029228}
   m_Layer: 11
   m_Name: Projectile
@@ -60,22 +59,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 441032}
   m_RootOrder: 0
---- !u!50 &5042150
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156112}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
 --- !u!60 &6029228
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -162,7 +145,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger

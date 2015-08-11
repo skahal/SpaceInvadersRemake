@@ -9,8 +9,10 @@ public class Alien : ShooterBase {
 	private SpriteDestruction m_spriteDestruction;
 	private AudioSource m_audioSource;
 
+	public int RowScoreFactor = 5;
 	public AudioClip DieAudio;
 	[HideInInspector] public int Row;
+	[HideInInspector] public float AnimationSpeed = 1f;
 
 	protected override void Awake ()
 	{
@@ -26,17 +28,23 @@ public class Alien : ShooterBase {
 		m_spriteDestruction = GetComponent<SpriteDestruction> ();
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.IsAlienVerticalEdge ()) {
+	public void Move(float x, float y) 
+	{
+		transform.position += new Vector3 (x, y);
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.IsAlienVerticalEdge ()) {
 			m_wave.Flip ();
-		} else if (collider.IsProjectile ()) {
-			var projectile = collider.GetComponent<Projectile> ();
+		} else if (other.IsProjectile ()) {
+
+			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Game.Instance.AddToScore (Row * 5);
+				Game.Instance.AddToScore (Row * RowScoreFactor);
 				Die ();
 			}
-		} else if (collider.IsCannonZone ()) {
+		} else if (other.IsCannonZone ()) {
 			Cannon.Instance.Die ();
 		}
 	}
@@ -47,7 +55,7 @@ public class Alien : ShooterBase {
 	}
 
 	void OnSpawnEnd() {
-		m_animator.speed = 1;
+		m_animator.speed = AnimationSpeed;
 	}
 		
 	protected override bool CanShoot ()
@@ -60,7 +68,9 @@ public class Alien : ShooterBase {
 				new Vector2 (transform.position.x, Cannon.Instance.transform.position.y),
 				LayerMask.GetMask("Alien"));
 
-			result = hit.Count() == 1;
+			var aliensDownCount = hit.Count ();
+		
+			result = aliensDownCount == 0;
 		} 
 
 		if (m_canShoot) {
@@ -89,7 +99,7 @@ public class Alien : ShooterBase {
 	}
 
 	void CheckAliensAlive() {
-		var aliensAlive = m_wave.Aliens.Count (a => a.activeInHierarchy) -1;
+		var aliensAlive = m_wave.Aliens.Count (a => a.gameObject.activeInHierarchy) -1;
 	
 		if (aliensAlive == 0) {
 			Game.Instance.NextLevel ();

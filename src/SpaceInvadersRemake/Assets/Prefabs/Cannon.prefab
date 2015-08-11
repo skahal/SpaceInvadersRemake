@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 469190}
   - 114: {fileID: 11416658}
-  - 50: {fileID: 5066896}
   - 61: {fileID: 6150930}
   m_Layer: 11
   m_Name: Projectile
@@ -136,22 +135,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &5066896
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155950}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 2
 --- !u!61 &6150930
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -271,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8f03dc180034b6aa55302498a54e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: .0450000018
+  Speed: 2
   SpawnTime: 1
   SpawnFlashTime: .150000006
   Lifes: 3
@@ -347,7 +330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -355,11 +338,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: .0399999991
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
@@ -385,6 +368,18 @@ Prefab:
       propertyPath: ShootAudio
       value: 
       objectReference: {fileID: 8300000, guid: aff98729f4be6446880261722b8becc3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 9.99999975e-05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 157318}

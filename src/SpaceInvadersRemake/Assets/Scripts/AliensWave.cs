@@ -11,7 +11,7 @@ public class AliensWave : BetterBehaviour {
 	private int m_totalAliens;
 	private AudioSource m_audioSource;
 
-	[HideInInspector] public List<GameObject> Aliens = new List<GameObject>();
+	[HideInInspector] public List<Alien> Aliens = new List<Alien>();
 
 	public float Columns = 6;
 	public float Rows = 6;
@@ -58,10 +58,15 @@ public class AliensWave : BetterBehaviour {
 
 			for(int y = 0; y < Rows; y++) {
 				var inc = new Vector2(xInc, top + y * Padding.y);
-				var alien = Instantiate(AlienPrefabs[y], new Vector2(0, 0) + inc, Quaternion.identity) as GameObject;
-				Aliens.Add (alien);
+				var alienGO = Instantiate(AlienPrefabs[y], inc, Quaternion.identity) as GameObject;
+				alienGO.name = string.Format ("Alien_{0}x{1}", x, y);
+
+				var alien = alienGO.GetComponent<Alien> ();
+				alien.Row = y + 1;
+				alien.AnimationSpeed = 1;
 				alien.transform.parent = gameObject.transform;
-				alien.GetComponent<Alien> ().Row = y + 1;
+
+				Aliens.Add (alien);
 			}
 		}
 
@@ -79,7 +84,7 @@ public class AliensWave : BetterBehaviour {
 		if (!m_moving) {
 			m_moving = true;
 			foreach (var alien in Aliens) {
-				alien.transform.position += new Vector3 (MoveSize.x, 0);
+				alien.Move (MoveSize.x, 0);
 			}
 
 			m_audioSource.PlayOneShot (AlienMoveAudioClip);

@@ -3,7 +3,6 @@ using System.Collections;
 using UnityStandardAssets.ImageEffects;
 
 public class Cannon: ShooterBase {
-
 	private bool m_touchingEdge;
 	private SpriteRenderer m_renderer;
 	private AudioSource m_audioSource;
@@ -49,16 +48,18 @@ public class Cannon: ShooterBase {
 		} 
 	}
 
-	void FixedUpdate ()
+	protected override void FixedUpdate ()
 	{
+		base.FixedUpdate ();
 		Move ();
 	}
 
 	void Move ()
 	{
 		if (CanInteract) {
-			var direction = (float)(Input.GetAxisRaw ("Horizontal"));
+			var direction = PlayerInput.Instance.HorizontalDirection * Time.deltaTime;
 			var x = transform.position.x;
+			Debug.LogFormat ("direction: {0}", direction);
 
 			// If is touching edge and is trying to move to edge direction again, 
 			// abort the movement.
@@ -72,7 +73,7 @@ public class Cannon: ShooterBase {
 
 	protected override bool CanShoot ()
 	{
-		return CanInteract && Input.GetKeyDown (KeyCode.Space) || Input.GetKeyDown (KeyCode.X);
+		return CanInteract && PlayerInput.Instance.IsShooting;
 	}
 
 	protected override void PerformShoot ()
@@ -81,18 +82,18 @@ public class Cannon: ShooterBase {
 		m_audioSource.PlayOneShot (ShootAudio);
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.IsVerticalEdge()) {
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.IsVerticalEdge()) {
 			m_touchingEdge = true;
 		}
-		else if (collider.IsProjectile()) {
-			var projectile = collider.GetComponent<Projectile> ();
+		else if (other.IsProjectile()) {
+			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingCannon) {
 				LoseLife ();
 			}
 		}
-		else if (collider.IsAlien ()) {
+		else if (other.IsAlien ()) {
 			Die ();
 		}
 	}

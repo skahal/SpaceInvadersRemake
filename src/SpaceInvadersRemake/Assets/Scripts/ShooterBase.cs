@@ -8,7 +8,7 @@ public abstract class ShooterBase: MonoBehaviour {
 		SetupShooter ();
 	}
 
-	protected virtual void Update() {
+	protected virtual void FixedUpdate() {
 		Shoot ();
 	}
 

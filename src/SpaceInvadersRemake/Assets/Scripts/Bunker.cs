@@ -57,17 +57,17 @@ public class Bunker : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D collider)
+	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (collider.IsProjectile ()) {
-			var projectile = collider.GetComponent<Projectile> ();
+		if (other.IsProjectile ()) {
+			var projectile = other.GetComponent<Projectile> ();
 			var hit = Physics2D.CircleCast (transform.position, 1f, Vector3.zero, 1f, LayerMask.GetMask ("Projectile"));
 		
 			if (DestroyPoint (hit, projectile.IsTargetingAlien)) {
 				projectile.DestroyIt ();
 			}	
 		}
-		else if (collider.IsAlien ()) {
+		else if (other.IsAlien ()) {
 			SendMessageUpwards ("OnAlienReachBunker");
 		}
 	}

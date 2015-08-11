@@ -52,8 +52,12 @@
      <Compile Include="Assets\Scripts\Bunkers.cs" />
      <Compile Include="Assets\Scripts\Cannon.cs" />
      <Compile Include="Assets\Scripts\ComponentExtensions.cs" />
+     <Compile Include="Assets\Scripts\EmptyPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
+     <Compile Include="Assets\Scripts\IPlayerInputStrategy.cs" />
+     <Compile Include="Assets\Scripts\KeyboardPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Ovni.cs" />
+     <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />

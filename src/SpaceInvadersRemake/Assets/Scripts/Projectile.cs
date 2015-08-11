@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Assertions;
 
 public class Projectile: MonoBehaviour
 {
@@ -39,17 +40,17 @@ public class Projectile: MonoBehaviour
 		}
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (m_target.HasValue && Cannon.Instance.CanInteract) {
-			transform.position = Vector2.Lerp (transform.position, m_target.Value, Time.deltaTime * Mathf.Abs (Speed));
+			transform.position = Vector2.Lerp (transform.position, m_target.Value, Time.fixedDeltaTime * Mathf.Abs (Speed));
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D collider)
+	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (collider.CompareTag (TargetTag)
-		    || collider.IsHorizontalEdge ()) {
+		if (other.CompareTag (TargetTag)
+		    || other.IsHorizontalEdge ()) {
 			DestroyIt ();
 		}
 	}

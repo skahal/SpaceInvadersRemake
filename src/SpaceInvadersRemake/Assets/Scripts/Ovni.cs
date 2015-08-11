@@ -67,11 +67,11 @@ public class Ovni : MonoBehaviour
 		StartCoroutine (Deploy ());
 	}
 
-	void OnTriggerEnter2D (Collider2D collider)
+	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (collider.IsAlienVerticalEdge ()) {
+		if (other.IsAlienVerticalEdge ()) {
 			Redeploy ();
-		} else if (collider.IsProjectile ()) {
+		} else if (other.IsProjectile ()) {
 			m_audioSource.Stop ();
 			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;

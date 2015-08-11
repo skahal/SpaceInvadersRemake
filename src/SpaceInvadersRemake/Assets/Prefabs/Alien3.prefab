@@ -33,7 +33,6 @@ GameObject:
   - 4: {fileID: 409114}
   - 114: {fileID: 11453820}
   - 61: {fileID: 6111690}
-  - 50: {fileID: 5075492}
   m_Layer: 11
   m_Name: Projectile
   m_TagString: Projectile
@@ -64,7 +63,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.94005775, y: -4.45645332, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422270}
@@ -111,22 +110,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!50 &5075492
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178006}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
 --- !u!61 &6111690
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -276,8 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e184171d6c38044c9bb3c6f66d3b68a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RowScoreFactor: 5
   DieAudio: {fileID: 8300000, guid: c81b0141d6a6944a08073253cc82dccb, type: 3}
   Row: 0
+  AnimationSpeed: .100000001
 --- !u!114 &11453820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -339,7 +324,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1430695001
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 4134e4dc4f40545f5b6905c927e2077a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -376,7 +361,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
@@ -410,6 +395,14 @@ Prefab:
       propertyPath: DieAudio
       value: 
       objectReference: {fileID: 8300000, guid: c81b0141d6a6944a08073253cc82dccb, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132378}
