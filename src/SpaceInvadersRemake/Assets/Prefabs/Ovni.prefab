@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11438046}
   - 61: {fileID: 6156136}
   - 82: {fileID: 8269232}
+  - 50: {fileID: 5089372}
   m_Layer: 0
   m_Name: Ovni
   m_TagString: Untagged
@@ -62,6 +63,22 @@ Transform:
   - {fileID: 402292}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5089372
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156662}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &6156136
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -254,6 +271,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
