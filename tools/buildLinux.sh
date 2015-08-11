@@ -1,0 +1,1 @@
+./buildPlatform.sh buildLinux32Player v$1-linux x86

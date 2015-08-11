@@ -1,1 +1,1 @@
-/Applications/Unity/Unity.app/Contents/MacOS/Unity -buildWindowsPlayer $(pwd)/../build/SpaceInvadersRemake-win.exe -projectPath $(pwd)/../src/SpaceInvadersRemake/ -quit -batchmode -nographics -silent-crashes -logFile $(pwd)/buildWIN.log
+./buildPlatform.sh buildWindowsPlayer v$1-win exe

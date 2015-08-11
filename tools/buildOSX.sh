@@ -1,1 +1,1 @@
-/Applications/Unity/Unity.app/Contents/MacOS/Unity -buildOSXPlayer $(pwd)/../build/SpaceInvadersRemake-osx.app -projectPath $(pwd)/../src/SpaceInvadersRemake/ -quit -batchmode -nographics -silent-crashes -logFile $(pwd)/buildOSX.log
+./buildPlatform.sh buildOSXPlayer v$1-osx app
