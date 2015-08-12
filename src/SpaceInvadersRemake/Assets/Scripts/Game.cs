@@ -8,6 +8,7 @@ public class Game : MonoBehaviour {
 	private int m_score;
 	private Bunkers m_bunkers;
 	private GameObject m_ovni;
+	private AudioSource m_audioSource;
 
 	public static Game Instance;
 	public GameObject CannonPrefab;
@@ -22,6 +23,7 @@ public class Game : MonoBehaviour {
 	public Text LifesText;
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
+	public AudioClip GameOverSound;
 
 	[HideInInspector] public int WaveNumber = 1;
 	[HideInInspector] public AliensWave AliensWave;
@@ -36,6 +38,7 @@ public class Game : MonoBehaviour {
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
 		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
 		m_ovni = GameObject.Find ("Ovni");
+		m_audioSource = GetComponent<AudioSource> ();
 
 		Setup ();
 	}
@@ -166,6 +169,9 @@ public class Game : MonoBehaviour {
 	}
 
 	public void StartGameOver() {
+		m_audioSource.clip = GameOverSound;
+		m_audioSource.Play ();
+
 		PlayerInput.EnableInput ();
 		Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
 		RaiseMessage ("OnGameOver");

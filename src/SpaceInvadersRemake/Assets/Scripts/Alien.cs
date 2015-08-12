@@ -13,6 +13,7 @@ public class Alien : ShooterBase {
 	public AudioClip DieAudio;
 	[HideInInspector] public int Row;
 	[HideInInspector] public float AnimationSpeed = 1f;
+	[HideInInspector] public bool IsAlive = true;
 
 	protected override void Awake ()
 	{
@@ -94,12 +95,14 @@ public class Alien : ShooterBase {
 
 	void OnSpriteDestructionEnd() {
 		CheckAliensAlive ();
-		
-		gameObject.SetActive (false);
+
+		StopAllCoroutines ();
+		GetComponent<SpriteRenderer> ().enabled = false;
+		IsAlive = false;
 	}
 
 	void CheckAliensAlive() {
-		var aliensAlive = m_wave.Aliens.Count (a => a.gameObject.activeInHierarchy) -1;
+		var aliensAlive = m_wave.Aliens.Count (a => a.IsAlive) -1;
 	
 		if (aliensAlive == 0) {
 			Game.Instance.NextLevel ();

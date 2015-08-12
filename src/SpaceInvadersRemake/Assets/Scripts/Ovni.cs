@@ -43,6 +43,7 @@ public class Ovni : MonoBehaviour
 		yield return new WaitForSeconds (DeployInterval);
 	
 		if (Cannon.Instance.CanInteract) {
+			m_audioSource.clip = MoveSound;
 			m_audioSource.Play ();
 
 			float x = 0;

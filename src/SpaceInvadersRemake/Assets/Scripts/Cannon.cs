@@ -59,8 +59,7 @@ public class Cannon: ShooterBase {
 		if (CanInteract) {
 			var direction = PlayerInput.Instance.HorizontalDirection * Time.deltaTime;
 			var x = transform.position.x;
-			Debug.LogFormat ("direction: {0}", direction);
-
+	
 			// If is touching edge and is trying to move to edge direction again, 
 			// abort the movement.
 			if (m_touchingEdge && direction > 0 == x > 0)
@@ -106,13 +105,15 @@ public class Cannon: ShooterBase {
 
 	void LoseLife(int lifesLost = 1) {
 		Projectile.DestroyIt ();
-		m_audioSource.PlayOneShot (LoseLifeAudio);
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 
 		if (Lifes == 0) {
 			Game.Instance.StartGameOver ();
+		} else {
+			m_audioSource.PlayOneShot (LoseLifeAudio);
 		}
+
 	}
 	public void Die() {		
 		LoseLife (Lifes);
