@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e2d3ec68bc6c484db94d7c74e3ef1f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDestroy: .5
+  TimeToDestroy: .600000024
   DestroySquarePixelSize: 10
   DestroySquareCount: 5
 --- !u!114 &11476812
@@ -273,9 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RowScoreFactor: 5
-  DieAudio: {fileID: 8300000, guid: c81b0141d6a6944a08073253cc82dccb, type: 3}
+  DieAudio: {fileID: 8300000, guid: 9b73f2d2d97ed4fcfb7b1c2ebad17e6b, type: 3}
   Row: 0
   AnimationSpeed: .100000001
+  IsAlive: 1
 --- !u!212 &21215882
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -373,7 +374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: TimeToDestroy
-      value: .5
+      value: .600000024
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Offset.x
@@ -394,7 +395,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: DieAudio
       value: 
-      objectReference: {fileID: 8300000, guid: c81b0141d6a6944a08073253cc82dccb, type: 3}
+      objectReference: {fileID: 8300000, guid: 9b73f2d2d97ed4fcfb7b1c2ebad17e6b, type: 3}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0

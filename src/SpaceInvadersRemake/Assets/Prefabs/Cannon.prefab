@@ -258,8 +258,8 @@ MonoBehaviour:
   SpawnTime: 1
   SpawnFlashTime: .150000006
   Lifes: 3
-  LoseLifeAudio: {fileID: 8300000, guid: f3070527fd3174b8f9d37073dce187f9, type: 3}
-  ShootAudio: {fileID: 8300000, guid: aff98729f4be6446880261722b8becc3, type: 3}
+  LoseLifeAudio: {fileID: 8300000, guid: 47aeed4ccdfd4455e9272b0f63453bd5, type: 3}
+  ShootAudio: {fileID: 8300000, guid: 5faf7935028984096b7cb716fe91d4f6, type: 3}
   CanInteract: 0
 --- !u!212 &21224008
 SpriteRenderer:
@@ -363,11 +363,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: LoseLifeAudio
       value: 
-      objectReference: {fileID: 8300000, guid: f3070527fd3174b8f9d37073dce187f9, type: 3}
+      objectReference: {fileID: 8300000, guid: 47aeed4ccdfd4455e9272b0f63453bd5, type: 3}
     - target: {fileID: 0}
       propertyPath: ShootAudio
       value: 
-      objectReference: {fileID: 8300000, guid: aff98729f4be6446880261722b8becc3, type: 3}
+      objectReference: {fileID: 8300000, guid: 5faf7935028984096b7cb716fe91d4f6, type: 3}
     - target: {fileID: 0}
       propertyPath: m_AngularDrag
       value: 0

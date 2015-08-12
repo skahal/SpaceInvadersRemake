@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxShootSupportedInPoint: 4
   HorizontalPixelsDestroyedPerShoot: 8
-  MinimumHitPixelsToBlockProjectile: 50
+  MinimumHitPixelsToBlockProjectile: 80
 --- !u!114 &11426564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: MinimumHitPixelsToBlockProjectile
-      value: 50
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
