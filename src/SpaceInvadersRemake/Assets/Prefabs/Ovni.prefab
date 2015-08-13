@@ -31,6 +31,7 @@ GameObject:
   - 61: {fileID: 6156136}
   - 82: {fileID: 8269232}
   - 50: {fileID: 5089372}
+  - 114: {fileID: 11480478}
   m_Layer: 0
   m_Name: Ovni
   m_TagString: Untagged
@@ -101,7 +102,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1ebeb2afaa9cb4889b62a4e6a6bce3f4, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -192,7 +193,7 @@ MonoBehaviour:
   DeployInterval: 12
   Speed: .0250000004
   MoveSound: {fileID: 8300000, guid: 65fdabb7683f04e17a55f3085f93a2da, type: 3}
-  DieSound: {fileID: 8300000, guid: 48ef15db6bf134440a829a70c89d25e0, type: 3}
+  DieSound: {fileID: 8300000, guid: 0ddd9bcdfab2a41288ddabe7de84f8af, type: 3}
 --- !u!114 &11449440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,6 +220,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+--- !u!114 &11480478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610d35d02ff294c57927a8b8337c20ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Low: .949999988
+  High: 1.04999995
 --- !u!212 &21293126
 SpriteRenderer:
   m_ObjectHideFlags: 1

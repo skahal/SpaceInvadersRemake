@@ -49,6 +49,7 @@ GameObject:
   - 114: {fileID: 11409740}
   - 114: {fileID: 11455288}
   - 82: {fileID: 8240172}
+  - 114: {fileID: 11449136}
   m_Layer: 10
   m_Name: Alien6
   m_TagString: Alien
@@ -234,6 +235,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+--- !u!114 &11449136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610d35d02ff294c57927a8b8337c20ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Low: .949999988
+  High: 1.04999995
 --- !u!114 &11455288
 MonoBehaviour:
   m_ObjectHideFlags: 1

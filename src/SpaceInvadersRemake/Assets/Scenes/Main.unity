@@ -126,18 +126,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
-      propertyPath: DeployInterval
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8269232, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
-      propertyPath: DieSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0ddd9bcdfab2a41288ddabe7de84f8af, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
   m_IsPrefabParent: 0
@@ -1147,11 +1135,11 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: ca503bab697c64b2786e58e292f54af3, type: 3}
+      objectReference: {fileID: 8300000, guid: ac05ca5b8c852437c87991491b1c6952, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienMoveAudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: ca503bab697c64b2786e58e292f54af3, type: 3}
+      objectReference: {fileID: 8300000, guid: ac05ca5b8c852437c87991491b1c6952, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
   m_IsPrefabParent: 0
