@@ -10,6 +10,7 @@ public class AliensWave : BetterBehaviour {
 	private float m_currentMoveDelay = 1.5f;
 	private int m_totalAliens;
 	private AudioSource m_audioSource;
+	private int m_currentAlienMoveSoundIndex;
 
 	[HideInInspector] public List<Alien> Aliens = new List<Alien>();
 
@@ -20,13 +21,18 @@ public class AliensWave : BetterBehaviour {
 	public Vector2 MoveSize = new Vector2(1, 1);
 	public Vector2 MoveSizeWaveNumberInc = new Vector2(0.1f, 0.1f);
 	public Dictionary<int, float> AliensAliveMoveDelay;
-	public AudioClip AlienMoveAudioClip;
+	public AudioClip[] AlienMoveSounds;
+	public AudioClip AlienSpeedChangedSound;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
 
 	void Awake() {
 		m_audioSource = GetComponent<AudioSource> ();
+
+		if (AlienMoveSounds.Length == 0) {
+			Debug.LogError ("At least one AlienMoveSounds must be defined.");
+		}
 	}
 
 	public void Setup () {
@@ -86,14 +92,20 @@ public class AliensWave : BetterBehaviour {
 			foreach (var alien in Aliens) {
 				alien.Move (MoveSize.x, 0);
 			}
-
-			m_audioSource.PlayOneShot (AlienMoveAudioClip);
+				
+			PlayAlienMoveSound ();
 
 			yield return new WaitForSeconds (m_currentMoveDelay);
 			m_moving = false;
 		}
 
 		yield return null;
+	}
+
+	void PlayAlienMoveSound ()
+	{
+		m_audioSource.PlayOneShot (AlienMoveSounds[m_currentAlienMoveSoundIndex]);
+		m_currentAlienMoveSoundIndex = m_currentAlienMoveSoundIndex + 1 < AlienMoveSounds.Length ? m_currentAlienMoveSoundIndex + 1 : 0;
 	}
 
 	public void Flip() {
@@ -118,6 +130,7 @@ public class AliensWave : BetterBehaviour {
 	void SetDelay(int aliensAlive) {
 		if(AliensAliveMoveDelay.ContainsKey(aliensAlive)) {
 			m_currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
+			m_audioSource.PlayOneShot (AlienSpeedChangedSound);
 		}
 
 		Debug.LogFormat ("Move delay for {0} aliens alive is {1}", aliensAlive, m_currentMoveDelay);
