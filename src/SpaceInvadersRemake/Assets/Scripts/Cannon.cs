@@ -14,6 +14,7 @@ public class Cannon: ShooterBase {
 	public int Lifes = 3;
 	public AudioClip LoseLifeAudio;
 	public AudioClip ShootAudio;
+	public float ShootAudioVolume = .5f;
 
 	[HideInInspector] public bool CanInteract;
 
@@ -78,7 +79,8 @@ public class Cannon: ShooterBase {
 	protected override void PerformShoot ()
 	{
 		base.PerformShoot ();
-		m_audioSource.PlayOneShot (ShootAudio);
+		SendMessage ("RandomPitch");
+		m_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
