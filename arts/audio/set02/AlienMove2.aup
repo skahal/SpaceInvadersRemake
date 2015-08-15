@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="AlienMove2_data" version="1.3.0" audacityversion="2.1.0" sel0="0.0000000000" sel1="9.9957596372" vpos="0" h="0.0000000000" zoom="86.1328125000" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + milliseconds">
+	<tags>
+		<tag name="ARTIST" value="Diego Giacomelli"/>
+		<tag name="BPM (beats per minute)" value="120"/>
+		<tag name="TRACKNUMBER" value="1"/>
+		<tag name="Composer" value="Diego Giacomelli"/>
+		<tag name="TITLE" value="AlienMove1"/>
+		<tag name="YEAR" value="2015-08-13T21:59"/>
+		<tag name="Software" value="GarageBand 5.1"/>
+		<tag name="ALBUM" value="Diego Giacomelli&apos;s Album"/>
+		<tag name="COMMENTS" value=" 00000000 00000210 00000930 00000000000AC440 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000"/>
+	</tags>
+	<wavetrack name="13 - Derezzed" channel="0" linked="1" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="440813">
+				<waveblock start="0">
+					<simpleblockfile filename="e0000b8f.au" len="227840" min="-0.986462" max="0.949886" rms="0.186318"/>
+				</waveblock>
+				<waveblock start="227840">
+					<simpleblockfile filename="e0000da0.au" len="212973" min="-1.002435" max="0.893392" rms="0.178449"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="13 - Derezzed" channel="1" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="1.0" pan="0.0">
+		<waveclip offset="0.00000000">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="440813">
+				<waveblock start="0">
+					<simpleblockfile filename="e00006aa.au" len="227840" min="-0.976979" max="0.911427" rms="0.172037"/>
+				</waveblock>
+				<waveblock start="227840">
+					<simpleblockfile filename="e0000938.au" len="212973" min="-0.957786" max="0.818304" rms="0.164479"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<labeltrack name="Label Track" numlabels="19" height="73" minimized="0" isSelected="0">
+		<label t="0.00000000" t1="0.00000000" title="AlienMove1"/>
+		<label t="0.52609261" t1="0.52609261" title="AlienMove2"/>
+		<label t="1.05218522" t1="1.05218522" title="AlienMove3"/>
+		<label t="1.57827784" t1="1.57827784" title="AlienMove4"/>
+		<label t="2.10437045" t1="2.10437045" title="AlienMove5"/>
+		<label t="2.63046306" t1="2.63046306" title="AlienMove6"/>
+		<label t="3.15655567" t1="3.15655567" title="AlienMove7"/>
+		<label t="3.68264829" t1="3.68264829" title="AlienMove8"/>
+		<label t="4.20874090" t1="4.20874090" title="AlienMove9"/>
+		<label t="4.73483351" t1="4.73483351" title="AlienMove10"/>
+		<label t="5.26092612" t1="5.26092612" title="AlienMove11"/>
+		<label t="5.78701874" t1="5.78701874" title="AlienMove12"/>
+		<label t="6.31311135" t1="6.31311135" title="AlienMove13"/>
+		<label t="6.83920396" t1="6.83920396" title="AlienMove14"/>
+		<label t="7.36529657" t1="7.36529657" title="AlienMove15"/>
+		<label t="7.89138919" t1="7.89138919" title="AlienMove16"/>
+		<label t="8.41748180" t1="8.41748180" title="AlienMove17"/>
+		<label t="8.94357441" t1="8.94357441" title="AlienMove18"/>
+		<label t="9.46966702" t1="9.46966702" title="AlienMove19"/>
+	</labeltrack>
+</project>

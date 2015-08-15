@@ -657,7 +657,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: version 0.5
+  m_Text: version 0.6.1
 --- !u!222 &1456399091
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1009,12 +1009,20 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
-      propertyPath: _serializationData.serializedStrings.keys.Array.size
+      propertyPath: AlienMoveSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.size
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.keys.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1058,7 +1066,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[8]
-      value: 6
+      value: '[6,7,8,9]'
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveSizeFactor.x
@@ -1074,11 +1082,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[8]
-      value: AudioClip AlienMoveAudioClip
+      value: AudioClip[] AlienMoveSounds
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[9]
-      value: float Left
+      value: AudioClip AlienSpeedChangedSound
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[5]
@@ -1086,7 +1094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[9]
-      value: 0.0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveSize.y
@@ -1094,7 +1102,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[10]
-      value: float Right
+      value: float Left
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[11]
@@ -1135,11 +1143,175 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[6]
       value: 
-      objectReference: {fileID: 8300000, guid: ac05ca5b8c852437c87991491b1c6952, type: 3}
+      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienMoveAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: ac05ca5b8c852437c87991491b1c6952, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienSpeedChangedSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1ab1b2f3c3bdc4e0f8744faa9f58a5ca, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 37162b4d4605e4f5091388929e1ed0b0, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 00c17cd3116f34628a6300ed751847fe, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[19]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 701e9d8751d364f449cfbbf5e46a6eed, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[20]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a629368f45040a296a256dc13f637c, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[21]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81a896e52c39f453581b2dd2e5e47679, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[22]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: d069208af14c842309b5e2d3b61366bb, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[23]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 113975ed8ceb94558b5800528f82ebfa, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[24]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7be0e624f15f74caf8f4440c0efeb70f, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedObjects.Array.data[25]
+      value: 
+      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienMoveSounds.Array.data[18]
+      value: 
+      objectReference: {fileID: 8300000, guid: a1d5c757570b646e39ea7488c5fe2a88, type: 3}
+    - target: {fileID: 11445928, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: Low
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445928, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: High
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
   m_IsPrefabParent: 0

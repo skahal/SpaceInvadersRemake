@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610d35d02ff294c57927a8b8337c20ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RandomAtStart: 0
   Low: .949999988
   High: 1.04999995
 --- !u!114 &11437220
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RowScoreFactor: 5
-  DieAudio: {fileID: 8300000, guid: 9b73f2d2d97ed4fcfb7b1c2ebad17e6b, type: 3}
+  DieAudio: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
   Row: 0
   AnimationSpeed: .100000001
   IsAlive: 1
@@ -409,7 +410,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: DieAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 9b73f2d2d97ed4fcfb7b1c2ebad17e6b, type: 3}
+      objectReference: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
