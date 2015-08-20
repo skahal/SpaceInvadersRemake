@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11461996}
   - 82: {fileID: 8282410}
   - 114: {fileID: 11430136}
+  - 114: {fileID: 11427808}
   m_Layer: 10
   m_Name: Alien2
   m_TagString: Alien
@@ -50,6 +51,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 405396}
   - 212: {fileID: 21202252}
+  - 114: {fileID: 11432184}
+  - 114: {fileID: 11421132}
   m_Layer: 11
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_6
   m_TagString: Untagged
@@ -223,6 +226,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11421132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: .5
+  AutoExplodeDelay: -1
+  ExplosionForce: 20
+  ExplosionRadius: 1
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 4
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 0
 --- !u!114 &11423974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +261,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: -.0199999996
   TargetTag: Cannon
+--- !u!114 &11427808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: 3
+  AutoExplodeDelay: -1
+  ExplosionForce: 500
+  ExplosionRadius: .699999988
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 2
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 1
 --- !u!114 &11430136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,6 +297,18 @@ MonoBehaviour:
   RandomAtStart: 0
   Low: .949999988
   High: 1.04999995
+--- !u!114 &11432184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!114 &11461996
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,7 +436,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Constraints
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
@@ -418,6 +477,26 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Pixel3DPrefab
+      value: 
+      objectReference: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: TimeToLife
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: GravityDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ExplosionForce
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ExplosionRadius
+      value: .699999988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

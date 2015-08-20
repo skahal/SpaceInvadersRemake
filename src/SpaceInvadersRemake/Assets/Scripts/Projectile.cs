@@ -5,8 +5,13 @@ using UnityEngine.Assertions;
 public class Projectile: MonoBehaviour
 {
 	private Vector2? m_target;
+	private BoxCollider2D m_collider;
+	private SpriteRenderer m_renderer;
+	private SpritePixel3DExplosion m_explosion;
+
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
+
 
 	public bool IsTargetingCannon {
 		get {
@@ -28,6 +33,9 @@ public class Projectile: MonoBehaviour
 
 	void Awake ()
 	{
+		m_collider = GetComponent<BoxCollider2D> ();
+		m_renderer = GetComponentInChildren <SpriteRenderer> ();
+		m_explosion = GetComponentInChildren<SpritePixel3DExplosion> ();
 		gameObject.SetActive (false);
 	}
 
@@ -37,6 +45,8 @@ public class Projectile: MonoBehaviour
 			m_target = new Vector2 (x, Speed > 0 ? 100 : -100);
 			transform.position = new Vector2 (x, y);
 			gameObject.SetActive (true);
+			m_collider.enabled = true;
+			m_renderer.enabled = true;
 		}
 	}
 
@@ -58,6 +68,12 @@ public class Projectile: MonoBehaviour
 	public void DestroyIt ()
 	{
 		m_target = null;
-		gameObject.SetActive (false);
+
+		if (m_renderer.enabled & gameObject.activeInHierarchy) {
+			m_explosion.Explode ();
+		}
+
+		m_collider.enabled = false;
+		m_renderer.enabled = false;
 	}
 }

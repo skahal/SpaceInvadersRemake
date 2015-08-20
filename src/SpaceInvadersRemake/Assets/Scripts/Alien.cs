@@ -90,6 +90,9 @@ public class Alien : ShooterBase {
 	void Die() {
 		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
+		GetComponent<SpritePixel3DExplosion> ().Explode ();
+
+		// TODO: remover essa linha.
 		StartCoroutine (m_spriteDestruction.DestroySprite ());
 	}
 

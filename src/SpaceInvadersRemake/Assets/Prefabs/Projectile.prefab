@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 488532}
   - 212: {fileID: 21251930}
+  - 114: {fileID: 11481058}
+  - 114: {fileID: 11409876}
   m_Layer: 11
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_6
   m_TagString: Untagged
@@ -93,6 +95,27 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .100000001, y: .400000006}
+--- !u!114 &11409876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: 3
+  AutoExplodeDelay: -1
+  ExplosionForce: 200
+  ExplosionRadius: 10
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 2
+  ZScaleByColorLuminance: .100000001
 --- !u!114 &11431418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,6 +129,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: .0500000007
   TargetTag: Cannon
+--- !u!114 &11481058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!212 &21251930
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -163,6 +198,10 @@ Prefab:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Pixel3DPrefab
+      value: 
+      objectReference: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156112}

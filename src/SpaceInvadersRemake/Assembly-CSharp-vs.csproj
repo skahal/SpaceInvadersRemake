@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Alien.cs" />
      <Compile Include="Assets\Scripts\AliensWave.cs" />
+     <Compile Include="Assets\Scripts\AnimatedRotation.cs" />
      <Compile Include="Assets\Scripts\AudioRandomPitch.cs" />
      <Compile Include="Assets\Scripts\Bunker.cs" />
      <Compile Include="Assets\Scripts\Bunkers.cs" />
@@ -58,11 +59,14 @@
      <Compile Include="Assets\Scripts\IPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\KeyboardPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Ovni.cs" />
+     <Compile Include="Assets\Scripts\Pixel.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <Compile Include="Assets\Scripts\SpriteDestruction.cs" />
+     <Compile Include="Assets\Scripts\SpritePixel3DExplosion.cs" />
+     <Compile Include="Assets\Scripts\Texture2DExtensions.cs" />
      <Compile Include="Assets\VFW Examples\FastSave Examples\GO\GameObjectTest.cs" />
      <Compile Include="Assets\VFW Examples\FastSave Examples\Hierarchy\HierarchyTest.cs" />
      <Compile Include="Assets\VFW Examples\FastSave Examples\Marked\MarkedTest.cs" />

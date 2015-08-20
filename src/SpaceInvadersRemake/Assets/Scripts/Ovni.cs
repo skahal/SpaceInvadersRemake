@@ -77,6 +77,9 @@ public class Ovni : MonoBehaviour
 			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;
 			Game.Instance.AddToScore (200);
+			GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();
+
+			// TODO: remover essa linha.
 			StartCoroutine (m_spriteDestruction.DestroySprite ());
 		}
 	}

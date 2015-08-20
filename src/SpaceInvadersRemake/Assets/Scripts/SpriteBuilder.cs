@@ -12,6 +12,10 @@ public class SpriteBuilder : MonoBehaviour {
 
 	void Awake() {
 		m_renderer = GetComponent<SpriteRenderer>();
+
+		if (m_renderer == null) {
+			m_renderer = GetComponentInChildren<SpriteRenderer>();
+		}
 	}
 
 	public bool HasNoColor(int x, int y) {
@@ -61,5 +65,25 @@ public class SpriteBuilder : MonoBehaviour {
 		m_renderer.sprite = Sprite.Create (m_texture, Sprite.rect, new Vector2 (0.5f, 0.5f), Sprite.pixelsPerUnit);
 
 		return this;
+	}
+
+	public Pixel[] ToPixels() {
+		var rect = Sprite.rect;
+		int width = Mathf.RoundToInt (rect.width);
+		int height = Mathf.RoundToInt (rect.height);
+		var pixels = new Pixel[width * height];
+		int index = 0;
+		int left = Mathf.RoundToInt (rect.x);
+		int right = Mathf.RoundToInt (rect.xMax);
+		int top = Mathf.RoundToInt (rect.y);
+		int bottom = Mathf.RoundToInt (rect.yMax);
+
+		for(int x = left; x < right; x++) {
+			for(int y = top; y < bottom; y++) {
+				pixels[index++] = new Pixel(x - left, y - top, m_texture.GetPixel (x, y));
+			}
+		}
+
+		return pixels;
 	}
 }

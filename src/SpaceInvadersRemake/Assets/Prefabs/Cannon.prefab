@@ -46,6 +46,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 467294}
   - 212: {fileID: 21292812}
+  - 114: {fileID: 11447496}
+  - 114: {fileID: 11408882}
   m_Layer: 11
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_6
   m_TagString: Untagged
@@ -62,6 +64,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 421444}
   - 212: {fileID: 21224008}
+  - 114: {fileID: 11422050}
+  - 114: {fileID: 11418798}
   m_Layer: 0
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_14
   m_TagString: Untagged
@@ -231,6 +235,28 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11408882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: 3
+  AutoExplodeDelay: -1
+  ExplosionForce: 200
+  ExplosionRadius: 10
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 2
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 0
 --- !u!114 &11412332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610d35d02ff294c57927a8b8337c20ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RandomAtStart: 0
   Low: .5
   High: 2
 --- !u!114 &11416658
@@ -257,6 +284,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: .0399999991
   TargetTag: Alien
+--- !u!114 &11418798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: 3
+  AutoExplodeDelay: -1
+  ExplosionForce: 200
+  ExplosionRadius: .800000012
+  VoxelateOnStart: 1
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 2
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 1
+--- !u!114 &11422050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!114 &11430866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,6 +337,18 @@ MonoBehaviour:
   ShootAudio: {fileID: 8300000, guid: 5faf7935028984096b7cb716fe91d4f6, type: 3}
   ShootAudioVolume: .5
   CanInteract: 0
+--- !u!114 &11447496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!212 &21224008
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -409,6 +482,30 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Scale.x
+      value: .0209999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Scale.y
+      value: .0209999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Scale.z
+      value: 10.0209999
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Pixel3DPrefab
+      value: 
+      objectReference: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ExplosionRadius
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: VoxelateOnStart
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
