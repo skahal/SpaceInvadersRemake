@@ -1014,6 +1014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 1726197804}
   PointSumEffectInterval: .100000001
+  PointSumColorEfectFactor: .00100000005
   Points: 0
 --- !u!1 &1745178040
 GameObject:

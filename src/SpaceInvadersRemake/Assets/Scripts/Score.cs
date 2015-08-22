@@ -8,6 +8,7 @@ public class Score : MonoBehaviour {
 	public static Score Instance;
 	public Text ScoreText;
 	public float PointSumEffectInterval = 0.1f;
+	public float PointSumColorEfectFactor = 0.01f;
 
 	[HideInInspector]
 	public int Points;
@@ -35,5 +36,16 @@ public class Score : MonoBehaviour {
 	public void Sum(int newPoints)
 	{
 		Points += newPoints;
+
+		Juiceness.Run ("ScoreCollorEffect", () => {
+			var currentColor = ScoreText.color;
+
+			var colorChange = newPoints * PointSumColorEfectFactor;
+			currentColor.r += colorChange;
+			currentColor.g -= colorChange;
+			currentColor.b -= colorChange;
+
+			ScoreText.color = currentColor;
+		});
 	}
 }
