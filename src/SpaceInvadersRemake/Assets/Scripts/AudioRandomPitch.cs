@@ -4,7 +4,6 @@ using System.Collections;
 public class AudioRandomPitch : MonoBehaviour {
 
 	private AudioSource m_audioSource;
-	private float m_originalPitch;
 
 	public bool RandomAtStart;
 	public float Low = .95f;
@@ -12,7 +11,6 @@ public class AudioRandomPitch : MonoBehaviour {
 
 	void Awake() {
 		m_audioSource = GetComponent<AudioSource> ();
-		m_originalPitch = m_audioSource.pitch;
 
 		if (RandomAtStart) {
 			RandomPitch ();

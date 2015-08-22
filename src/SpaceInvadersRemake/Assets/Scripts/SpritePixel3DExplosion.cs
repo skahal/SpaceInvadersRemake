@@ -4,7 +4,6 @@ using System.Linq;
 
 [RequireComponent(typeof(SpriteBuilder))]
 public class SpritePixel3DExplosion : MonoBehaviour {
-	private ParticleSystem m_ps;
 	private SpriteRenderer m_spriteRenderer;
 	private SpriteBuilder m_spriteBuilder;
 	private GameObject m_pixels3DContainer;
@@ -35,7 +34,6 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 
 	public void Voxelate() {
 		if (m_pixels3DContainer == null) {
-			m_ps = GetComponent<ParticleSystem> ();
 			m_spriteRenderer = GetComponent<SpriteRenderer> ();
 			m_spriteBuilder = GetComponent<SpriteBuilder> ();
 			m_spriteBuilder.Build ();
