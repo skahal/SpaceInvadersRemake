@@ -8,6 +8,11 @@ public static class ComponentExtensions {
 		return component.CompareTag("Alien");
 	}
 
+	public static bool IsOvni(this Component component) 
+	{
+		return component.name.Equals ("Ovni");
+	}
+
 	public static bool IsHorizontalEdge(this Component component) 
 	{
 		return component.CompareTag("HorizontalEdge");

@@ -116,6 +116,7 @@ MonoBehaviour:
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 2
   ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 1
 --- !u!114 &11431418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: .0500000007
   TargetTag: Cannon
+  CameraShakeTime: .200000003
+  CameraShakeAmount: {x: .5, y: .5, z: .5}
 --- !u!114 &11481058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,6 +205,10 @@ Prefab:
       propertyPath: Pixel3DPrefab
       value: 
       objectReference: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: CameraShakeTime
+      value: .200000003
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156112}
