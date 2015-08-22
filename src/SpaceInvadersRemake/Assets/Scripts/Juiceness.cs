@@ -12,10 +12,12 @@ public class Juiceness : MonoBehaviour {
 		}
 	}
 
-	public static void Run(string name, Action action) {
+	public static void Run(string name, Action juicenessAction, Action notJuicenessAction = null) {
 		if (s_juicenessEnabled) {
 			Debug.LogFormat ("Running juiceness {0}", name);
-			action ();
+			juicenessAction ();
+		} else if (notJuicenessAction != null) {
+			notJuicenessAction ();
 		}
 	}
 }

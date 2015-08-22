@@ -944,6 +944,7 @@ GameObject:
   - 224: {fileID: 1726197806}
   - 222: {fileID: 1726197805}
   - 114: {fileID: 1726197804}
+  - 114: {fileID: 1726197807}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1000,6 +1001,20 @@ RectTransform:
   m_AnchoredPosition: {x: 141.399994, y: -15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
+--- !u!114 &1726197807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726197803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036065b6a36194471b37ef204d5fca35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1726197804}
+  PointSumEffectInterval: .100000001
+  Points: 0
 --- !u!1 &1745178040
 GameObject:
   m_ObjectHideFlags: 0

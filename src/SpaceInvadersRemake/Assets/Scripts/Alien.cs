@@ -42,7 +42,7 @@ public class Alien : ShooterBase {
 			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Game.Instance.AddToScore (Row * RowScoreFactor);
+				Score.Instance.Sum (Row * RowScoreFactor);
 				Die ();
 			}
 		} else if (other.IsCannonZone ()) {

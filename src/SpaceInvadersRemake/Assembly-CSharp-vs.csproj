@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\SH\Camera\SHCameraHelper.cs" />
      <Compile Include="Assets\Scripts\SH\Tweening\iTweenHelper.cs" />
      <Compile Include="Assets\Scripts\SH\Tweening\iTweenHinting.cs" />
+     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <Compile Include="Assets\Scripts\SpriteDestruction.cs" />

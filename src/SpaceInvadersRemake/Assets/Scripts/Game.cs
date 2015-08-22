@@ -4,8 +4,6 @@ using UnityEngine.UI;
 using UnityStandardAssets.ImageEffects;
 
 public class Game : MonoBehaviour {
-
-	private int m_score;
 	private Bunkers m_bunkers;
 	private GameObject m_ovni;
 	private AudioSource m_audioSource;
@@ -19,7 +17,6 @@ public class Game : MonoBehaviour {
 	public float TopEdgeDistanceY = 5f;
 	public float BottomEdgeDistanceY = 5f;
 	public GameObject HorizontalEdgePrefab;
-	public Text ScoreText;
 	public Text LifesText;
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
@@ -54,12 +51,11 @@ public class Game : MonoBehaviour {
 
 		// Next level stuffs.
 		if (PlayerPrefs.HasKey ("Score")) {
-			m_score = PlayerPrefs.GetInt ("Score");
+			Score.Instance.Initialize(PlayerPrefs.GetInt ("Score"));
 			Cannon.Instance.Lifes = PlayerPrefs.GetInt ("Lifes");
 			WaveNumber = PlayerPrefs.GetInt ("WaveNumber") + 1;
 			PlayerPrefs.DeleteAll ();
 
-			RefreshScore ();
 			RefreshLifes ();
 		}
 
@@ -108,17 +104,7 @@ public class Game : MonoBehaviour {
 	{
 		Instantiate (CannonPrefab, CannonDeployPosition, Quaternion.identity);
 	}
-
-	public void AddToScore(int value)
-	{
-		m_score += value;
-		RefreshScore ();
-	}
-
-	void RefreshScore() {
-		ScoreText.text = m_score.ToString ("D4");
-	}
-
+		
 	void Update() {
 		if (PlayerInput.Instance.IsRestart) {
 			Restart ();
@@ -136,7 +122,7 @@ public class Game : MonoBehaviour {
 	public void NextLevel ()
 	{
 		PlayerInput.DisableInput ();
-		PlayerPrefs.SetInt ("Score", m_score);
+		PlayerPrefs.SetInt ("Score", Score.Instance.Points);
 		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
 		PlayerPrefs.SetInt ("WaveNumber", WaveNumber);
 		Application.LoadLevel (Application.loadedLevelName);
