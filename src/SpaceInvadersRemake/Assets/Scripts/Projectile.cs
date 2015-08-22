@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Assertions;
+using Skahal.Camera;
 
 public class Projectile: MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Projectile: MonoBehaviour
 
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
-
+	public float CameraShakeTime = .5f;
+	public Vector3 CameraShakeAmount = new Vector3(.5f, .5f, .5f);
 
 	public bool IsTargetingCannon {
 		get {
@@ -59,8 +61,13 @@ public class Projectile: MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.CompareTag (TargetTag)
-		    || other.IsHorizontalEdge ()) {
+		if (other.CompareTag (TargetTag) || other.IsOvni()) {
+			DestroyIt ();
+			Juiceness.Run ("ProjectileCameraShake", () => {
+				SHCameraHelper.Shake(CameraShakeTime, CameraShakeAmount);
+			});
+		}
+		else if (other.IsHorizontalEdge ()) {
 			DestroyIt ();
 		}
 	}
@@ -70,7 +77,9 @@ public class Projectile: MonoBehaviour
 		m_target = null;
 
 		if (m_renderer.enabled & gameObject.activeInHierarchy) {
-			m_explosion.Explode ();
+			Juiceness.Run ("ProjectileExplosion", () => {
+				m_explosion.Explode ();
+			});
 		}
 
 		m_collider.enabled = false;
