@@ -57,11 +57,16 @@
      <Compile Include="Assets\Scripts\EmptyPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\IPlayerInputStrategy.cs" />
+     <Compile Include="Assets\Scripts\Juiceness.cs" />
      <Compile Include="Assets\Scripts\KeyboardPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Ovni.cs" />
      <Compile Include="Assets\Scripts\Pixel.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
+     <Compile Include="Assets\Scripts\SH\Camera\SHCameraEffects.cs" />
+     <Compile Include="Assets\Scripts\SH\Camera\SHCameraHelper.cs" />
+     <Compile Include="Assets\Scripts\SH\Tweening\iTweenHelper.cs" />
+     <Compile Include="Assets\Scripts\SH\Tweening\iTweenHinting.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <Compile Include="Assets\Scripts\SpriteDestruction.cs" />
@@ -169,6 +174,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
