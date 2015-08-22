@@ -63,12 +63,12 @@
      <Compile Include="Assets\Scripts\Pixel.cs" />
      <Compile Include="Assets\Scripts\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
-     <Compile Include="Assets\Scripts\SH\Camera\SHCameraEffects.cs" />
-     <Compile Include="Assets\Scripts\SH\Camera\SHCameraHelper.cs" />
-     <Compile Include="Assets\Scripts\SH\Tweening\iTweenHelper.cs" />
-     <Compile Include="Assets\Scripts\SH\Tweening\iTweenHinting.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraEffects.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraHelper.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Tweening\iTweenHelper.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Tweening\iTweenHinting.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <Compile Include="Assets\Scripts\SpriteDestruction.cs" />
      <Compile Include="Assets\Scripts\SpritePixel3DExplosion.cs" />
