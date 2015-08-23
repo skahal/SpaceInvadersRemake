@@ -70,6 +70,11 @@ public class Projectile: MonoBehaviour
 		else if (other.IsHorizontalEdge ()) {
 			DestroyIt ();
 		}
+		else if (other.IsProjectile ()) {
+			Juiceness.Run ("ProjectileDetroyProjectile", () => {
+				DestroyIt ();
+			});
+		}
 	}
 
 	public void DestroyIt ()
