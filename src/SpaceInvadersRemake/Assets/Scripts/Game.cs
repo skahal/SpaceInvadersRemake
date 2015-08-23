@@ -21,6 +21,7 @@ public class Game : MonoBehaviour {
 	public float AlienShootInterval = -5;
 	public float AlienShootProbability = 0.5f;
 	public AudioClip GameOverSound;
+	public float EnableInputDelay = 1f;
 
 	[HideInInspector] public int WaveNumber = 1;
 	[HideInInspector] public AliensWave AliensWave;
@@ -43,7 +44,8 @@ public class Game : MonoBehaviour {
 	void Setup()
 	{
 		Debug.Log ("Begin game setup...");
-
+		PlayerInput.DisableInput ();
+	
 		m_bunkers.Setup ();
 		AliensWave.Setup ();
 		SetupEdges ();
@@ -59,7 +61,16 @@ public class Game : MonoBehaviour {
 			RefreshLifes ();
 		}
 
+		StartCoroutine (EnableInput ());
+
 		Debug.LogFormat ("Game setup done. Wave number : {0}", WaveNumber);
+	}
+
+	IEnumerator EnableInput() {
+		Cannon.Instance.CanInteract = false;
+		yield return new WaitForSeconds (EnableInputDelay);
+		PlayerInput.EnableInput ();
+		Cannon.Instance.CanInteract = true;
 	}
 
 	void SetupEdges() 

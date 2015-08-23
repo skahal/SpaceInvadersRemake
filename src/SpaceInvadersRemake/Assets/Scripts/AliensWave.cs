@@ -11,6 +11,7 @@ public class AliensWave : BetterBehaviour {
 	private int m_totalAliens;
 	private AudioSource m_audioSource;
 	private int m_currentAlienMoveSoundIndex;
+	private bool m_aliensDeployed = false;
 
 	[HideInInspector] public List<Alien> Aliens = new List<Alien>();
 
@@ -23,6 +24,7 @@ public class AliensWave : BetterBehaviour {
 	public Dictionary<int, float> AliensAliveMoveDelay;
 	public AudioClip[] AlienMoveSounds;
 	public AudioClip AlienSpeedChangedSound;
+	public float AlienDeployInterval = .005f;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
@@ -59,29 +61,34 @@ public class AliensWave : BetterBehaviour {
 		var top = transform.position.y;
 
 		// Deploy the aliens.
+		StartCoroutine(DeployAliens (top));
+	}
+
+	IEnumerator DeployAliens (float top)
+	{
 		for (int x = 0; x < Columns; x++) {
 			var xInc = Left + x * Padding.x;
-
-			for(int y = 0; y < Rows; y++) {
-				var inc = new Vector2(xInc, top + y * Padding.y);
-				var alienGO = Instantiate(AlienPrefabs[y], inc, Quaternion.identity) as GameObject;
+			for (int y = 0; y < Rows; y++) {
+				var inc = new Vector2 (xInc, top + y * Padding.y);
+				var alienGO = Instantiate (AlienPrefabs [y], inc, Quaternion.identity) as GameObject;
 				alienGO.name = string.Format ("Alien_{0}x{1}", x, y);
-
 				var alien = alienGO.GetComponent<Alien> ();
 				alien.Row = y + 1;
 				alien.AnimationSpeed = 1;
 				alien.transform.parent = gameObject.transform;
-
 				Aliens.Add (alien);
+
+				yield return new WaitForSeconds (AlienDeployInterval);
 			}
 		}
 
 		m_totalAliens = Aliens.Count;
 		SetDelay (m_totalAliens);
+		m_aliensDeployed = true;
 	}
 
 	void FixedUpdate() {
-		if (Cannon.Instance.CanInteract) {
+		if (Cannon.Instance.CanInteract && m_aliensDeployed) {
 			StartCoroutine (MoveAliens ());
 		}
 	}

@@ -688,6 +688,7 @@ MonoBehaviour:
   BunkerPrefab: {fileID: 162998, guid: a995c5fa9e5314a01b21da937f1246e1, type: 2}
   BunkersCount: 3
   Width: 9
+  DeployInterval: .200000003
 --- !u!4 &1300880375
 Transform:
   m_ObjectHideFlags: 0
