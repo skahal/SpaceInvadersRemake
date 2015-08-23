@@ -4,7 +4,7 @@ using System;
 
 public class Juiceness : MonoBehaviour {
 
-	private static bool s_juicenessEnabled;
+	private static bool s_juicenessEnabled = true;
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.J)) {
