@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Vexe.Runtime.Types;
+using Skahal.Tweening;
 
 public class AliensWave : BetterBehaviour {
 
@@ -25,6 +26,9 @@ public class AliensWave : BetterBehaviour {
 	public AudioClip[] AlienMoveSounds;
 	public AudioClip AlienSpeedChangedSound;
 	public float AlienDeployInterval = .005f;
+	public Vector3 AlienDeployStartPosition = new Vector3 (0, 5, 0);
+	public iTween.EaseType AlienDeployEasyType = iTween.EaseType.linear;
+	public float AlienDeployEasyTime = .1f;
 
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
@@ -78,12 +82,23 @@ public class AliensWave : BetterBehaviour {
 				alien.transform.parent = gameObject.transform;
 				Aliens.Add (alien);
 
-				yield return new WaitForSeconds (AlienDeployInterval);
+				if (Juiceness.CanRun ("DeployAliensAnimation")) {
+					iTweenHelper.MoveFrom (
+						alienGO, 
+						iT.MoveFrom.position, AlienDeployStartPosition,
+						iT.MoveFrom.easetype, AlienDeployEasyType,
+						iT.MoveFrom.time, AlienDeployEasyTime
+					);
+					yield return new WaitForSeconds (AlienDeployInterval);
+				}
 			}
 		}
 
 		m_totalAliens = Aliens.Count;
 		SetDelay (m_totalAliens);
+
+		yield return new WaitForEndOfFrame ();
+
 		m_aliensDeployed = true;
 	}
 
@@ -96,6 +111,7 @@ public class AliensWave : BetterBehaviour {
 	IEnumerator MoveAliens() {
 		if (!m_moving) {
 			m_moving = true;
+
 			foreach (var alien in Aliens) {
 				alien.Move (MoveSize.x, 0);
 			}

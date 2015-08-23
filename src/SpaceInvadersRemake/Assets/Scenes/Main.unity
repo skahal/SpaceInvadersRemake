@@ -689,6 +689,9 @@ MonoBehaviour:
   BunkersCount: 3
   Width: 9
   DeployInterval: .200000003
+  DeployFromScale: {x: 0, y: 0, z: 0}
+  DeployEasyType: 30
+  DeployEasyTime: .5
 --- !u!4 &1300880375
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,11 +1212,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.size
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.size
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1293,19 +1296,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[10]
-      value: float Left
+      value: float AlienDeployInterval
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.keys.Array.data[11]
-      value: float Right
+      value: Vector3 AlienDeployStartPosition
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[10]
-      value: 0.0
+      value: 0.00499999988824129
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[11]
-      value: 0.0
+      value: '{"x":0.0,"y":5.0,"z":0.0}'
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: MoveSizeWaveNumberInc.x
@@ -1502,6 +1505,22 @@ Prefab:
     - target: {fileID: 11445928, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: High
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[12]
+      value: '"linear"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienDeployEasyType
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[13]
+      value: 0.400000005960464
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: AlienDeployEasyTime
+      value: .400000006
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}

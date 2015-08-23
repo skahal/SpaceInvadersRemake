@@ -20,4 +20,20 @@ public class Juiceness : MonoBehaviour {
 			notJuicenessAction ();
 		}
 	}
+
+	public static YieldInstruction Run(string name, Func<YieldInstruction> juicenessAction, Func<YieldInstruction> notJuicenessAction = null) {
+		if (s_juicenessEnabled) {
+			Debug.LogFormat ("Running juiceness {0}", name);
+			return juicenessAction ();
+		} else if (notJuicenessAction == null) {
+			return new WaitForFixedUpdate();
+		}
+		else {
+			return notJuicenessAction ();
+		}
+	}
+
+	public static bool CanRun(string name) {
+		return s_juicenessEnabled;
+	}
 }

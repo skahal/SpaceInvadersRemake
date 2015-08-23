@@ -67,6 +67,9 @@
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraEffects.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraHelper.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\SH.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Threading\SHThread.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Threading\SHThreadStartInfo.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Tweening\iTweenHelper.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Tweening\iTweenHinting.cs" />
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
@@ -165,7 +168,6 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
-     <None Include="Assets\Scripts\Skahal-Unity-Scripts\src\Threading\SHThreadStartInfo.cs.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />

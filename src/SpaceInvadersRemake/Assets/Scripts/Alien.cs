@@ -19,6 +19,7 @@ public class Alien : ShooterBase {
 	{
 		base.Awake ();
 		m_animator = GetComponent<Animator> ();
+		m_animator.speed = 0;
 		m_audioSource = GetComponent<AudioSource> ();
 	}
 
