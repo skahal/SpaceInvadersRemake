@@ -154,15 +154,15 @@ public class Game : MonoBehaviour {
 		PlayerInput.EnableInput ();
 	}
 
-	public void RaiseMessage(string message) {
+	public void RaiseMessage(string message, GameObject sender = null) {
 		Debug.Log ("RaiseMessage: " + message);
 
 		foreach (var alien in AliensWave.Aliens) {
-			alien.SendMessage (message, SendMessageOptions.DontRequireReceiver);
+			alien.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		}
 			
-		m_ovni.SendMessage (message, SendMessageOptions.DontRequireReceiver);
-		gameObject.SendMessage (message, SendMessageOptions.DontRequireReceiver);
+		m_ovni.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
+		gameObject.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 	}
 
 	public void StartGameOver() {

@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RowScoreFactor: 5
   DieAudio: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
+  OtherAlienHitShakeAmount: {x: 75, y: 10, z: 10}
   Row: 0
   AnimationSpeed: .100000001
   IsAlive: 1
@@ -317,6 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: -.0199999996
   TargetTag: Cannon
+  CameraShakeTime: .5
+  CameraShakeAmount: {x: .5, y: .5, z: .5}
 --- !u!114 &11468760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,7 +353,7 @@ MonoBehaviour:
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 2
   ZScaleByColorLuminance: .100000001
-  KeepContainerParent: 1
+  KeepContainerParent: 0
 --- !u!212 &21212598
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -497,6 +500,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ExplosionRadius
       value: .699999988
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OtherAlienHitShakeAmount.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OtherAlienHitShakeAmount.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: OtherAlienHitShakeAmount.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: KeepContainerParent
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

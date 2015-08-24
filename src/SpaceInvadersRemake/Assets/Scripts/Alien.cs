@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
+using Skahal.Tweening;
 
 public class Alien : ShooterBase {
 	private AliensWave m_wave;
@@ -11,6 +12,7 @@ public class Alien : ShooterBase {
 
 	public int RowScoreFactor = 5;
 	public AudioClip DieAudio;
+	public Vector3 OtherAlienHitShakeAmount = new Vector3(10f, 10, 10f);
 	[HideInInspector] public int Row;
 	[HideInInspector] public float AnimationSpeed = 1f;
 	[HideInInspector] public bool IsAlive = true;
@@ -89,6 +91,7 @@ public class Alien : ShooterBase {
 	}
 
 	void Die() {
+		Game.Instance.RaiseMessage ("OnAlienHit", gameObject);
 		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
 
@@ -115,6 +118,16 @@ public class Alien : ShooterBase {
 			Game.Instance.NextLevel ();
 		} else {
 			SendMessageUpwards ("OnAlienDie", aliensAlive);
+		}
+	}
+
+	void OnAlienHit(GameObject sender) {
+		if (sender != gameObject) {
+			Juiceness.Run ("OtherAlienHit", () => {
+				iTweenHelper.ShakeRotation (
+					gameObject, 
+					iT.ShakeRotation.amount, OtherAlienHitShakeAmount);
+			});
 		}
 	}
 }
