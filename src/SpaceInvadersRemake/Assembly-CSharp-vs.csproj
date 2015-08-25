@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\ShooterBase.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraEffects.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Camera\SHCameraHelper.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\ParticleSystems\ParticleEmitterExtensions.cs" />
+     <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\ParticleSystems\TrainRendererExtensions.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\SH.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Threading\SHThread.cs" />
      <Compile Include="Assets\Scripts\Skahal-Unity-Scripts\src\Threading\SHThreadStartInfo.cs" />

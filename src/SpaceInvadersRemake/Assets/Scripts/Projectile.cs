@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Assertions;
 using Skahal.Camera;
+using Skahal.ParticleSystems;
 
 public class Projectile: MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Projectile: MonoBehaviour
 	private BoxCollider2D m_collider;
 	private SpriteRenderer m_renderer;
 	private SpritePixel3DExplosion m_explosion;
+	private TrailRenderer m_trail;
 
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
@@ -38,6 +40,7 @@ public class Projectile: MonoBehaviour
 		m_collider = GetComponent<BoxCollider2D> ();
 		m_renderer = GetComponentInChildren <SpriteRenderer> ();
 		m_explosion = GetComponentInChildren<SpritePixel3DExplosion> ();
+		m_trail = GetComponentInChildren<TrailRenderer> ();
 		gameObject.SetActive (false);
 	}
 
@@ -49,6 +52,11 @@ public class Projectile: MonoBehaviour
 			gameObject.SetActive (true);
 			m_collider.enabled = true;
 			m_renderer.enabled = true;
+
+			if (m_trail != null && Juiceness.CanRun("ProjectileTrail")) {
+				m_trail.Reset (this);
+				m_trail.enabled = true;
+			}
 		}
 	}
 
@@ -89,5 +97,9 @@ public class Projectile: MonoBehaviour
 
 		m_collider.enabled = false;
 		m_renderer.enabled = false;
+
+		if (m_trail != null) {
+			m_trail.enabled = false;	
+		}
 	}
 }
