@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Assertions;
 using Skahal.Camera;
 using Skahal.ParticleSystems;
+using Skahal.Threading;
 
 public class Projectile: MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Projectile: MonoBehaviour
 	public string TargetTag = "Cannon";
 	public float CameraShakeTime = .5f;
 	public Vector3 CameraShakeAmount = new Vector3(.5f, .5f, .5f);
+	public Color CameraFlashColor = Color.white;
 
 	public bool IsTargetingCannon {
 		get {
@@ -71,8 +73,16 @@ public class Projectile: MonoBehaviour
 	{
 		if (other.CompareTag (TargetTag) || other.IsOvni()) {
 			DestroyIt ();
+
 			Juiceness.Run ("ProjectileCameraShake", () => {
 				SHCameraHelper.Shake(CameraShakeTime, CameraShakeAmount);
+			});
+
+			Juiceness.Run ("ProjectileCameraFlash", () => {
+				Camera.main.backgroundColor = CameraFlashColor;
+				SHThread.StartEndOfFrame(() => {
+					Camera.main.backgroundColor = Color.black;
+				});
 			});
 		}
 		else if (other.IsHorizontalEdge ()) {

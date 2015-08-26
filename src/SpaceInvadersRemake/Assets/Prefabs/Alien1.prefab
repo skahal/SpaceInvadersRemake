@@ -258,6 +258,8 @@ MonoBehaviour:
   TargetTag: Cannon
   CameraShakeTime: .5
   CameraShakeAmount: {x: .5, y: .5, z: .5}
+  CameraFlashTime: .100000001
+  CameraFlashColor: {r: .735294104, g: .248702437, b: .248702437, a: 1}
 --- !u!114 &11415962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,6 +502,22 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: KeepContainerParent
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CameraFlashTime
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CameraFlashColor.r
+      value: .735294104
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CameraFlashColor.g
+      value: .248702437
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: CameraFlashColor.b
+      value: .248702437
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
