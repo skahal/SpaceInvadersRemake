@@ -136,13 +136,13 @@ public class AliensWave : BetterBehaviour {
 			m_isFliping = true;
 			MoveSize.x *= -1;
 			transform.position = new Vector3 (transform.position.x, transform.position.y - MoveSize.y, 0);
-		}
 
-		StartCoroutine (EndFlip ());
+			StartCoroutine (EndFlip ());
+		}
 	}
 
 	IEnumerator EndFlip() {
-		yield return new WaitForSeconds (m_currentMoveDelay * 2);
+		yield return new WaitForSeconds (m_currentMoveDelay * Columns);
 		m_isFliping = false;
 	}
 
