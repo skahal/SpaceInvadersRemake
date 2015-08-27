@@ -14,7 +14,6 @@ public class Juiceness : MonoBehaviour {
 
 	public static void Run(string name, Action juicenessAction, Action notJuicenessAction = null) {
 		if (s_juicenessEnabled) {
-			Debug.LogFormat ("Running juiceness {0}", name);
 			juicenessAction ();
 		} else if (notJuicenessAction != null) {
 			notJuicenessAction ();
@@ -23,7 +22,6 @@ public class Juiceness : MonoBehaviour {
 
 	public static YieldInstruction Run(string name, Func<YieldInstruction> juicenessAction, Func<YieldInstruction> notJuicenessAction = null) {
 		if (s_juicenessEnabled) {
-			Debug.LogFormat ("Running juiceness {0}", name);
 			return juicenessAction ();
 		} else if (notJuicenessAction == null) {
 			return new WaitForFixedUpdate();
