@@ -58,17 +58,23 @@ public class Cannon: ShooterBase {
 	void Move ()
 	{
 		if (CanInteract) {
-			var direction = PlayerInput.Instance.HorizontalDirection * Time.deltaTime;
-			var x = transform.position.x;
-	
-			// If is touching edge and is trying to move to edge direction again, 
-			// abort the movement.
-			if (m_touchingEdge && direction > 0 == x > 0)
-				return;
-
-			direction *= Speed;
-			transform.position = new Vector3 (x + direction, transform.position.y);
+			transform.position = GetNewPosition (PlayerInput.Instance.HorizontalDirection);
 		}
+	}
+
+	public Vector3 GetNewPosition(float horizontalDirection)
+	{
+		var direction = horizontalDirection * Time.deltaTime;
+		var x = transform.position.x;
+
+		// If is touching edge and is trying to move to edge direction again, 
+		// abort the movement.
+		if (m_touchingEdge && direction > 0 == x > 0)
+			return transform.position;
+
+		direction *= Speed;
+
+		return new Vector3 (x + direction, transform.position.y);
 	}
 
 	protected override bool CanShoot ()
