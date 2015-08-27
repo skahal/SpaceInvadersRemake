@@ -43,7 +43,6 @@ public class Bunker : MonoBehaviour
 			
 		m_spriteBuilder.Rebuild();
 
-		Debug.LogFormat ("hitPixelsCount: {0}", hitPixelsCount);
 		return hitPixelsCount >= MinimumHitPixelsToBlockProjectile;	
 	}
 
