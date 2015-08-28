@@ -263,7 +263,6 @@ MonoBehaviour:
   TargetTag: Cannon
   CameraShakeTime: .5
   CameraShakeAmount: {x: .5, y: .5, z: .5}
-  CameraFlashTime: .100000001
   CameraFlashColor: {r: .735294104, g: .248702437, b: .248702437, a: 1}
 --- !u!114 &11427808
 MonoBehaviour:
@@ -392,7 +391,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6f10d3b522ff34a6f883b7c0f4328459, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -535,6 +534,10 @@ Prefab:
       propertyPath: CameraFlashColor.b
       value: .248702437
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6f10d3b522ff34a6f883b7c0f4328459, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128864}

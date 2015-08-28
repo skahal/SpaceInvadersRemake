@@ -12,6 +12,7 @@ public class Projectile: MonoBehaviour
 	private SpriteRenderer m_renderer;
 	private SpritePixel3DExplosion m_explosion;
 	private TrailRenderer m_trail;
+	private Light m_light;
 
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
@@ -43,6 +44,7 @@ public class Projectile: MonoBehaviour
 		m_renderer = GetComponentInChildren <SpriteRenderer> ();
 		m_explosion = GetComponentInChildren<SpritePixel3DExplosion> ();
 		m_trail = GetComponentInChildren<TrailRenderer> ();
+		m_light = GetComponentInChildren<Light> ();
 		gameObject.SetActive (false);
 	}
 
@@ -59,6 +61,11 @@ public class Projectile: MonoBehaviour
 				m_trail.Reset (this);
 				m_trail.enabled = true;
 			}
+
+			if(m_light != null && Juiceness.CanRun("ProjectileLight")) {
+				m_light.enabled = true;
+			}
+
 		}
 	}
 
@@ -110,6 +117,7 @@ public class Projectile: MonoBehaviour
 
 		if (m_trail != null) {
 			m_trail.enabled = false;	
+			m_light.enabled = false;
 		}
 	}
 }
