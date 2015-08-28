@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Input\KeyboardPlayerInputStrategy.cs" />
      <Compile Include="Assets\Scripts\Input\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Juiceness.cs" />
+     <Compile Include="Assets\Scripts\Opening.cs" />
      <Compile Include="Assets\Scripts\Ovni.cs" />
      <Compile Include="Assets\Scripts\Pixel.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
