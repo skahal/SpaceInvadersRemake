@@ -13,7 +13,7 @@ public class KeyboardPlayerInputStrategy : IPlayerInputStrategy
 	public bool IsShooting
 	{
 		get {
-			return Input.GetKeyDown (KeyCode.X) || Input.GetKeyDown (KeyCode.Space);
+			return Input.GetKey (KeyCode.X) || Input.GetKey (KeyCode.Space);
 		}
 	}
 
