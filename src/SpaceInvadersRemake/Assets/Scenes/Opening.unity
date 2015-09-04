@@ -426,6 +426,7 @@ MonoBehaviour:
   AutoExplodeDelay: 6
   ExplosionForce: 10
   ExplosionRadius: .400000006
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
   VoxelateOnStart: 1
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 10

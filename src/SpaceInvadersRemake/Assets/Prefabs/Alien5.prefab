@@ -241,11 +241,12 @@ MonoBehaviour:
   Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
   TimeToLife: 3
   AutoExplodeDelay: -1
-  ExplosionForce: 500
-  ExplosionRadius: .699999988
+  ExplosionForce: 1500
+  ExplosionRadius: 1
+  ExplosionRelativePosition: {x: 0, y: 0, z: .300000012}
   VoxelateOnStart: 0
   MinAlphaToVoxel: .100000001
-  ColliderEveryVoxel: 2
+  ColliderEveryVoxel: 1
   ZScaleByColorLuminance: .100000001
   KeepContainerParent: 0
 --- !u!114 &11420668
@@ -303,6 +304,7 @@ MonoBehaviour:
   AutoExplodeDelay: -1
   ExplosionForce: 20
   ExplosionRadius: 1
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
   VoxelateOnStart: 0
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 4
@@ -496,11 +498,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ExplosionForce
-      value: 500
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ExplosionRadius
-      value: .699999988
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: OtherAlienHitShakeAmount.x
@@ -538,6 +540,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6f10d3b522ff34a6f883b7c0f4328459, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ExplosionRelativePosition.z
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ColliderEveryVoxel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 188534}

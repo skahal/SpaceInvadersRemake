@@ -377,7 +377,7 @@ Light:
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
-  m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
+  m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
@@ -404,6 +404,7 @@ MonoBehaviour:
   AutoExplodeDelay: -1
   ExplosionForce: 200
   ExplosionRadius: 10
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
   VoxelateOnStart: 0
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 2
@@ -456,6 +457,7 @@ MonoBehaviour:
   AutoExplodeDelay: -1
   ExplosionForce: 200
   ExplosionRadius: .800000012
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
   VoxelateOnStart: 1
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 2

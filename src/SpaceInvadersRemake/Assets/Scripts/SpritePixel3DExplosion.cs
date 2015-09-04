@@ -14,11 +14,13 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 	public float AutoExplodeDelay = -1f;
 	public float ExplosionForce = 200f;
 	public float ExplosionRadius = 10f;
+	public Vector3 ExplosionRelativePosition = Vector3.zero;
 	public bool VoxelateOnStart = false;
 	public float MinAlphaToVoxel = 0.1f;
 	public int ColliderEveryVoxel = 2;
 	public float ZScaleByColorLuminance = .1f;
 	public bool KeepContainerParent = true;
+
 
 	// Use this for initialization
 	void Start () {
@@ -81,7 +83,7 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 
 			var rb = child.GetComponent<Rigidbody> ();
 			rb.isKinematic = false;
-			rb.AddExplosionForce (ExplosionForce, new Vector3 (transform.position.x, transform.position.y, 0), ExplosionRadius);
+			rb.AddExplosionForce (ExplosionForce, transform.position + ExplosionRelativePosition, ExplosionRadius);
 
 			index++;
 		}
