@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Skahal.Tweening;
 
 public class Score : MonoBehaviour {
 
 	private int m_currentDisplayPoints;
+
 	public static Score Instance;
 	public Text ScoreText;
 	public float PointSumEffectInterval = 0.1f;

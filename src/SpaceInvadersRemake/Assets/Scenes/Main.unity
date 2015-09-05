@@ -1013,6 +1013,7 @@ GameObject:
   - 224: {fileID: 1713996576}
   - 222: {fileID: 1713996578}
   - 114: {fileID: 1713996577}
+  - 114: {fileID: 1713996579}
   m_Layer: 5
   m_Name: Lifes
   m_TagString: Untagged
@@ -1069,6 +1070,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1713996575}
+--- !u!114 &1713996579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1713996575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38659c5db7614d22951fc40a0fe8b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeployInterval: 1
+  DeployEasing: 27
 --- !u!1 &1726197803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1094,7 @@ GameObject:
   - 222: {fileID: 1726197805}
   - 114: {fileID: 1726197804}
   - 114: {fileID: 1726197807}
+  - 114: {fileID: 1726197808}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1151,6 +1166,19 @@ MonoBehaviour:
   PointSumEffectInterval: .100000001
   PointSumColorEfectFactor: .00100000005
   Points: 0
+--- !u!114 &1726197808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726197803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38659c5db7614d22951fc40a0fe8b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeployInterval: 1
+  DeployEasing: 27
 --- !u!1 &1745178040
 GameObject:
   m_ObjectHideFlags: 0

@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\SpriteBuilder.cs" />
      <Compile Include="Assets\Scripts\SpriteDestruction.cs" />
      <Compile Include="Assets\Scripts\SpritePixel3DExplosion.cs" />
+     <Compile Include="Assets\Scripts\TextEffect.cs" />
      <Compile Include="Assets\Scripts\Texture2DExtensions.cs" />
      <Compile Include="Assets\VFW Examples\FastSave Examples\GO\GameObjectTest.cs" />
      <Compile Include="Assets\VFW Examples\FastSave Examples\Hierarchy\HierarchyTest.cs" />
