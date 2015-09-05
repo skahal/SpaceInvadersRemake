@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 445030, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
       propertyPath: DeployInterval
@@ -758,7 +758,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1 &1316149591
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,7 +922,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 419270, guid: 58e1facc9c82945338e25b025c0856b2, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 21268132, guid: 58e1facc9c82945338e25b025c0856b2, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -1081,8 +1081,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38659c5db7614d22951fc40a0fe8b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeployInterval: 1
-  DeployEasing: 27
+  Interval: 1
+  Easing: 27
+  From: 0
+  To: 1
+  DestroyOnComplete: 0
 --- !u!1 &1726197803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1098,7 @@ GameObject:
   - 114: {fileID: 1726197804}
   - 114: {fileID: 1726197807}
   - 114: {fileID: 1726197808}
+  - 114: {fileID: 1726197809}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1162,9 +1166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036065b6a36194471b37ef204d5fca35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 1726197804}
-  PointSumEffectInterval: .100000001
-  PointSumColorEfectFactor: .00100000005
+  NewPointScrollingTextPrefab: {fileID: 156548, guid: a2f71157c8b914e988202ba3104f3761,
+    type: 2}
   Points: 0
 --- !u!114 &1726197808
 MonoBehaviour:
@@ -1177,8 +1180,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38659c5db7614d22951fc40a0fe8b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeployInterval: 1
-  DeployEasing: 27
+  Interval: 1
+  Easing: 27
+  From: 0
+  To: 1
+  DestroyOnComplete: 0
+--- !u!114 &1726197809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1726197803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6f3113d93144f6eb0ef8b701aa4341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interval: .100000001
+  ColorFactor: .00100000005
+  Format: D4
 --- !u!1 &1745178040
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,7 +45,7 @@ public class Alien : ShooterBase {
 			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Score.Instance.Sum (Row * RowScoreFactor);
+				Score.Instance.Sum (gameObject, Row * RowScoreFactor);
 				Die ();
 			}
 		} else if (other.IsCannonZone ()) {
@@ -99,7 +99,6 @@ public class Alien : ShooterBase {
 			GetComponent<SpritePixel3DExplosion> ().Explode ();
 		});
 
-		// TODO: remover essa linha.
 		StartCoroutine (m_spriteDestruction.DestroySprite ());
 	}
 
