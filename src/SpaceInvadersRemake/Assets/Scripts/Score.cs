@@ -22,6 +22,7 @@ public class Score : MonoBehaviour
 	public void Initialize (int initialPoints)
 	{
 		Points = initialPoints;
+		m_sumEffect.Sum (Points);
 	}
 
 	public void Sum (GameObject source, int newPoints)
