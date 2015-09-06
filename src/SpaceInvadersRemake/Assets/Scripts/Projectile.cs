@@ -103,9 +103,7 @@ public class Projectile: MonoBehaviour
 	}
 
 	public void DestroyIt ()
-	{
-		m_target = null;
-
+	{		
 		if (m_renderer.enabled & gameObject.activeInHierarchy) {
 			Juiceness.Run ("ProjectileExplosion", () => {
 				m_explosion.Explode ();
@@ -119,5 +117,7 @@ public class Projectile: MonoBehaviour
 			m_trail.enabled = false;	
 			m_light.enabled = false;
 		}
+
+		m_target = null;
 	}
 }
