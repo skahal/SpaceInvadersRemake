@@ -20,7 +20,7 @@ public static class TextHelper
 
 		var textComponent = (GameObject.Instantiate (textPrefab) as GameObject).GetComponent<Text>();
 		textComponent.text = text;
-		textComponent.transform.parent = canvasTransform;
+		textComponent.transform.SetParent (canvasTransform, false);
 		textComponent.transform.localPosition = Vector3.zero;
 		var rectTransform = textComponent.GetComponent<RectTransform> ();
 
