@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11463570}
   - 95: {fileID: 9563806}
   - 114: {fileID: 11449440}
+  - 114: {fileID: 11470882}
   m_Layer: 0
   m_Name: SpaceInvadersAtari2600SpriteSheetWhite_13
   m_TagString: Untagged
@@ -32,8 +33,25 @@ GameObject:
   - 82: {fileID: 8269232}
   - 50: {fileID: 5089372}
   - 114: {fileID: 11480478}
+  - 123: {fileID: 12350894}
   m_Layer: 0
   m_Name: Ovni
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &189510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 415650}
+  - 96: {fileID: 9628640}
+  m_Layer: 0
+  m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,6 +69,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 445030}
   m_RootOrder: 0
+--- !u!4 &415650
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 445030}
+  m_RootOrder: 1
 --- !u!4 &445030
 Transform:
   m_ObjectHideFlags: 1
@@ -62,6 +92,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 402292}
+  - {fileID: 415650}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5089372
@@ -179,6 +210,51 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!96 &9628640
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189510}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1.79999995
+  m_StartWidth: 1
+  m_EndWidth: .100000001
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4284229505
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4285802655
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4284229760
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4285159311
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 6378119
+  m_MinVertexDistance: .00999999978
+  m_Autodestruct: 0
 --- !u!114 &11438046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b199d4fb016504f7d9cf2ed40fd8183c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeployInterval: 12
+  DeployInterval: 1
   Speed: .0250000004
   MoveSound: {fileID: 8300000, guid: 65fdabb7683f04e17a55f3085f93a2da, type: 3}
   DieSound: {fileID: 8300000, guid: 0ddd9bcdfab2a41288ddabe7de84f8af, type: 3}
@@ -220,6 +296,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sprite: {fileID: 0}
+--- !u!114 &11470882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: 3
+  AutoExplodeDelay: -1
+  ExplosionForce: 2000
+  ExplosionRadius: 1
+  ExplosionRelativePosition: {x: 0, y: 0, z: .300000012}
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 2
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 1
 --- !u!114 &11480478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,6 +333,21 @@ MonoBehaviour:
   RandomAtStart: 0
   Low: .949999988
   High: 1.04999995
+--- !u!123 &12350894
+LensFlare:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156662}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
+  m_Color: {r: .474509835, g: .129411772, b: .392156899, a: 0}
+  m_Brightness: 1
+  m_FadeSpeed: 3
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!212 &21293126
 SpriteRenderer:
   m_ObjectHideFlags: 1
