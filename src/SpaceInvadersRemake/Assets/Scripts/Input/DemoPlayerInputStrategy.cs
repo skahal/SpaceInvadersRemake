@@ -32,30 +32,24 @@ public class DemoPlayerInputStrategy : IPlayerInputStrategy
 		m_ga.MutationProbability = 0.5f;
 		m_ga.GenerationRan += (sender, e) => {
 			m_bestChromossome = m_ga.BestChromosome as DemoPlayerChromosome;
+
+			if(m_bestChromossome.AvoidAliensProjectilesProbability > 0.9f) {
+				HorizontalDirection = 1f;
+			}
 		};
 		m_ga.Start ();
 
 		SHThread.PingPong (.01f, 0, 1, (t) => {
-		//	Debug.LogFormat("Generation: {0}", m_ga.GenerationsNumber);
 			m_ga.Termination = new GenerationNumberTermination (m_ga.GenerationsNumber + 1);
 			m_ga.Resume();
+
 			return true;
 		});
 	}
 
-	public float HorizontalDirection
-	{
-		get {
-			return m_bestChromossome.HorizontalDirection;
-		}
-	}
+	public float HorizontalDirection { get; private set; }
 
-	public bool IsShooting
-	{
-		get {
-			return m_bestChromossome.IsShooting;
-		}
-	}
+	public bool IsShooting { get; private set; }
 
 	public bool IsRestart
 	{

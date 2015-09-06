@@ -37,4 +37,9 @@ public static class ComponentExtensions {
 	{
 		return component.CompareTag("CannonZone");
 	}
+
+	public static bool IsBunker(this Component component) 
+	{
+		return component.CompareTag("Bunker");
+	}
 }

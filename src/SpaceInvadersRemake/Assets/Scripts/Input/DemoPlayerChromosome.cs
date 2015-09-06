@@ -5,13 +5,7 @@ using GeneticSharp.Domain.Randomizations;
 
 public class DemoPlayerChromosome : ChromosomeBase {
 
-	public DemoPlayerChromosome() : base(2) {
-
-		// Test 01
-		ReplaceGene (0, GenerateGene (0)); // HorizontalDirection
-		ReplaceGene (1, GenerateGene (1)); // IsShooting;
-
-		//TODO: Should the chromosome has more genes?
+	public DemoPlayerChromosome() : base(4) {
 
 		// Test 02
 		// TargetAlien?
@@ -21,20 +15,33 @@ public class DemoPlayerChromosome : ChromosomeBase {
 		// AvoidProjectiles?
 
 		// Test 03
-		// ShootOvniProbability
-		// ShootAlienProbability(index);
-		// StayBehindBunkerProbability(index);
-		// AvoidAliensProjectilesProbability
+		ReplaceGene (0, GenerateGene (0)); // ShootOvniProbability
+		ReplaceGene (1, GenerateGene (1)); // ShootAlienProbability(index);
+		ReplaceGene (2, GenerateGene (2)); // StayBehindBunkerProbability(index);
+		ReplaceGene (3, GenerateGene (3)); // AvoidAliensProjectilesProbability
 	}
 
-	public float HorizontalDirection { 
+	public float ShootOvniProbability { 
 		get {
-			return (int)GetGene (0).Value;
+			return (float)GetGene (0).Value;
 		}
 	}
-	public bool IsShooting {
+
+	public float ShootAlienProbability { 
 		get {
-			return (bool)GetGene (1).Value;
+			return (float)GetGene (1).Value;
+		}
+	}
+
+	public float StayBehindBunkerProbability { 
+		get {
+			return (float)GetGene (2).Value;
+		}
+	}
+
+	public float AvoidAliensProjectilesProbability { 
+		get {
+			return (float)GetGene (3).Value;
 		}
 	}
 
@@ -42,11 +49,7 @@ public class DemoPlayerChromosome : ChromosomeBase {
 
 	public override Gene GenerateGene (int geneIndex)
 	{
-		if (geneIndex == 0) {
-			return new Gene (RandomizationProvider.Current.GetInt(-1, 2));
-		} else {
-			return new Gene (RandomizationProvider.Current.GetInt (0, 2) == 0);
-		}
+		return new Gene(RandomizationProvider.Current.GetFloat ());
 	}
 
 	public override IChromosome CreateNew ()

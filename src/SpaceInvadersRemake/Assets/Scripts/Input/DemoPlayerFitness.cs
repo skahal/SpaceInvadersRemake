@@ -20,41 +20,31 @@ public class DemoPlayerFitness : IFitness {
 			0,
 			new Vector2 (cannon.transform.position.x, 3));
 
-		//Debug.DrawLine (cannon.transform.position, new Vector2 (cannon.transform.position.x, 3));
-
+	
 		var aliensCount = hit.Count (h => h.collider.IsAlien ());
 		var ovniCount = hit.Count (h => h.collider.IsOvni ());
 		var projectilesCount = hit.Count (h => h.collider.IsProjectile ());
+		var bunkersCount = hit.Count (h => h.collider.IsBunker ());
 
-//		if (aliensCount > 0) {
-//			Debug.LogFormat ("AliensCount: {0}", aliensCount);
-//		}
+		var result = 0f;
 
-		//var newCannonPosition = cannon.GetNewPosition (c.HorizontalDirection);
+		if (aliensCount > 0) {
+			result += c.ShootAlienProbability / 4f;
+		}
 
-		//var distance = SHGameObjectHelper.GetLowestDistanceFrom (newCannonPosition, Game.Instance.AliensWave.Aliens.Select (a => a.transform.position));
-
-		//Debug.LogFormat ("Distance: {0}", distance);
-		//var result = 1f - (distance / 10f);
-		var result = 1f;
-
-		if (aliensCount == 0 && c.HorizontalDirection == 0) {
-			result = 0f;
+		if (ovniCount > 0) {
+			result += c.ShootOvniProbability / 4f;
 		}
 
 		if (projectilesCount > 0) {
-			if (c.HorizontalDirection == 0) {
-				result = 0;
-			} else if(c.HorizontalDirection != PlayerInput.Instance.HorizontalDirection) {
-				result = 0.5f;
-			}
+			result += c.AvoidAliensProjectilesProbability / 4f;
 		}
 
-		if (!c.IsShooting && aliensCount > 0) {
-			result = 0f;
+		if (bunkersCount > 0) {
+			result += c.StayBehindBunkerProbability / 4f;
 		}
 
-		return result < 0 ? 0 : result;
+		return result;
 	}
 
 	#endregion
