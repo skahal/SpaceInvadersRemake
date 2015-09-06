@@ -149,6 +149,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0799999833, y: .359999955, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &708971403 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 156662, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+  m_PrefabInternal: {fileID: 269248670}
+--- !u!123 &708971410
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708971403}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: 54fbbf098d116effa00081aba8ad6659, type: 2}
+  m_Color: {r: .474509835, g: .129411772, b: .392156899, a: 0}
+  m_Brightness: 1
+  m_FadeSpeed: 3
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1 &740168778
 GameObject:
   m_ObjectHideFlags: 0

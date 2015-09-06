@@ -8,6 +8,7 @@ public class Ovni : MonoBehaviour
 	private bool m_canMove;
 	private BoxCollider2D m_collider;
 	private AudioSource m_audioSource;
+	private LensFlare m_lensFlare;
 
 	public float DeployInterval = 12f;
 	public float Speed = .1f;
@@ -23,6 +24,7 @@ public class Ovni : MonoBehaviour
 		m_collider = GetComponent<BoxCollider2D> ();
 
 		m_audioSource = GetComponent<AudioSource> ();
+		m_lensFlare = GetComponent<LensFlare> ();
 
 		StartCoroutine (Deploy ());
 	}
@@ -40,6 +42,7 @@ public class Ovni : MonoBehaviour
 		m_spriteBuilder.Hide ();
 		m_canMove = false;
 		m_audioSource.Stop ();
+		m_lensFlare.enabled = false;
 		yield return new WaitForSeconds (DeployInterval);
 	
 		if (Cannon.Instance.CanInteract) {
@@ -58,6 +61,7 @@ public class Ovni : MonoBehaviour
 			m_spriteBuilder.Show ();
 			m_canMove = true;
 			m_collider.enabled = true;
+			m_lensFlare.enabled = true;
 		} else {
 			Redeploy ();
 		}
@@ -73,6 +77,7 @@ public class Ovni : MonoBehaviour
 		if (other.IsAlienVerticalEdge ()) {
 			Redeploy ();
 		} else if (other.IsProjectile ()) {
+			m_lensFlare.enabled = false;
 			m_audioSource.Stop ();
 			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;
