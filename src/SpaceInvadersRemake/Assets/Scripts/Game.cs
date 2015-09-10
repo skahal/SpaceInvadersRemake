@@ -113,7 +113,8 @@ public class Game : MonoBehaviour {
 
 	void SetupCannon()
 	{
-		Instantiate (CannonPrefab, CannonDeployPosition, Quaternion.identity);
+		var cannon = Instantiate (CannonPrefab, CannonDeployPosition, Quaternion.identity) as GameObject;
+		ParallaxScrolling.Instance.PointOfView = cannon;
 	}
 		
 	void Update() {
