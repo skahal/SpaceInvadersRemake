@@ -85,6 +85,33 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &220163065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 220163066}
+  m_Layer: 0
+  m_Name: DevilsTowerTop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &220163066
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 220163065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.5, y: 150, z: 30}
+  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_Children: []
+  m_Father: {fileID: 797408850}
+  m_RootOrder: 0
 --- !u!1001 &269248670
 Prefab:
   m_ObjectHideFlags: 0
@@ -94,7 +121,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 445030, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: 3.1400001
       objectReference: {fileID: 0}
     - target: {fileID: 445030, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
       propertyPath: m_LocalPosition.y
@@ -127,6 +154,26 @@ Prefab:
     - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
       propertyPath: DeployInterval
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 21293126, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402292, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402292, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: VoyageStartPoint
+      value: 
+      objectReference: {fileID: 220163066}
+    - target: {fileID: 11438046, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
+      propertyPath: DeployY
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bcb8b3a1fe74426d8c8e6b81e7a08a4, type: 2}
@@ -411,7 +458,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .0769230798, y: .0769230798, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 220163066}
   m_Father: {fileID: 1598518894}
   m_RootOrder: 2
 --- !u!212 &797408851

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityStandardAssets.ImageEffects;
+using Skahal.Camera;
 
 public class Game : MonoBehaviour {
 	private Bunkers m_bunkers;
@@ -29,8 +30,13 @@ public class Game : MonoBehaviour {
 	[HideInInspector] public GameObject TopEdge;
 	[HideInInspector] public GameObject RightEdge;
 	[HideInInspector] public GameObject BottomEdge;
+	[HideInInspector] public float LeftBorder;
+	[HideInInspector] public float RightBorder;
 
 	void Awake () {
+		LeftBorder = SHCameraHelper.GetLeftBorder ();
+		RightBorder = SHCameraHelper.GetRightBorder ();
+
 		Instance = this;
 		Cursor.visible = false;
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
