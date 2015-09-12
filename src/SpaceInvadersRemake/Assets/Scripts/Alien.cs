@@ -3,6 +3,9 @@ using System.Collections;
 using System.Linq;
 using Skahal.Tweening;
 
+/// <summary>
+/// Represents an individual alien.
+/// </summary>
 public class Alien : ShooterBase {
 	private AliensWave m_wave;
 	private bool m_canShoot;
@@ -13,6 +16,7 @@ public class Alien : ShooterBase {
 	public int RowScoreFactor = 5;
 	public AudioClip DieAudio;
 	public Vector3 OtherAlienHitShakeAmount = new Vector3(10f, 10, 10f);
+
 	[HideInInspector] public int Row;
 	[HideInInspector] public float AnimationSpeed = 1f;
 	[HideInInspector] public bool IsAlive = true;

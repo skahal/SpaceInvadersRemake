@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using Vexe.Runtime.Types;
 using Skahal.Tweening;
 
+/// <summary>
+/// Represents an alien wave.
+/// <remarks>>
+/// In the classic formation is a grid with 6 columns x 6 rows of aliens.
+/// </remarks>
+/// </summary>
 public class AliensWave : BetterBehaviour {
 
 	private bool m_moving;
@@ -13,8 +19,6 @@ public class AliensWave : BetterBehaviour {
 	private AudioSource m_audioSource;
 	private int m_currentAlienMoveSoundIndex;
 	private bool m_aliensDeployed = false;
-
-	[HideInInspector] public List<Alien> Aliens = new List<Alien>();
 
 	public float Columns = 6;
 	public float Rows = 6;
@@ -30,6 +34,7 @@ public class AliensWave : BetterBehaviour {
 	public iTween.EaseType AlienDeployEasyType = iTween.EaseType.linear;
 	public float AlienDeployEasyTime = .1f;
 
+	[HideInInspector] public List<Alien> Aliens = new List<Alien>();
 	[HideInInspector] public float Left;
 	[HideInInspector] public float Right;
 
