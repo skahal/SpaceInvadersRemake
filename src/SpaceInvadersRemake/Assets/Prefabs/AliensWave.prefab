@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.60000002, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,6 +45,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -120,10 +121,13 @@ MonoBehaviour:
     - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
     - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
     - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
-    - {fileID: 8300000, guid: 2c54d8a0eca934970aac57676af7a884, type: 3}
+    - {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+    - {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+    - {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+    - {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+    - {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
     serializedStrings:
       keys:
-      - List<Alien> Aliens
       - float Columns
       - float Rows
       - GameObject[] AlienPrefabs
@@ -131,22 +135,32 @@ MonoBehaviour:
       - Vector2 MoveSize
       - Vector2 MoveSizeWaveNumberInc
       - Dictionary<int, float> AliensAliveMoveDelay
-      - AudioClip AlienMoveAudioClip
+      - AudioClip[] AlienMoveSounds
+      - AudioClip AlienSpeedChangedSound
+      - float AlienDeployInterval
+      - Vector3 AlienDeployStartPosition
+      - EaseType AlienDeployEasyType
+      - float AlienDeployEasyTime
+      - List<Alien> Aliens
       - float Left
       - float Right
       values:
-      - '{"$content":[]}'
       - 6.0
       - 6.0
       - '[0,1,2,3,4,5]'
       - '{"x":1.20000004768372,"y":0.699999988079071}'
       - '{"x":0.150000005960464,"y":0.25}'
-      - '{"x":0.100000001490116,"y":0.100000001490116}'
-      - '{"$content":[{"Key":1,"Value":0.0},{"Key":3,"Value":0.5},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
-      - 6
+      - '{"x":0.150000005960464,"y":0.5}'
+      - '{"$content":[{"Key":3,"Value":0.0500000007450581},{"Key":1,"Value":0.0},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
+      - '[6,7,8,9]'
+      - 10
+      - 0.00499999988824129
+      - '{"x":0.0,"y":0.0,"z":-11.0}'
+      - '"linear"'
+      - 0.400000005960464
+      - '{"$content":[]}'
       - 0.0
       - 0.0
-  Aliens: []
   Columns: 6
   Rows: 6
   AlienPrefabs:
@@ -158,8 +172,19 @@ MonoBehaviour:
   - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
   Padding: {x: 1.20000005, y: .699999988}
   MoveSize: {x: .150000006, y: .25}
-  MoveSizeWaveNumberInc: {x: .100000001, y: .100000001}
-  AlienMoveAudioClip: {fileID: 8300000, guid: 2c54d8a0eca934970aac57676af7a884, type: 3}
+  MoveSizeWaveNumberInc: {x: .150000006, y: .5}
+  AlienMoveSounds:
+  - {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+  - {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+  - {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+  - {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+  AlienSpeedChangedSound: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e,
+    type: 3}
+  AlienDeployInterval: .00499999989
+  AlienDeployStartPosition: {x: 0, y: 0, z: -11}
+  AlienDeployEasyType: 21
+  AlienDeployEasyTime: .400000006
+  Aliens: []
   Left: 0
   Right: 0
 --- !u!114 &11445928
@@ -173,8 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610d35d02ff294c57927a8b8337c20ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Low: .949999988
-  High: 1.04999995
+  RandomAtStart: 0
+  Low: -3
+  High: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -189,6 +215,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _serializationData.serializedStrings.values.Array.data[6]
       value: '{}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
+      value: '[]'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
