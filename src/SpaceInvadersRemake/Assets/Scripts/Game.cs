@@ -32,6 +32,7 @@ public class Game : MonoBehaviour {
 	[HideInInspector] public GameObject BottomEdge;
 	[HideInInspector] public float LeftBorder;
 	[HideInInspector] public float RightBorder;
+	[HideInInspector] public bool IsGameOver;
 
 	void Awake () {
 		LeftBorder = SHCameraHelper.GetLeftBorder ();
@@ -173,6 +174,7 @@ public class Game : MonoBehaviour {
 	}
 
 	public void StartGameOver() {
+		IsGameOver = true;
 		m_audioSource.clip = GameOverSound;
 		m_audioSource.Play ();
 
