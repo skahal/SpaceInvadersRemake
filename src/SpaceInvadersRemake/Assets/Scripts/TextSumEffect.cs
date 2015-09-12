@@ -12,7 +12,7 @@ public class TextSumEffect : MonoBehaviour {
 
 	public float Interval = 0.1f;
 	public float ColorFactor = 0.001f;
-	public string Format = "D";
+	public string Format = "{0:D}";
 
 	void Awake() {
 		m_text = GetComponent<Text> ();
@@ -24,12 +24,13 @@ public class TextSumEffect : MonoBehaviour {
 			"TextSumEffect",
 			() => {
 				m_currentDisplayValue = Mathf.CeilToInt (Mathf.Lerp (m_currentDisplayValue, m_value, Interval));
-				m_text.text = m_currentDisplayValue.ToString (Format);
+				m_text.text = string.Format(Format, m_currentDisplayValue);
 			},
 			() => {
-				m_text.text = m_value.ToString (Format);
+				m_text.text = string.Format(Format, m_value);
 			});
 	}
+
 
 	public void Sum(int value) {
 		m_value += value;
