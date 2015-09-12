@@ -23,6 +23,12 @@ public class Ovni : MonoBehaviour
 	public Transform VoyageStartPoint;
 	public float DeployY;
 
+	public static Ovni Instance;
+
+	void Awake() { 
+		Instance = this;
+	}
+
 	void Start ()
 	{
 		m_spriteBuilder = GetComponentInChildren<SpriteBuilder> ();
