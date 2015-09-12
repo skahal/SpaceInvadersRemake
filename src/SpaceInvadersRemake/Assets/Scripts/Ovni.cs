@@ -62,10 +62,12 @@ public class Ovni : MonoBehaviour
 
 		transform.position = GetCurrentVoyageStartPoint ();
 
-		iTweenHelper.MoveTo (gameObject, 
-			iT.MoveTo.position, GetCurrentVoyageEndPoint(),
-			iT.MoveTo.time, DeployInterval,
-			iT.MoveTo.easetype, iTween.EaseType.linear);
+		if (!Game.Instance.IsGameOver) {
+			iTweenHelper.MoveTo (gameObject, 
+				iT.MoveTo.position, GetCurrentVoyageEndPoint (),
+				iT.MoveTo.time, DeployInterval,
+				iT.MoveTo.easetype, iTween.EaseType.linear);
+		}
 		
 		yield return new WaitForSeconds (DeployInterval * .9f);
 	
