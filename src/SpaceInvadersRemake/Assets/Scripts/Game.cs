@@ -163,13 +163,14 @@ public class Game : MonoBehaviour {
 	}
 
 	public void RaiseMessage(string message, GameObject sender = null) {
-		Debug.Log ("RaiseMessage: " + message);
+		//Debug.Log ("RaiseMessage: " + message);
 
 		foreach (var alien in AliensWave.Aliens) {
 			alien.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		}
 			
 		m_ovni.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
+		Combo.Instance.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		gameObject.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 	}
 

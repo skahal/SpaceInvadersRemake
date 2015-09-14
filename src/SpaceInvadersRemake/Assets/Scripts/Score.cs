@@ -25,15 +25,17 @@ public class Score : MonoBehaviour
 		m_sumEffect.Sum (Points);
 	}
 
-	public void Sum (GameObject source, int newPoints)
+	public void Sum (GameObject source, int newPoints, bool scrollingText = true)
 	{
-		Juiceness.Run ("ScoreNewPointsEffect", () => {
-			TextHelper.CreateInWorldPoint (
-				newPoints.ToString (), 
-				source.transform.position,
-				NewPointScrollingTextPrefab,
-				transform.parent);
-		});
+		if (scrollingText) {
+			Juiceness.Run ("ScoreNewPointsEffect", () => {
+				TextHelper.CreateInWorldPoint (
+					newPoints.ToString (), 
+					source.transform.position,
+					NewPointScrollingTextPrefab,
+					transform.parent);
+			});
+		}
 		
 		Points += newPoints;
 

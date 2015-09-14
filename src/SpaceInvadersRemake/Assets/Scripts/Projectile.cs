@@ -91,14 +91,19 @@ public class Projectile: MonoBehaviour
 					Camera.main.backgroundColor = Color.black;
 				});
 			});
+
+			Game.Instance.RaiseMessage ("OnProjectileHit" + TargetTag, gameObject);
 		}
 		else if (other.IsHorizontalEdge ()) {
 			DestroyIt ();
+			Game.Instance.RaiseMessage ("OnProjectileMiss" + TargetTag, gameObject);
 		}
 		else if (other.IsProjectile ()) {
 			Juiceness.Run ("ProjectileDetroyProjectile", () => {
 				DestroyIt ();
 			});
+
+			Game.Instance.RaiseMessage ("OnProjectileMiss" + TargetTag, gameObject);
 		}
 	}
 
