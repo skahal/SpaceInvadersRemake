@@ -8,7 +8,7 @@ Space Invaders Remake (SIR)
 
 Download
 ===
-See our [releases page](releases).
+See our [releases page](https://github.com/skahal/SpaceInvadersRemake/releases).
 
 Roadmap
 ======
