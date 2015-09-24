@@ -30,3 +30,9 @@ sysinfo.txt
 Icon?
 ehthumbs.db
 [Tt]humbs.db
+src/SpaceInvadersRemake/Assets/Examples
+Examples.meta
+spine-csharp.meta
+src/SpaceInvadersRemake/Assets/spine-csharp
+src/SpaceInvadersRemake/Assets/spine-unity
+spine-unity.meta
