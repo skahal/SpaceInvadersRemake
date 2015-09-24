@@ -2,12 +2,21 @@
 ===========
 [![License](http://img.shields.io/:license-MIT-blue.svg)](https://raw.githubusercontent.com/skahal/SpaceInvadersRemake/master/LICENSE)
 
-Space Invaders Remake (SIR)
+![](docs/images/Alien2.png)
 
 --------
 
+Current development status
+======
+We are working on version 0.7.
+
+The gif bellow shows how it looks like right know:
+
+![](docs/images/parallax.gif)
+
+
 Download
-===
+======
 See our [releases page](https://github.com/skahal/SpaceInvadersRemake/releases).
 
 Roadmap
