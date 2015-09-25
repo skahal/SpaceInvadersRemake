@@ -9,7 +9,7 @@ using Skahal.Tweening;
 public class Alien : ShooterBase {
 	private AliensWave m_wave;
 	private bool m_canShoot;
-	private Animator m_animator;
+	private SkeletonAnimation m_animation;
 	private SpriteDestruction m_spriteDestruction;
 	private AudioSource m_audioSource;
 
@@ -24,8 +24,8 @@ public class Alien : ShooterBase {
 	protected override void Awake ()
 	{
 		base.Awake ();
-		m_animator = GetComponent<Animator> ();
-		m_animator.speed = 0;
+		m_animation = GetComponent<SkeletonAnimation> ();
+		m_animation.timeScale = 0;
 		m_audioSource = GetComponent<AudioSource> ();
 	}
 
@@ -39,6 +39,7 @@ public class Alien : ShooterBase {
 	public void Move(float x, float y) 
 	{
 		transform.position += new Vector3 (x, y);
+		m_animation.AnimationName = "Idle";
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -59,11 +60,11 @@ public class Alien : ShooterBase {
 
 	void OnSpawnBegin() {
 		Projectile.DestroyIt ();
-		m_animator.speed = 0;
+		m_animation.timeScale = 0;
 	}
 
 	void OnSpawnEnd() {
-		m_animator.speed = AnimationSpeed;
+		m_animation.timeScale = 1;
 	}
 		
 	protected override bool CanShoot ()
@@ -94,23 +95,30 @@ public class Alien : ShooterBase {
 		m_canShoot = true;
 	}
 
+	protected override void PerformShoot ()
+	{
+		m_animation.AnimationName = "Shooting";
+		base.PerformShoot ();
+	}
+
 	void Die() {
 		Game.Instance.RaiseMessage ("OnAlienHit", gameObject);
 		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
 
 		Juiceness.Run ("AlienExplosion", () => {
-			GetComponent<SpritePixel3DExplosion> ().Explode ();
+			//GetComponent<SpritePixel3DExplosion> ().Explode ();
 		});
 
-		StartCoroutine (m_spriteDestruction.DestroySprite ());
+		//StartCoroutine (m_spriteDestruction.DestroySprite ());
+		OnSpriteDestructionEnd();
 	}
 
 	void OnSpriteDestructionEnd() {
 		CheckAliensAlive ();
 
 		StopAllCoroutines ();
-		GetComponent<SpriteRenderer> ().enabled = false;
+		GetComponent<MeshRenderer> ().enabled = false;
 		IsAlive = false;
 	}
 

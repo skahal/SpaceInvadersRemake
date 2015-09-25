@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 1e8a610c9e01c3648bac42585e5fc676, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -27,4 +27,16 @@ Material:
         first:
           name: _Cutoff
         second: .100000001
-    m_Colors: {}
+      data:
+        first:
+          name: PixelSnap
+        second: 0
+      data:
+        first:
+          name: _TextureFade
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}

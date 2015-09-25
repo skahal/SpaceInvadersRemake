@@ -19,7 +19,7 @@ GameObject:
   - 114: {fileID: 11430136}
   - 114: {fileID: 11427808}
   m_Layer: 10
-  m_Name: Alien2
+  m_Name: Alien2.old
   m_TagString: Alien
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,6 +155,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
