@@ -24,12 +24,12 @@ public class Alien : ShooterBase {
 	{
 		base.Awake ();
 		m_animation = GetComponent<SkeletonAnimation> ();
-		m_animation.timeScale = 0;
 		m_audioSource = GetComponent<AudioSource> ();
 	}
 
 	void Start ()
 	{
+		
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 		StartCoroutine (CanShootAgain ());
 	}
@@ -37,7 +37,6 @@ public class Alien : ShooterBase {
 	public void Move(float x, float y) 
 	{
 		transform.position += new Vector3 (x, y);
-		m_animation.AnimationName = "Idle";
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -58,11 +57,9 @@ public class Alien : ShooterBase {
 
 	void OnSpawnBegin() {
 		Projectile.DestroyIt ();
-		m_animation.timeScale = 0;
 	}
 
 	void OnSpawnEnd() {
-		m_animation.timeScale = 1;
 	}
 		
 	protected override bool CanShoot ()
@@ -95,8 +92,11 @@ public class Alien : ShooterBase {
 
 	protected override void PerformShoot ()
 	{
-		m_animation.AnimationName = "Shooting";
-		base.PerformShoot ();
+		m_animation.state.SetAnimation (0, "Shooting", false).Complete += (Spine.AnimationState state, int trackIndex, int loopCount) => 
+		{
+			base.PerformShoot ();  
+			m_animation.state.SetAnimation (0, "Idle", true);
+		};
 	}
 
 	void Die() {
@@ -114,11 +114,7 @@ public class Alien : ShooterBase {
 		GetComponent<MeshRenderer> ().enabled = false;
 		IsAlive = false;
 	}
-
-	void OnPixel3DExplosionEnded() {
 		
-	}
-
 	void CheckAliensAlive() {
 		var aliensAlive = m_wave.Aliens.Count (a => a.IsAlive) -1;
 	
