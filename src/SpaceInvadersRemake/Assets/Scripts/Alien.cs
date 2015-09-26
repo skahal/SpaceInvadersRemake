@@ -107,19 +107,18 @@ public class Alien : ShooterBase {
 		GetComponent<BoxCollider2D> ().enabled = false;
 
 		Juiceness.Run ("AlienExplosion", () => {
-			//GetComponent<SpritePixel3DExplosion> ().Explode ();
+			GetComponent<Pixel3DExplosion> ().Explode ();
 		});
 
-		//StartCoroutine (m_spriteDestruction.DestroySprite ());
-		OnSpriteDestructionEnd();
-	}
-
-	void OnSpriteDestructionEnd() {
 		CheckAliensAlive ();
 
 		StopAllCoroutines ();
 		GetComponent<MeshRenderer> ().enabled = false;
 		IsAlive = false;
+	}
+
+	void OnPixel3DExplosionEnded() {
+		
 	}
 
 	void CheckAliensAlive() {
