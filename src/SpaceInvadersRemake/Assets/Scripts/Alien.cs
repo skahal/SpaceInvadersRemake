@@ -10,7 +10,6 @@ public class Alien : ShooterBase {
 	private AliensWave m_wave;
 	private bool m_canShoot;
 	private SkeletonAnimation m_animation;
-	private SpriteDestruction m_spriteDestruction;
 	private AudioSource m_audioSource;
 
 	public int RowScoreFactor = 5;
@@ -33,7 +32,6 @@ public class Alien : ShooterBase {
 	{
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 		StartCoroutine (CanShootAgain ());
-		m_spriteDestruction = GetComponent<SpriteDestruction> ();
 	}
 
 	public void Move(float x, float y) 
@@ -107,7 +105,7 @@ public class Alien : ShooterBase {
 		GetComponent<BoxCollider2D> ().enabled = false;
 
 		Juiceness.Run ("AlienExplosion", () => {
-			GetComponent<Pixel3DExplosion> ().Explode ();
+			GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();
 		});
 
 		CheckAliensAlive ();
