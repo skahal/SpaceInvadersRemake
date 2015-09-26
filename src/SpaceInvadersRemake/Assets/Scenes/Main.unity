@@ -2150,6 +2150,10 @@ Prefab:
       propertyPath: AlienPrefabs.Array.data[5]
       value: 
       objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
+    - target: {fileID: 8253214, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
+      propertyPath: m_Volume
+      value: .505999982
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
   m_IsPrefabParent: 0
