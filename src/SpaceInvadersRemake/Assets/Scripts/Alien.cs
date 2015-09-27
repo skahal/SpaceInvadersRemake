@@ -29,7 +29,6 @@ public class Alien : ShooterBase {
 
 	void Start ()
 	{
-		
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
 		StartCoroutine (CanShootAgain ());
 	}
@@ -37,6 +36,10 @@ public class Alien : ShooterBase {
 	public void Move(float x, float y) 
 	{
 		transform.position += new Vector3 (x, y);
+	}
+
+	public void Flip() {
+		m_animation.Skeleton.FlipX = !m_animation.Skeleton.FlipX;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

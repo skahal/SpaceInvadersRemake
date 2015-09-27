@@ -142,6 +142,10 @@ public class AliensWave : BetterBehaviour {
 			MoveSize.x *= -1;
 			transform.position = new Vector3 (transform.position.x, transform.position.y - MoveSize.y, 0);
 
+			foreach (var alien in Aliens) {
+				alien.Flip ();
+			}
+
 			StartCoroutine (EndFlip ());
 		}
 	}
