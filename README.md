@@ -1,5 +1,6 @@
 #Space Invaders Remake (SIR)
 ===========
+[![Tag](https://img.shields.io/github/tag/skahal/SpaceInvadersRemake.svg)](https://github.com/skahal/SpaceInvadersRemake/releases)
 [![License](http://img.shields.io/:license-MIT-blue.svg)](https://raw.githubusercontent.com/skahal/SpaceInvadersRemake/master/LICENSE)
 
 ![](docs/images/Alien2.png)
