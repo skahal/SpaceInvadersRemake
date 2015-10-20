@@ -13,7 +13,7 @@ public class Opening : MonoBehaviour {
 
 	void Update () {
 		if (Input.anyKey) {
-			Application.LoadLevel ("Main");
+			//Application.LoadLevel ("Main");
 		}
 	}
 }

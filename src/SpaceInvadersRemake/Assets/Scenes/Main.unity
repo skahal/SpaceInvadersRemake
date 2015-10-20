@@ -1434,7 +1434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: version 0.7-beta
+  m_Text: version 0.7.2-beta
 --- !u!222 &1456399091
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2016,7 +2016,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: m_LocalPosition.x
@@ -2073,7 +2073,7 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[3]
       value: 
-      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[3]
       value: 
@@ -2081,15 +2081,15 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
+      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[4]
       value: 
-      objectReference: {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
+      objectReference: {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[6]
       value: 
@@ -2108,20 +2108,20 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[2]
-      value: '[0,0,0,0,0,0]'
+      value: '[0,1,0,1,0,1]'
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[7]
-      value: '[1,2,3,4]'
+      value: '[2,3,4,5]'
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedStrings.values.Array.data[8]
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
+      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[10]
       value: 
@@ -2129,11 +2129,11 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: _serializationData.serializedObjects.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[1]
       value: 
@@ -2141,11 +2141,11 @@ Prefab:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
+      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 2}
+      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 2}
       propertyPath: AlienPrefabs.Array.data[5]
       value: 
