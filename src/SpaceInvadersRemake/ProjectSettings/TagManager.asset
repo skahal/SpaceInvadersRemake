@@ -14,6 +14,7 @@ TagManager:
   - Bunkers
   - CannonZone
   - AlienVerticalEdge
+  - AlienArm
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Alien
   - Projectile
   - Edge
-  - 
+  - AlienBody
   - 
   - 
   - 

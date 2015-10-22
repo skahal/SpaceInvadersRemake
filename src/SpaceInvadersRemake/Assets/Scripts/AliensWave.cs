@@ -142,10 +142,6 @@ public class AliensWave : BetterBehaviour {
 			MoveSize.x *= -1;
 			transform.position = new Vector3 (transform.position.x, transform.position.y - MoveSize.y, 0);
 
-			foreach (var alien in Aliens) {
-				alien.Flip ();
-			}
-
 			StartCoroutine (EndFlip ());
 		}
 	}
@@ -165,6 +161,6 @@ public class AliensWave : BetterBehaviour {
 			m_audioSource.PlayOneShot (AlienSpeedChangedSound);
 		}
 
-		Debug.LogFormat ("Move delay for {0} aliens alive is {1}", aliensAlive, m_currentMoveDelay);
+		//Debug.LogFormat ("Move delay for {0} aliens alive is {1}", aliensAlive, m_currentMoveDelay);
 	}
 }

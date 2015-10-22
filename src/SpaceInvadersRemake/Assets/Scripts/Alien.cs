@@ -37,22 +37,10 @@ public class Alien : ShooterBase {
 	{
 		transform.position += new Vector3 (x, y);
 	}
-
-	public void Flip() {
-		m_animation.Skeleton.FlipX = !m_animation.Skeleton.FlipX;
-	}
-
+		
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsAlienVerticalEdge ()) {
 			m_wave.Flip ();
-		} else if (other.IsProjectile ()) {
-
-			var projectile = other.GetComponent<Projectile> ();
-
-			if (projectile.IsTargetingAlien) {
-				Score.Instance.Sum (gameObject, Row * RowScoreFactor);
-				Die ();
-			}
 		} else if (other.IsCannonZone ()) {
 			Cannon.Instance.Die ();
 		}
@@ -73,11 +61,11 @@ public class Alien : ShooterBase {
 			var hit = Physics2D.LinecastAll (
 				transform.position, 
 				new Vector2 (transform.position.x, Cannon.Instance.transform.position.y),
-				LayerMask.GetMask("Alien"));
+				LayerMask.GetMask("AlienBody"));
 
 			var aliensDownCount = hit.Count ();
 		
-			result = aliensDownCount == 0;
+			result = aliensDownCount == 1;
 		} 
 
 		if (m_canShoot) {
@@ -102,10 +90,13 @@ public class Alien : ShooterBase {
 		};
 	}
 
-	void Die() {
+	public void Die() {
 		Game.Instance.RaiseMessage ("OnAlienHit", gameObject);
 		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
+		transform.FindChild ("LeftArm").gameObject.SetActive (false);
+		transform.FindChild ("RightArm").gameObject.SetActive (false);
+		transform.FindChild ("Body").gameObject.SetActive (false);
 
 		Juiceness.Run ("AlienExplosion", () => {
 			GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();

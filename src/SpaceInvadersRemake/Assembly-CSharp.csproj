@@ -56,6 +56,8 @@
      <Compile Include="Assets\Examples\Scripts\Spineboy.cs" />
      <Compile Include="Assets\Examples\Scripts\SpineboyController.cs" />
      <Compile Include="Assets\Scripts\Alien.cs" />
+     <Compile Include="Assets\Scripts\AlienArm.cs" />
+     <Compile Include="Assets\Scripts\AlienBody.cs" />
      <Compile Include="Assets\Scripts\AliensWave.cs" />
      <Compile Include="Assets\Scripts\AnimatedRotation.cs" />
      <Compile Include="Assets\Scripts\AudioRandomPitch.cs" />
