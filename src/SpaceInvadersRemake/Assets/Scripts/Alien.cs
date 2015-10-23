@@ -26,7 +26,7 @@ public class Alien : ShooterBase {
 		m_animation = GetComponent<SkeletonAnimation> ();
 		m_audioSource = GetComponent<AudioSource> ();
 	}
-
+	 
 	void Start ()
 	{
 		m_wave = gameObject.transform.parent.GetComponent<AliensWave> ();
