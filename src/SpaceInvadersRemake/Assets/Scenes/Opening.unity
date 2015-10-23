@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b706c0ccd73354182b2eeb634309fc09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DelaytoLoadLevel: 500
+  DelaytoLoadLevel: 5
 --- !u!1 &1503049755
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1503049756
 RectTransform:
   m_ObjectHideFlags: 0
