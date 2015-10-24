@@ -17,5 +17,8 @@ public class AlienBody : MonoBehaviour {
 				m_alien.Die ();
 			}
 		}
+		else if (other.IsCannonZone ()) {
+			Cannon.Instance.Die ();
+		}
 	}
 }

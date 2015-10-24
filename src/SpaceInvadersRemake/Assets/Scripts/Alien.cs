@@ -41,9 +41,7 @@ public class Alien : ShooterBase {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsAlienVerticalEdge ()) {
 			m_wave.Flip ();
-		} else if (other.IsCannonZone ()) {
-			Cannon.Instance.Die ();
-		}
+		} 
 	}
 
 	void OnSpawnBegin() {
@@ -94,8 +92,7 @@ public class Alien : ShooterBase {
 		Game.Instance.RaiseMessage ("OnAlienHit", gameObject);
 		m_audioSource.PlayOneShot (DieAudio);
 		GetComponent<BoxCollider2D> ().enabled = false;
-		transform.FindChild ("LeftArm").gameObject.SetActive (false);
-		transform.FindChild ("RightArm").gameObject.SetActive (false);
+		transform.FindChild ("SkeletonUtility-Root").gameObject.SetActive (false);
 		transform.FindChild ("Body").gameObject.SetActive (false);
 
 		Juiceness.Run ("AlienExplosion", () => {
