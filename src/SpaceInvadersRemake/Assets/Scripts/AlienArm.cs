@@ -12,6 +12,7 @@ public class AlienArm : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsProjectile ()) {
+			Score.Instance.Sum (gameObject);
 			ChoppingOff ();
 		}
 	}
@@ -37,6 +38,6 @@ public class AlienArm : MonoBehaviour {
 	}
 
 	void ChoppingOffOnComplete() {
-		//SkeletonUtilityBone.up
+
 	}
 }

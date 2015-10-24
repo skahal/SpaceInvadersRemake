@@ -13,7 +13,7 @@ public class AlienBody : MonoBehaviour {
 			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Score.Instance.Sum (gameObject, m_alien.Row * m_alien.RowScoreFactor);
+				Score.Instance.Sum (m_alien.gameObject);
 				m_alien.Die ();
 			}
 		}

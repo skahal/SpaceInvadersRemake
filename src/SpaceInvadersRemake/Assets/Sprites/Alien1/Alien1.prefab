@@ -245,7 +245,7 @@ GameObject:
   - 4: {fileID: 417502}
   - 114: {fileID: 11434516}
   - 114: {fileID: 11474878}
-  - 60: {fileID: 6080788}
+  - 60: {fileID: 6093718}
   m_Layer: 13
   m_Name: Body
   m_TagString: Alien
@@ -729,28 +729,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6080788
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -3.7951436, y: -1.59547174}
-      - {x: -.296264589, y: -4.68539238}
-      - {x: 4.20229435, y: -1.32283258}
-      - {x: 2.92997527, y: 2.67588592}
-      - {x: 1.79397476, y: 2.90308547}
-      - {x: 1.74853539, y: 6.6291647}
-      - {x: -1.15962481, y: 6.76548624}
-      - {x: -1.02330399, y: 3.03940701}
-      - {x: -2.65914512, y: 2.08516836}
 --- !u!60 &6086224
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -777,6 +755,28 @@ PolygonCollider2D:
       - {x: -2.22213292, y: .0521581955}
       - {x: -1.03120911, y: -1.024104}
       - {x: .690371394, y: -1.90132082}
+--- !u!60 &6093718
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -3.7951436, y: -1.59547174}
+      - {x: -.296264589, y: -4.68539238}
+      - {x: 4.20229435, y: -1.32283258}
+      - {x: 2.92997527, y: 2.67588592}
+      - {x: 1.79397476, y: 2.90308547}
+      - {x: 1.74853539, y: 6.6291647}
+      - {x: -1.15962481, y: 6.76548624}
+      - {x: -1.02330399, y: 3.03940701}
+      - {x: -2.65914512, y: 2.08516836}
 --- !u!60 &6094396
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkeletonUtilityBone: {fileID: 11475220}
   ChoppingOffTime: 5
-  ChoppingOffToY: 15
+  ChoppingOffToY: 20
   ChoppingOffRotation: {x: 0, y: 0, z: 15}
   ChoppingOffScale: {x: 15, y: 15, z: 15}
 --- !u!114 &11412600
@@ -1040,7 +1040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e184171d6c38044c9bb3c6f66d3b68a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowScoreFactor: 5
   DieAudio: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
   OtherAlienHitShakeAmount: {x: 75, y: 10, z: 10}
   Row: 0

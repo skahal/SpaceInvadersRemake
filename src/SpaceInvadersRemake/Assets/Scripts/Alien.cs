@@ -12,7 +12,6 @@ public class Alien : ShooterBase {
 	private SkeletonAnimation m_animation;
 	private AudioSource m_audioSource;
 
-	public int RowScoreFactor = 5;
 	public AudioClip DieAudio;
 	public Vector3 OtherAlienHitShakeAmount = new Vector3(10f, 10, 10f);
 

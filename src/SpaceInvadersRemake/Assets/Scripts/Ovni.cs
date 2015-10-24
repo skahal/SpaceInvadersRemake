@@ -121,7 +121,7 @@ public class Ovni : MonoBehaviour
 			m_audioSource.Stop ();
 			m_audioSource.PlayOneShot (DieSound);
 			m_canMove = false;
-			Score.Instance.Sum (gameObject, 200);
+			Score.Instance.Sum (gameObject);
 
 			Juiceness.Run ("OvniExplosion", () => {
 				GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();

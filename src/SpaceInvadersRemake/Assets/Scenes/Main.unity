@@ -1672,7 +1672,7 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6080788, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
+    - {fileID: 6093718, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1713996575
@@ -1852,6 +1852,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NewPointScrollingTextPrefab: {fileID: 156548, guid: a2f71157c8b914e988202ba3104f3761,
     type: 2}
+  HitAlienRowPointsMultiplier: 5
+  HitAlienRowArmPointsMultiplier: 1
+  HitOvniPoints: 200
   Points: 0
 --- !u!114 &1726197808
 MonoBehaviour:
