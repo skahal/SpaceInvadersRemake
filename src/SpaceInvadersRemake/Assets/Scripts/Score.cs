@@ -66,7 +66,7 @@ public class Score : MonoBehaviour
 			return HitOvniPoints;
 
 		default:
-			Debug.LogErrorFormat ("'{0}' does not have a score defined", source.tag);
+			Debug.LogErrorFormat ("'{0}:{1}' does not have a score defined", source.name, source.tag);
 			return 0;
 		}
 	}

@@ -9,10 +9,18 @@ public class AlienArm : MonoBehaviour {
 	public float ChoppingOffToY = 5;
 	public Vector3 ChoppingOffRotation = new Vector3 (10, 10, 10);
 	public Vector3 ChoppingOffScale = new Vector3 (.5f, .5f, .5f);
+	public GameObject BloodSplashPrefab;
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsProjectile ()) {
 			Score.Instance.Sum (gameObject);
+			//Instantiate (BloodSplashPrefab, transform.position, Quaternion.identity);
+			var explosion = GetComponent<SpritePixel3DExplosion> ();
+				
+			if(explosion != null) {
+				explosion.Explode ();
+			}
+
 			ChoppingOff ();
 		}
 	}
