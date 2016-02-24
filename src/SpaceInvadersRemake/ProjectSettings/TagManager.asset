@@ -15,6 +15,7 @@ TagManager:
   - CannonZone
   - AlienVerticalEdge
   - AlienArm
+  - Ovni
   layers:
   - Default
   - TransparentFX

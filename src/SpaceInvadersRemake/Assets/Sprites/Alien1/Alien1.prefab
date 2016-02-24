@@ -179,6 +179,9 @@ GameObject:
   - 4: {fileID: 457620}
   - 60: {fileID: 6086224}
   - 114: {fileID: 11400478}
+  - 212: {fileID: 21217588}
+  - 114: {fileID: 11426402}
+  - 114: {fileID: 11437260}
   m_Layer: 0
   m_Name: '[BoundingBox]ArmClawLeft'
   m_TagString: AlienArm
@@ -245,7 +248,6 @@ GameObject:
   - 4: {fileID: 417502}
   - 114: {fileID: 11434516}
   - 114: {fileID: 11474878}
-  - 60: {fileID: 6080788}
   m_Layer: 13
   m_Name: Body
   m_TagString: Alien
@@ -311,6 +313,9 @@ GameObject:
   - 4: {fileID: 400524}
   - 60: {fileID: 6094396}
   - 114: {fileID: 11491582}
+  - 212: {fileID: 21262808}
+  - 114: {fileID: 11410094}
+  - 114: {fileID: 11414580}
   m_Layer: 0
   m_Name: '[BoundingBox]ArmClawRight-BoudingBox'
   m_TagString: AlienArm
@@ -729,28 +734,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6080788
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 157004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -3.7951436, y: -1.59547174}
-      - {x: -.296264589, y: -4.68539238}
-      - {x: 4.20229435, y: -1.32283258}
-      - {x: 2.92997527, y: 2.67588592}
-      - {x: 1.79397476, y: 2.90308547}
-      - {x: 1.74853539, y: 6.6291647}
-      - {x: -1.15962481, y: 6.76548624}
-      - {x: -1.02330399, y: 3.03940701}
-      - {x: -2.65914512, y: 2.08516836}
 --- !u!60 &6086224
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -910,9 +893,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkeletonUtilityBone: {fileID: 11475220}
   ChoppingOffTime: 5
-  ChoppingOffToY: 15
+  ChoppingOffToY: 20
   ChoppingOffRotation: {x: 0, y: 0, z: 15}
   ChoppingOffScale: {x: 15, y: 15, z: 15}
+  BloodSplashPrefab: {fileID: 119070, guid: f4ecf1d41738b4326a2305b73ac39422, type: 2}
+--- !u!114 &11410094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!114 &11412600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -934,6 +930,29 @@ MonoBehaviour:
   VoxelateOnStart: 0
   MinAlphaToVoxel: .100000001
   ColliderEveryVoxel: 1
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 0
+--- !u!114 &11414580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: .5
+  AutoExplodeDelay: -1
+  ExplosionForce: 100
+  ExplosionRadius: .5
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 100
   ZScaleByColorLuminance: .100000001
   KeepContainerParent: 0
 --- !u!114 &11419456
@@ -958,6 +977,18 @@ MonoBehaviour:
   boneName: ClawLeft
   parentReference: {fileID: 0}
   transformLerpComplete: 0
+--- !u!114 &11426402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7720b75685354832990fd270d0cdc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 0}
 --- !u!114 &11429160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1007,6 +1038,29 @@ MonoBehaviour:
   skeletonRenderer: {fileID: 11489622}
   slotName: Body
   use3DMeshCollider: 0
+--- !u!114 &11437260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cadfb07573024ab988894a38fe94288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scale: {x: .0209999997, y: .0209999997, z: .0209999997}
+  Pixel3DPrefab: {fileID: 186748, guid: bfad79ace8d0649f2b5d385a51768c4a, type: 2}
+  TimeToLife: .5
+  AutoExplodeDelay: -1
+  ExplosionForce: 100
+  ExplosionRadius: .5
+  ExplosionRelativePosition: {x: 0, y: 0, z: 0}
+  VoxelateOnStart: 0
+  MinAlphaToVoxel: .100000001
+  ColliderEveryVoxel: 100
+  ZScaleByColorLuminance: .100000001
+  KeepContainerParent: 0
 --- !u!114 &11443192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1040,7 +1094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e184171d6c38044c9bb3c6f66d3b68a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RowScoreFactor: 5
   DieAudio: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
   OtherAlienHitShakeAmount: {x: 75, y: 10, z: 10}
   Row: 0
@@ -1394,6 +1447,7 @@ MonoBehaviour:
   ChoppingOffToY: 8
   ChoppingOffRotation: {x: 0, y: 0, z: 15}
   ChoppingOffScale: {x: 0, y: 0, z: 0}
+  BloodSplashPrefab: {fileID: 119070, guid: f4ecf1d41738b4326a2305b73ac39422, type: 2}
 --- !u!114 &11497392
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1438,6 +1492,32 @@ MonoBehaviour:
   boneName: root
   parentReference: {fileID: 0}
   transformLerpComplete: 0
+--- !u!212 &21217588
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149174}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 41d50a75619b843ee91d4d2fca03c1a7, type: 3}
+  m_Color: {r: .549019635, g: .68235296, b: .176470593, a: 1}
 --- !u!212 &21225684
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -1463,6 +1543,32 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0082a121ab0dc46f8add449a1f5d5e16, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!212 &21262808
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 166004}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 41d50a75619b843ee91d4d2fca03c1a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!212 &21290766
 SpriteRenderer:
