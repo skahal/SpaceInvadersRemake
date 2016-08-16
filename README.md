@@ -13,7 +13,7 @@ We are working on version 0.7.
 
 The gif bellow shows how it looks like right know:
 
-![](docs/images/parallax.gif)
+![](docs/gifs/parallax.gif)
 
 
 Download
