@@ -13,7 +13,7 @@ public abstract class ShooterBase: MonoBehaviour {
 	}
 
 	void SetupShooter() {
-		Projectile = transform.FindChild("Projectile") .GetComponent<Projectile> ();
+		Projectile = transform.Find("Projectile") .GetComponent<Projectile> ();
 		Projectile.transform.parent = null;
 	}
 

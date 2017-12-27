@@ -37,3 +37,10 @@ src/SpaceInvadersRemake/Assets/spine-csharp
 src/SpaceInvadersRemake/Assets/spine-unity
 spine-unity.meta
 docs/images/history
+
+# =============================================================== #
+# Spine Runtine should not be included, they can be downloaded at #
+# http://esotericsoftware.com/spine-unity-download                #
+# =============================================================== #
+Spine/
+Spine.meta
