@@ -7,6 +7,7 @@ using UnityEngine;
 using Vexe.Runtime.Extensions;
 using Vexe.Runtime.Serialization;
 using UnityObject = UnityEngine.Object;
+using UnityEngine.Profiling;
 
 #if UNITY_EDITOR
 using UnityEditor;

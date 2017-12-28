@@ -1,19 +1,18 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Skahal-Unity-Scripts/src/SHRaycastHit.cs">
+﻿<Properties StartupConfiguration="{DDB2DAF1-7E4C-3585-50A5-DE402488080A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bunker.cs">
     <Files>
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/ParticleSystems/ParticleEmitterExtensions.cs" Line="11" Column="2" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/SHScreenshotHelper.cs" Line="30" Column="6" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/Transform/ScaleScript.cs" Line="16" Column="10" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/Movies/SHScreenshotsMovieMakerScript.cs" Line="11" Column="35" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/SHDevice.cs" Line="240" Column="5" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/GUIStyleStateHelper.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/GUITextureHelper.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Skahal-Unity-Scripts/src/SHRaycastHit.cs" Line="3" Column="14" />
+      <File FileName="Assets/Scripts/Alien.cs" Line="1" Column="1" />
+      <File FileName="Assets/VFW Misc/Requirements.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Game.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bunkers.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Bunker.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.SpaceInvadersRemake PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
