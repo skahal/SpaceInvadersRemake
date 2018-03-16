@@ -668,6 +668,8 @@
     <None Include="Assets\Spine\spine-unity\version.txt" />
     <None Include="Assets\Sprites\Alien1\skeleton.atlas.txt" />
     <None Include="Assets\Sprites\Alien2\Alien2-Skeleton.atlas.txt" />
+    <None Include="Assets\Sprites\Alien3\skeleton.atlas.txt" />
+    <None Include="Assets\Sprites\Alien4\skeleton.atlas.txt" />
     <None Include="Assets\Sprites\City Background\license.txt" />
     <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />

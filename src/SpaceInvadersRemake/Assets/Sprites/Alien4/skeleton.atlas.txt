@@ -1,0 +1,34 @@
+
+skeleton.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Botton
+  rotate: false
+  xy: 2, 299
+  size: 869, 697
+  orig: 869, 697
+  offset: 0, 0
+  index: -1
+HeadBotton
+  rotate: true
+  xy: 2, 2
+  size: 295, 346
+  orig: 295, 346
+  offset: 0, 0
+  index: -1
+HeadTop
+  rotate: false
+  xy: 1675, 711
+  size: 289, 285
+  orig: 289, 285
+  offset: 0, 0
+  index: -1
+Top
+  rotate: false
+  xy: 873, 322
+  size: 800, 674
+  orig: 800, 674
+  offset: 0, 0
+  index: -1
