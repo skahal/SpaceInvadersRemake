@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Skahal.Threading;
+using UnityEngine.SceneManagement;
 
 public class Opening : MonoBehaviour {
 	public float DelaytoLoadLevel = 8f;
 
 	void Start() {
-		SHThread.Start (DelaytoLoadLevel, () => {
-			Application.LoadLevel ("Main");
+		SHCoroutine.Start (DelaytoLoadLevel, () => {
+			SceneManager.LoadScene("Main");
 		});
 	}
 
 	void Update () {
 		if (Input.anyKey) {
-			//Application.LoadLevel ("Main");
+			SceneManager.LoadScene("Main");
 		}
 	}
 }

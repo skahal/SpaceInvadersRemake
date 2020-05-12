@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vexe.Runtime.Extensions;
 using Vexe.Runtime.Serialization;
 using Vexe.Runtime.Types;
@@ -52,7 +54,7 @@ namespace Vexe.Runtime.Helpers
             string sceneName;
 
 #if UNITY_EDITOR
-            sceneName = Application.isPlaying ? Application.loadedLevelName : System.IO.Path.GetFileNameWithoutExtension(UnityEditor.EditorApplication.currentScene);
+            sceneName = Application.isPlaying ? SceneManager.GetActiveScene().name: System.IO.Path.GetFileNameWithoutExtension(EditorSceneManager.GetActiveScene().name);
             if ( string.IsNullOrEmpty(sceneName) )
             {
                 sceneName = "Unnamed";

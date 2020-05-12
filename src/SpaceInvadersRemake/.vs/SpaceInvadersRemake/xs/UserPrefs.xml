@@ -1,26 +1,84 @@
-﻿<Properties StartupConfiguration="{7C0C28EF-770C-2351-A735-6CB04A4C96FA}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Alien.cs">
+﻿<Properties StartupConfiguration="{560A8458-EAA7-4D83-0063-7BE8E10A0B7A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Spine/Runtime/spine-unity/Components/SkeletonAnimation.cs">
     <Files>
-      <File FileName="Assets/Scripts/Alien.cs" Line="4" Column="7" />
-      <File FileName="Assets/VFW Misc/Requirements.cs" />
-      <File FileName="Assets/Scripts/Game.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Opening.cs" Line="16" Column="26" />
+      <File FileName="Assets/Scripts/Game.cs" />
+      <File FileName="Assets/Scripts/Cannon.cs" />
+      <File FileName="Assets/Plugins/Vexe/Runtime/Library/Helpers/RuntimeHelper.cs" />
+      <File FileName="Assets/Plugins/Vexe/Runtime/Library/Helpers/ReflectionHelper.cs" Line="55" Column="32" />
+      <File FileName="Assets/Spine/Runtime/spine-unity/Components/SkeletonAnimation.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SpaceInvadersRemake" expanded="True" selected="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="SpaceInvadersRemake" expanded="True" selected="True" />
+          <Node name="SpaceInvadersRemake" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True">
+                <Node name="Editor" expanded="True">
+                  <Node name="Vexe" expanded="True">
+                    <Node name="Drawers" expanded="True">
+                      <Node name="API" expanded="True">
+                        <Node name="Base" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+                <Node name="Vexe" expanded="True">
+                  <Node name="Runtime" expanded="True">
+                    <Node name="Library" expanded="True">
+                      <Node name="Helpers" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="Input" expanded="True" />
+                <Node name="Skahal-Unity-Scripts" expanded="True">
+                  <Node name="src" expanded="True">
+                    <Node name="Common" expanded="True" />
+                    <Node name="Editor" expanded="True">
+                      <Node name="UnitTests" expanded="True">
+                        <Node name="Common" expanded="True" />
+                        <Node name="Infrastructure" expanded="True">
+                          <Node name="Repositories" expanded="True" />
+                        </Node>
+                      </Node>
+                    </Node>
+                    <Node name="Infrastructure" expanded="True">
+                      <Node name="Framework" expanded="True">
+                        <Node name="Domain" expanded="True" />
+                      </Node>
+                      <Node name="Repositories" expanded="True" />
+                    </Node>
+                    <Node name="Logging" expanded="True" />
+                    <Node name="Skahal.Unity.Scripts.Externals" expanded="True">
+                      <Node name="Detonator Explosion Framework" expanded="True">
+                        <Node name="System" expanded="True" />
+                      </Node>
+                    </Node>
+                    <Node name="Text" expanded="True" />
+                    <Node name="Threading" expanded="True" />
+                    <Node name="SHMonoBehaviourExtensions.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Spine" expanded="True">
+                <Node name="Runtime" expanded="True">
+                  <Node name="spine-unity" expanded="True">
+                    <Node name="Components" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="VFW Misc" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-firstpass PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SpaceInvadersRemake PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.ItemProperties.SpaceInvadersRemake PreferredExecutionTarget="0ffc89c8-f283-4c43-9c77-6bf02d291d56" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
