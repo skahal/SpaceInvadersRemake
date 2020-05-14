@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Vexe.Runtime.Types;
 using Skahal.Tweening;
 
 /// <summary>
@@ -10,7 +9,7 @@ using Skahal.Tweening;
 /// In the classic formation is a grid with 6 columns x 6 rows of aliens.
 /// </remarks>
 /// </summary>
-public class AliensWave : BetterBehaviour {
+public class AliensWave : MonoBehaviour {
 
 	private bool m_moving;
 	private bool m_isFliping;

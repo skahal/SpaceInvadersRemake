@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Vexe.Runtime.Types;
 
-public class Challenge : BetterBehaviour {
+public class Challenge : Behaviour {
 	public ChallengeProperty AlienShootInterval;
 	public ChallengeProperty AlienShootProbability;
 	public ChallengeProperty OvniSpeed;

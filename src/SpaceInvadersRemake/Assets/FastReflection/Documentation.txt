@@ -1,0 +1,136 @@
+<strong> --- Fast.Reflection --- </strong><br><br>
+
+<strong>What?</strong><br>
+- an extension methods library that emits IL code to generate extremely fast<br>
+    field/property getters/setter, method calls and ctor invocations.<br>
+    Since it emits IL, it can't be used on AOT platforms<br>
+
+<br><strong>Who's this for?</strong><br>
+- anyone who needs 'fast' reflection<br>
+- editor developers (especially)<br>
+- as a bonus, you could use it for your game if you're targetting standalone<br>
+
+<br><strong>Features?</strong><br>
+- lightning fast (just a couple of milliseconds away from direct calls!)<br>
+- very simple, easy to use and intuitive API<br>
+- 0 GC column in many cases!<br>
+- weakly typed API if you don't know the target and member types in advance<br>
+- strongly typed API! (generic)<br>
+- works on both reference and value types! (no need to do anything special when dealing with structs)<br>
+- handles ref/out method parameters<br>
+- handles instance and static members (fields, properties and methods)<br>
+- doesn't require Unity Pro<br>
+
+<strong>Contact?</strong><br>
+<a href="http://forum.unity3d.com/threads/dynamic-reflection-delegates-for-lightning-fast-reflection.305080/"> Forums thread </a><br>
+- email askvexe@gmail.com<br><br>
+
+Thank you!<br>
+-- vexe
+
+
+API?
+- there are 4 delagate types to set/get fields/properties, call methods and invoke constructors
+public delegate void MemberSetter<TTarget, TValue>(ref TTarget target, TValue value);
+public delegate TReturn MemberGetter<TTarget, TReturn>(TTarget target);
+public delegate TReturn MethodCaller<TTarget, TReturn>(TTarget target, object[] args);
+public delegate T CtorInvoker<T>(object[] parameters);
+
+- then we have the following extension methods:
+* strongly-typed API
+public static CtorInvoker<T> DelegateForCtor<T>(this Type type, params Type[] paramTypes)
+public static MemberGetter<TTarget, TReturn> DelegateForGet<TTarget, TReturn>(this FieldInfo field)
+public static MemberSetter<TTarget, TValue> DelegateForSet<TTarget, TValue>(this FieldInfo field)
+public static MemberGetter<TTarget, TReturn> DelegateForGet<TTarget, TReturn>(this PropertyInfo property)
+public static MemberSetter<TTarget, TValue> DelegateForSet<TTarget, TValue>(this PropertyInfo property)
+public static MethodCaller<TTarget, TReturn> DelegateForCall<TTarget, TReturn>(this MethodInfo method)
+* weakly-typed API
+public static CtorInvoker<object> DelegateForCtor(this Type type, params Type[] ctorParamTypes)
+public static MemberGetter<object, object> DelegateForGet(this FieldInfo field)
+public static MemberSetter<object, object> DelegateForSet(this FieldInfo field)
+public static MemberGetter<object, object> DelegateForGet(this PropertyInfo property)
+public static MemberSetter<object, object> DelegateForSet(this PropertyInfo property)
+public static MethodCaller<object, object> DelegateForCall(this MethodInfo method)
+
+Usage?
+- say we have the following struct or class:
+public struct|class Test
+{
+    public int Field;
+    public static string Property { get; set; }
+    public void ByRefMethod(ref int x, int y, out int z) { x = y = z = -1; }
+}
+
+- we can then write:
+    // get metadata
+    var type = typeof(Test);
+    var field = type.GetField("Field");
+    var staticProperty = type.GetProperty("Property", BindingFlags.Static | BindingFlags.Public);
+    var byRefMethod = type.GetMethod("ByRefMethod");
+
+1- weakly typed API:
+    * useful if you don't know the target and member types at compile time
+    * will generate around a small number of bytes of garbage when dealing with value-type members
+
+    // get a delgate for our type constructor, and construct an instance
+    var ctor = type.DelegateForCtor(Type.EmptyTypes); // get a ctor with no parameters
+    object inst = ctor(null); // null for no arguments.
+
+    // get an open-instance weakly-typed delegate to set the field on a target instance
+    var fieldSetter = field.DelgeateForSet();
+    fieldSetter(ref inst, 10); // generates 12 bytes (in my machine) due to boxing the 10
+
+    // get a delegate to get the field value
+    var fieldGetter = field.DelgeateForGet();
+    Debug.Log(fieldGetter(inst)); // 10 - generates 12 bytes (in my machine) because the getter returns 'object' while our field is an 'int' so it has to box it
+
+    // do the same for the property
+    var propertySetter = property.DelegateForSet();
+    // when dealing with static members, there's no 'target'
+    // but we can't pass 'null' because our setter expect a 'ref' parameter
+    // we can have a null object around and pass that, or just pass our 'inst'
+    // we can pass whatever we want, the target is completely ignored...
+    propertySetter(ref inst, "test");
+
+    var propertyGetter = property.DelegateForGet();
+    Debug.Log(propertyGetter(null)); // "test"
+
+    // get a delegate to call our method
+    var byRefCaller = byRefMethod.DelegateForCall();
+    var args = new object[] { 1, 2, 3 };
+    byRefCaller(inst, args);
+    Debug.Log(args[0]); // -1
+    Debug.Log(args[1]); // 2
+    Debug.Log(args[2]); // -1
+
+2- strongly-typed API
+    * useful if you know the type of target in compile time
+    * generates 0 bytes garbage even when dealing with value-type members
+
+    var ctor = type.DelegateForCtor<Test>(Type.EmptyTypes);
+    Test inst = ctor(null);
+
+    // get an open-instance strongly-typed delegate to set the field on a target instance
+    var fieldSetter = field.DelgeateForSet<Test>();
+    fieldSetter(ref inst, 10); // generates 0 bytes garbage! no boxing cause we're strongly-typed
+
+    var fieldGetter = field.DelgeateForGet<Test>();
+    Debug.Log(fieldGetter(inst)); // 0 bytes gc
+
+    var propertySetter = property.DelegateForSet<Test>();
+    propertySetter(ref inst, "test");
+
+    var propertyGetter = property.DelegateForGet<Test>();
+    Debug.Log(propertyGetter(null)); // "test"
+
+    // get a delegate to call our method
+    // second generic arg is the return type.
+    // the generated code will return null in the case of method with void return
+    // so it doesn't matter much what the return type is as long as it's a reference type
+    // so we just pass 'object'
+    var byRefCaller = byRefMethod.DelegateForCall<Test, object>();
+    var args = new object[] { 1, 2, 3 };
+    byRefCaller(inst, args);
+    Debug.Log(args[0]); // -1
+    Debug.Log(args[1]); // 2
+    Debug.Log(args[2]); // -1
