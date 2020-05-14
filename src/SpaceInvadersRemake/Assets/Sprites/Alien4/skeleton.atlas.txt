@@ -1,34 +1,40 @@
 
 skeleton.png
-size: 2048,1024
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+HeadBotton
+  rotate: true
+  xy: 523, 1216
+  size: 530, 622
+  orig: 530, 622
+  offset: 0, 0
+  index: -1
+HeadTop
+  rotate: false
+  xy: 2, 1233
+  size: 519, 513
+  orig: 519, 513
+  offset: 0, 0
+  index: -1
+Top
+  rotate: false
+  xy: 2, 2
+  size: 1440, 1212
+  orig: 1440, 1212
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Botton
   rotate: false
-  xy: 2, 299
-  size: 869, 697
-  orig: 869, 697
-  offset: 0, 0
-  index: -1
-HeadBotton
-  rotate: true
   xy: 2, 2
-  size: 295, 346
-  orig: 295, 346
-  offset: 0, 0
-  index: -1
-HeadTop
-  rotate: false
-  xy: 1675, 711
-  size: 289, 285
-  orig: 289, 285
-  offset: 0, 0
-  index: -1
-Top
-  rotate: false
-  xy: 873, 322
-  size: 800, 674
-  orig: 800, 674
+  size: 1564, 1255
+  orig: 1564, 1255
   offset: 0, 0
   index: -1
