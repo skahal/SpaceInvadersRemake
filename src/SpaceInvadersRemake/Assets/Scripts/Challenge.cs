@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Challenge : Behaviour {
+public class Challenge : MonoBehaviour {
 	public ChallengeProperty AlienShootInterval;
 	public ChallengeProperty AlienShootProbability;
 	public ChallengeProperty OvniSpeed;
