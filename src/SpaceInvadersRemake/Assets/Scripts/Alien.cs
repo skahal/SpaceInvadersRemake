@@ -45,6 +45,21 @@ public class Alien : ShooterBase
         {
             m_wave.Flip();
         }
+
+        if (other.IsProjectile())
+        {
+            var projectile = other.GetComponent<Projectile>();
+
+            if (projectile.IsTargetingAlien)
+            {
+                Score.Instance.Sum(gameObject);
+                Die();
+            }
+        }
+        else if (other.IsCannonZone())
+        {
+            Cannon.Instance.Die();
+        }
     }
 
     void OnSpawnBegin()

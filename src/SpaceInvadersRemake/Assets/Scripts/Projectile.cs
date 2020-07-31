@@ -87,7 +87,7 @@ public class Projectile: MonoBehaviour
 
 			Juiceness.Run ("ProjectileCameraFlash", () => {
 				Camera.main.backgroundColor = CameraFlashColor;
-				SHThread.StartEndOfFrame(() => {
+				SHCoroutine.StartEndOfFrame(() => {
 					Camera.main.backgroundColor = Color.black;
 				});
 			});

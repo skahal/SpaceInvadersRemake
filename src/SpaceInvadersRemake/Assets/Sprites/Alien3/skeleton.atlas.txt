@@ -1,69 +1,75 @@
 
 skeleton.png
-size: 2048,1024
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Body
-  rotate: false
-  xy: 2, 224
-  size: 391, 742
-  orig: 391, 742
-  offset: 0, 0
-  index: -1
 Eye
   rotate: false
-  xy: 138, 132
-  size: 92, 90
-  orig: 92, 90
+  xy: 2, 1598
+  size: 165, 162
+  orig: 165, 162
   offset: 0, 0
   index: -1
 Mouth
-  rotate: false
-  xy: 2, 2
-  size: 134, 220
-  orig: 134, 220
+  rotate: true
+  xy: 169, 1520
+  size: 240, 396
+  orig: 240, 396
   offset: 0, 0
   index: -1
 WingLeft1
   rotate: false
-  xy: 395, 79
-  size: 480, 416
-  orig: 480, 416
+  xy: 2, 217
+  size: 863, 748
+  orig: 863, 748
   offset: 0, 0
   index: -1
 WingLeft3-Back
   rotate: false
-  xy: 934, 120
-  size: 471, 416
-  orig: 471, 416
+  xy: 867, 2
+  size: 848, 748
+  orig: 848, 748
   offset: 0, 0
   index: -1
 WingLeft3-Front
   rotate: true
-  xy: 1476, 398
-  size: 200, 538
-  orig: 200, 538
-  offset: 0, 0
-  index: -1
-WingRight1
-  rotate: false
-  xy: 395, 497
-  size: 537, 469
-  orig: 537, 469
+  xy: 567, 1400
+  size: 360, 968
+  orig: 360, 968
   offset: 0, 0
   index: -1
 WingRight2
   rotate: true
-  xy: 1476, 600
-  size: 366, 562
-  orig: 366, 562
-  offset: 0, 0
+  xy: 945, 752
+  size: 646, 964
+  orig: 659, 1011
+  offset: 13, 47
   index: -1
 WingRight3
   rotate: true
-  xy: 934, 538
-  size: 428, 540
-  orig: 428, 540
+  xy: 2, 967
+  size: 431, 941
+  orig: 770, 972
+  offset: 336, 31
+  index: -1
+
+skeleton2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 2, 820
+  size: 704, 1336
+  orig: 704, 1336
   offset: 0, 0
+  index: -1
+WingRight1
+  rotate: false
+  xy: 2, 2
+  size: 966, 816
+  orig: 966, 843
+  offset: 0, 27
   index: -1

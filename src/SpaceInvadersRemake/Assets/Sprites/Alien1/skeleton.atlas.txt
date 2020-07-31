@@ -1,48 +1,48 @@
 
 skeleton.png
-size: 2048,1024
+size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Alien1-Body
   rotate: false
-  xy: 2, 315
-  size: 553, 622
-  orig: 553, 622
-  offset: 0, 0
+  xy: 2, 906
+  size: 995, 1115
+  orig: 995, 1119
+  offset: 0, 4
   index: -1
 Alien1-Foot-Left
   rotate: true
-  xy: 1286, 803
-  size: 134, 415
-  orig: 134, 415
+  xy: 2, 663
+  size: 241, 746
+  orig: 241, 746
   offset: 0, 0
   index: -1
 Alien1-Foot-Right
-  rotate: true
-  xy: 1286, 671
-  size: 130, 412
-  orig: 130, 412
+  rotate: false
+  xy: 750, 163
+  size: 234, 741
+  orig: 234, 741
   offset: 0, 0
   index: -1
 Alien1-Hand-Left
   rotate: false
-  xy: 557, 356
-  size: 568, 581
-  orig: 568, 581
+  xy: 999, 976
+  size: 1022, 1045
+  orig: 1022, 1045
   offset: 0, 0
   index: -1
 Alien1-Hand-Right
   rotate: true
-  xy: 2, 2
-  size: 311, 543
-  orig: 311, 543
+  xy: 999, 415
+  size: 559, 977
+  orig: 559, 977
   offset: 0, 0
   index: -1
 Alien1-Head
-  rotate: false
-  xy: 1127, 541
-  size: 157, 396
-  orig: 157, 396
+  rotate: true
+  xy: 986, 131
+  size: 282, 712
+  orig: 282, 712
   offset: 0, 0
   index: -1

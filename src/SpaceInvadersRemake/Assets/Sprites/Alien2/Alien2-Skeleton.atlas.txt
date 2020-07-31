@@ -7,7 +7,7 @@ repeat: none
 Alien2
   rotate: false
   xy: 2, 2
-  size: 1024, 1024
-  orig: 1024, 1024
-  offset: 0, 0
+  size: 1843, 1587
+  orig: 1843, 1843
+  offset: 0, 227
   index: -1

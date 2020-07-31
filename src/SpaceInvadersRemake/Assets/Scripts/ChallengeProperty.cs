@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 
+[Serializable]
 public class ChallengeProperty {
 	public float StartValue;
 	public float VariationByLevel;

@@ -39,7 +39,7 @@ public class DemoPlayerInputStrategy : IPlayerInputStrategy
 		};
 		m_ga.Start ();
 
-		SHThread.PingPong (.01f, 0, 1, (t) => {
+		SHCoroutine.PingPong (.01f, 0, 1, (t) => {
 			m_ga.Termination = new GenerationNumberTermination (m_ga.GenerationsNumber + 1);
 			m_ga.Resume();
 

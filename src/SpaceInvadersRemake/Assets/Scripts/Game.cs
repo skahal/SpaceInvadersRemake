@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using UnityStandardAssets.ImageEffects;
 using Skahal.Camera;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 	private Bunkers m_bunkers;
@@ -135,7 +135,7 @@ public class Game : MonoBehaviour {
 	static void Restart ()
 	{
 		PlayerInput.DisableInput ();
-		Application.LoadLevel (Application.loadedLevelName);
+		SceneManager.LoadScene("Main");
 	}
 
 	public void NextLevel ()
@@ -144,7 +144,7 @@ public class Game : MonoBehaviour {
 		PlayerPrefs.SetInt ("Score", Score.Instance.Points);
 		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
 		PlayerPrefs.SetInt ("WaveNumber", WaveNumber);
-		Application.LoadLevel (Application.loadedLevelName);
+		SceneManager.LoadScene("Main");
 	}
 
 	void OnSpawnBegin() {
@@ -180,7 +180,8 @@ public class Game : MonoBehaviour {
 		m_audioSource.Play ();
 
 		PlayerInput.EnableInput ();
-		Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
-		RaiseMessage ("OnGameOver");
+		//TODO: Update this with https://github.com/Unity-Technologies/PostProcessing/releases
+		// Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
+		RaiseMessage("OnGameOver");
 	}
 }

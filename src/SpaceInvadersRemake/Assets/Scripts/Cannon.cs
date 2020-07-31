@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityStandardAssets.ImageEffects;
 
 public class Cannon: ShooterBase {
 	private bool m_touchingEdge;
