@@ -114,8 +114,8 @@ Transform:
   m_Children:
   - {fileID: 496444}
   - {fileID: 475722}
-  - {fileID: 5895715784315121157}
   - {fileID: 3068345097692339841}
+  - {fileID: 5895715784315121157}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,7 +248,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12436323, y: 1.154077}
+  m_Offset: {x: -0.18978119, y: -2.3463852}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -259,7 +259,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 21.733505, y: 8.000925}
   m_EdgeRadius: 0
 --- !u!82 &8234992
 AudioSource:
@@ -1121,7 +1121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3068345097692339841}
   m_Layer: 0
-  m_Name: SkeletonUtility-SkeletonRoot
+  m_Name: SkeletonUtility-Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1140,7 +1140,7 @@ Transform:
   m_Children:
   - {fileID: 6553115040416837089}
   m_Father: {fileID: 428852}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6563530045197999921
 GameObject:
@@ -1204,7 +1204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5895715784315121157}
   - component: {fileID: 2957671416385899333}
-  - component: {fileID: 5178701876636932883}
   - component: {fileID: 5618484767472790777}
   - component: {fileID: 8164406680441249511}
   m_Layer: 13
@@ -1226,7 +1225,7 @@ Transform:
   m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children: []
   m_Father: {fileID: 428852}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 136.197}
 --- !u!114 &2957671416385899333
 MonoBehaviour:
@@ -1244,18 +1243,6 @@ MonoBehaviour:
   slotName: Body
   isTrigger: 0
   clearStateOnDisable: 1
---- !u!114 &5178701876636932883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7607588209234226283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77fc6962f64b4f458d08cc09ef6a8ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &5618484767472790777
 Rigidbody2D:
   serializedVersion: 4
@@ -1302,35 +1289,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.8521999, y: 1.0962}
-      - {x: -2.6389, y: 2.949}
-      - {x: -0.9528, y: 4.5049}
-      - {x: -1.4853998, y: 5.3878}
-      - {x: -2.8567002, y: 4.0733}
-      - {x: -4.7817, y: 4.2397}
-      - {x: -4.5604997, y: 3.1009}
-      - {x: -6.3558, y: 2.0199}
-      - {x: -6.4084, y: 1.3361}
-      - {x: -5.8677, y: 0.8644999}
-      - {x: -4.3458, y: 1.1008999}
-      - {x: -3.0705998, y: -0.62979996}
-      - {x: -2.0888, y: -1.2437}
-      - {x: -0.86910003, y: -0.83889997}
-      - {x: 0.64269996, y: -0.4472}
-      - {x: 1.5444, y: -0.35959998}
-      - {x: 2.1407, y: -0.83019996}
-      - {x: 2.6478, y: -1.4659}
-      - {x: 2.6471, y: -1.9992999}
-      - {x: 2.0001, y: -1.5285001}
-      - {x: 0.6919, y: -1.5903}
-      - {x: 0.48709998, y: -2.8092}
-      - {x: 1.6036, y: -3.5979998}
-      - {x: 3.572, y: -3.6134}
-      - {x: 4.2471, y: -2.103}
-      - {x: 3.716, y: -0.42599997}
-      - {x: 2.2823, y: 0.5538}
-      - {x: 0.6568, y: 0.60679996}
-      - {x: -0.4484, y: 0.41779998}
+    - - {x: 2.4187999, y: -0.76629996}
+      - {x: 1.8605, y: -1.2161}
+      - {x: -1.9860001, y: -1.1696}
+      - {x: -2.5289, y: -0.90589994}
+      - {x: -3.1492999, y: -1.4952999}
+      - {x: -4.204, y: -1.5263001}
+      - {x: -4.8708997, y: -0.11489999}
+      - {x: -4.235, y: 0.86230004}
+      - {x: -3.8007, y: 5.2981}
+      - {x: -3.5214999, y: 5.5618}
+      - {x: -3.7696998, y: 6.8646}
+      - {x: -2.715, y: 9.7029}
+      - {x: -1.5361999, y: 6.6629996}
+      - {x: 3.2873998, y: 6.4459}
+      - {x: 4.4505997, y: 9.594399}
+      - {x: 5.1176, y: 8.679299}
+      - {x: 5.3037, y: 6.8026}
+      - {x: 4.5436997, y: 4.3675}
+      - {x: 4.7142997, y: 3.8711998}
+      - {x: 4.7608, y: 1.6997999}
+      - {x: 4.3731, y: -0.6887}
 --- !u!1 &7908659290952735491
 GameObject:
   m_ObjectHideFlags: 0

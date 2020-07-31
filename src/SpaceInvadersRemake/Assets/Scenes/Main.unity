@@ -1361,6 +1361,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7306645af66e84c0c907e02ed89bb949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AlienShootInterval:
+    StartValue: 5
+    VariationByLevel: -0.5
+  AlienShootProbability:
+    StartValue: 0
+    VariationByLevel: 0.1
+  OvniSpeed:
+    StartValue: 1
+    VariationByLevel: 1
 --- !u!4 &1377075019
 Transform:
   m_ObjectHideFlags: 0
@@ -2357,7 +2366,7 @@ PrefabInstance:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: AlienPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1514259319095242, guid: a23a0641d3ad24056b09e893a2bd7b5d,
+      objectReference: {fileID: 1990298678188046, guid: d4048a60a9eff4f8cb4c32407d1f36ee,
         type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: _serializationData.serializedObjects.Array.data[10]
@@ -2375,7 +2384,7 @@ PrefabInstance:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: AlienPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 1514259319095242, guid: a23a0641d3ad24056b09e893a2bd7b5d,
+      objectReference: {fileID: 1990298678188046, guid: d4048a60a9eff4f8cb4c32407d1f36ee,
         type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: AlienPrefabs.Array.data[2]
