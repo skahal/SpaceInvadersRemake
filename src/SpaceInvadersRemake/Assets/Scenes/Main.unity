@@ -2366,7 +2366,7 @@ PrefabInstance:
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: AlienPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1990298678188046, guid: d4048a60a9eff4f8cb4c32407d1f36ee,
+      objectReference: {fileID: 1990298678188046, guid: c740280079e224434afb122c52d51a72,
         type: 3}
     - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: _serializationData.serializedObjects.Array.data[10]

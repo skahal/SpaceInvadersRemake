@@ -304,15 +304,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="HelperSharp">
-      <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Libraries/HelperSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GeneticSharp.Domain">
-      <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Libraries/GeneticSharp.Domain.dll</HintPath>
-    </Reference>
-    <Reference Include="GeneticSharp.Infrastructure.Framework">
-      <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Libraries/GeneticSharp.Infrastructure.Framework.dll</HintPath>
-    </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Scripts/Skahal-Unity-Scripts/src/Editor/UnitTests/packages/RhinoMocks.3.6.1/lib/net/Rhino.Mocks.dll</HintPath>
     </Reference>

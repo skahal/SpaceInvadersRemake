@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerInput : MonoBehaviour {
 	[HideInInspector] public static IPlayerInputStrategy Instance;
@@ -14,9 +13,5 @@ public class PlayerInput : MonoBehaviour {
 
 	public static void DisableInput() {
 		Instance = new EmptyPlayerInputStrategy ();
-	}
-
-	public static void DemoInput() {
-		Instance = new DemoPlayerInputStrategy ();
 	}
 }
