@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b18c976848743d1b1e58d6896d8cd2, type: 3}
-  m_Name: Alien4
+  m_Script: {fileID: 11500000, guid: 2b1dd3945cb6741418d5ea95211fcabf, type: 3}
+  m_Name: 12 aliens wave
   m_EditorClassIdentifier: 
-  _canShoot: 1
+  ForAliensAlive: 12
+  Delay: 0.5

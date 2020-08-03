@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Skahal.Tweening;
+using System;
+using System.Linq;
+using Skahal.SpaceInvadersRemake;
 
 /// <summary>
 /// Represents an alien wave.
@@ -25,7 +28,7 @@ public class AliensWave : MonoBehaviour {
 	public Vector2 Padding = new Vector2(20, 10);
 	public Vector2 MoveSize = new Vector2(1, 1);
 	public Vector2 MoveSizeWaveNumberInc = new Vector2(0.1f, 0.1f);
-	public Dictionary<int, float> AliensAliveMoveDelay;
+	public AliensWaveKind[] Kinds;
 	public AudioClip[] AlienMoveSounds;
 	public AudioClip AlienSpeedChangedSound;
 	public float AlienDeployInterval = .005f;
@@ -155,12 +158,15 @@ public class AliensWave : MonoBehaviour {
 	}
 
 	void SetDelay(int aliensAlive) {
-        //if (AliensAliveMoveDelay.ContainsKey(aliensAlive))
-        //{
-        //    _currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
-        //    _audioSource.PlayOneShot(AlienSpeedChangedSound);
-        //}
 
-        //Debug.LogFormat("Move delay for {0} aliens alive is {1}", aliensAlive, _currentMoveDelay);
+		var config = Kinds.FirstOrDefault(c => c.ForAliensAlive == aliensAlive);
+
+        if (config != null)
+        {
+            _currentMoveDelay = config.Delay;
+            _audioSource.PlayOneShot(AlienSpeedChangedSound);
+        }
+
+        Debug.LogFormat("Move delay for {0} aliens alive is {1}", aliensAlive, _currentMoveDelay);
     }
 }

@@ -3,14 +3,15 @@
 --- !u!1 &100636
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
   m_Component:
-  - 4: {fileID: 414738}
-  - 114: {fileID: 11415164}
-  - 82: {fileID: 8253214}
-  - 114: {fileID: 11445928}
+  - component: {fileID: 414738}
+  - component: {fileID: 11415164}
+  - component: {fileID: 8253214}
+  - component: {fileID: 11445928}
   m_Layer: 0
   m_Name: AliensWave
   m_TagString: AliensWave
@@ -20,9 +21,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &414738
 Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
@@ -30,22 +32,70 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11415164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2658be486d7d349fdaed5dcd147f0764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Columns: 6
+  Rows: 6
+  AlienPrefabs:
+  - {fileID: 1990298678188046, guid: c740280079e224434afb122c52d51a72, type: 3}
+  - {fileID: 1990298678188046, guid: d4048a60a9eff4f8cb4c32407d1f36ee, type: 3}
+  - {fileID: 1514259319095242, guid: a23a0641d3ad24056b09e893a2bd7b5d, type: 3}
+  - {fileID: 1139630852709614, guid: c9b6f943708f94fec8e9a67b0931b406, type: 3}
+  - {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 3}
+  - {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 3}
+  Padding: {x: 1.2, y: 0.7}
+  MoveSize: {x: 0.15, y: 0.25}
+  MoveSizeWaveNumberInc: {x: 0.15, y: 0.5}
+  Kinds:
+  - {fileID: 11400000, guid: f5526bc94360e4ade84e5d4fa1882bce, type: 2}
+  - {fileID: 11400000, guid: ece8b3ad4d96f4ac686a9c006b57b03c, type: 2}
+  - {fileID: 11400000, guid: f6956dc540a644d2e8a0b13b1d37f7d7, type: 2}
+  - {fileID: 11400000, guid: da4ce420e2d8c4cf3961cae2ae86aa2d, type: 2}
+  - {fileID: 11400000, guid: b45babdc81fb54eefb81e479453bb84b, type: 2}
+  - {fileID: 11400000, guid: 2c3a930c275b4453b95f516bc052531b, type: 2}
+  AlienMoveSounds:
+  - {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
+  - {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
+  - {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
+  - {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
+  AlienSpeedChangedSound: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e,
+    type: 3}
+  AlienDeployInterval: 0.005
+  AlienDeployStartPosition: {x: 0, y: 0, z: -11}
+  AlienDeployEasyType: 21
+  AlienDeployEasyTime: 0.4
+  Aliens: []
+  Left: 0
+  Right: 0
 --- !u!82 &8253214
 AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100636}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.506
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
+  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -58,140 +108,78 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11415164
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2658be486d7d349fdaed5dcd147f0764, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: -1062
-  dbg: 0
-  _serializationData:
-    serializedObjects:
-    - {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
-    - {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
-    - {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
-    - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
-    - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
-    - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
-    - {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
-    - {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
-    - {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
-    - {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
-    - {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
-    serializedStrings:
-      keys:
-      - float Columns
-      - float Rows
-      - GameObject[] AlienPrefabs
-      - Vector2 Padding
-      - Vector2 MoveSize
-      - Vector2 MoveSizeWaveNumberInc
-      - Dictionary<int, float> AliensAliveMoveDelay
-      - AudioClip[] AlienMoveSounds
-      - AudioClip AlienSpeedChangedSound
-      - float AlienDeployInterval
-      - Vector3 AlienDeployStartPosition
-      - EaseType AlienDeployEasyType
-      - float AlienDeployEasyTime
-      - List<Alien> Aliens
-      - float Left
-      - float Right
-      values:
-      - 6.0
-      - 6.0
-      - '[0,1,2,3,4,5]'
-      - '{"x":1.20000004768372,"y":0.699999988079071}'
-      - '{"x":0.150000005960464,"y":0.25}'
-      - '{"x":0.150000005960464,"y":0.5}'
-      - '{"$content":[{"Key":3,"Value":0.0500000007450581},{"Key":1,"Value":0.0},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
-      - '[6,7,8,9]'
-      - 10
-      - 0.00499999988824129
-      - '{"x":0.0,"y":0.0,"z":-11.0}'
-      - '"linear"'
-      - 0.400000005960464
-      - '{"$content":[]}'
-      - 0.0
-      - 0.0
-  Columns: 6
-  Rows: 6
-  AlienPrefabs:
-  - {fileID: 189248, guid: ca00d5e57b64049408d91d2e586ee056, type: 2}
-  - {fileID: 132378, guid: 1e0fb70675a4144d58faa26016da3461, type: 2}
-  - {fileID: 188534, guid: 16f0c2c3589124d95b46543879c214bc, type: 2}
-  - {fileID: 128864, guid: 4c394e21d5fee41978a85e41d86e6f06, type: 2}
-  - {fileID: 118204, guid: e484bc8c4ce614111950a3677674365b, type: 2}
-  - {fileID: 105764, guid: 1508a8dbe4232473991cd3635a6bdef3, type: 2}
-  Padding: {x: 1.20000005, y: .699999988}
-  MoveSize: {x: .150000006, y: .25}
-  MoveSizeWaveNumberInc: {x: .150000006, y: .5}
-  AlienMoveSounds:
-  - {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
-  - {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
-  - {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
-  - {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
-  AlienSpeedChangedSound: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e,
-    type: 3}
-  AlienDeployInterval: .00499999989
-  AlienDeployStartPosition: {x: 0, y: 0, z: -11}
-  AlienDeployEasyType: 21
-  AlienDeployEasyTime: .400000006
-  Aliens: []
-  Left: 0
-  Right: 0
+    m_RotationOrder: 0
 --- !u!114 &11445928
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100636}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -201,26 +189,3 @@ MonoBehaviour:
   RandomAtStart: 0
   Low: -3
   High: 3
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[3]
-      value: '[]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
-      value: '{}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
-      value: '[]'
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 100636}
-  m_IsPrefabParent: 1
