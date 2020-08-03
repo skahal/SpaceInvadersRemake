@@ -2123,11 +2123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 3}
       propertyPath: AlienShootProbability
-      value: .400000006
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 3}
       propertyPath: VerticalEdgeDistance
-      value: .5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 3}
       propertyPath: AlienShootInterval
@@ -2147,7 +2147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 3}
       propertyPath: CannonDeployPosition.x
-      value: -3.70000005
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 11481720, guid: 20aead53629a54574975e74154db1d38, type: 3}
       propertyPath: GameOverSound
@@ -2162,6 +2162,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100636, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
+      propertyPath: m_Name
+      value: AliensWave
+      objectReference: {fileID: 0}
     - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2194,132 +2198,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8253214, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: m_Volume
-      value: 0.506
-      objectReference: {fileID: 0}
-    - target: {fileID: 8253214, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
+    - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8253214, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
+    - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.size
-      value: 6
+    - target: {fileID: 414738, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[6]
-      value: '{"$content":[{"Key":3,"Value":0.0500000007450581},{"Key":1,"Value":0.0199999995529652},{"Key":36,"Value":0.5},{"Key":24,"Value":0.400000005960464},{"Key":12,"Value":0.200000002980232},{"Key":6,"Value":0.100000001490116}]}'
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[0]
-      value: 6.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: Columns
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[1]
-      value: 6.0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: Rows
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[3]
-      value: 
-      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1139630852709614, guid: c9b6f943708f94fec8e9a67b0931b406,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1514259319095242, guid: a23a0641d3ad24056b09e893a2bd7b5d,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5f1de5840c76d409a98fa870f0262feb, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 75cbfc92dc849440c8f285e63670ec45, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1dc01abd474014ba3b49caeed73bb981, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9679fde6ea9174aed860502d1d479d8d, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[2]
-      value: '[0,0,0,1,2,3]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[7]
-      value: '[4,5,6,7]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedStrings.values.Array.data[8]
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1990298678188046, guid: c740280079e224434afb122c52d51a72,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[10]
-      value: 
-      objectReference: {fileID: 8300000, guid: 26352adfed65048a6846efe1278ed66e, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 1139630852709614, guid: c9b6f943708f94fec8e9a67b0931b406,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: _serializationData.serializedObjects.Array.data[2]
-      value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1990298678188046, guid: d4048a60a9eff4f8cb4c32407d1f36ee,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1514259319095242, guid: a23a0641d3ad24056b09e893a2bd7b5d,
-        type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 142534, guid: eee57a6334e3b43fdbf0d91f5be95556, type: 3}
-    - target: {fileID: 11415164, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
-      propertyPath: AlienPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 146496, guid: 7c249b688c0294fd0a1b6b8a08218d5d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ed8b9031975d4f8b8c5b4e66272fd8e, type: 3}
 --- !u!1 &1975678126 stripped
