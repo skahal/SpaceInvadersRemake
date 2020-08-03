@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using Skahal.Tweening;
 
 public class Score : MonoBehaviour
 {
-	private TextSumEffect m_sumEffect;
+	private TextSumEffect _sumEffect;
 
 	public static Score Instance;
 	public GameObject NewPointScrollingTextPrefab;
@@ -20,13 +17,13 @@ public class Score : MonoBehaviour
 	void Awake ()
 	{
 		Instance = this;
-		m_sumEffect = GetComponent<TextSumEffect> ();
+		_sumEffect = GetComponent<TextSumEffect> ();
 	}
 		
 	public void Initialize (int initialPoints)
 	{
 		Points = initialPoints;
-		m_sumEffect.Sum (Points);
+		_sumEffect.Sum (Points);
 	}
 
 	public void Sum (GameObject source, int newPoints, bool scrollingText = true)
@@ -41,7 +38,7 @@ public class Score : MonoBehaviour
 
 		Points += newPoints;
 
-		m_sumEffect.Sum (newPoints);
+		_sumEffect.Sum (newPoints);
 	}
 
 	public void Sum (GameObject source, bool scrollingText = true)

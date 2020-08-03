@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [ExecuteInEditMode]
 public class ParallaxScrolling : MonoBehaviour {
 
-	private SpriteRenderer[] m_layers;
-	private Vector3 m_lastPovPosition;
+	private SpriteRenderer[] _layers;
+	private Vector3 _lastPovPosition;
 
 	public static ParallaxScrolling Instance;
 	public float LayerAcceleration = 0.03f;
@@ -14,21 +13,21 @@ public class ParallaxScrolling : MonoBehaviour {
 
 	void Awake() {
 		Instance = this;
-		m_layers = GetComponentsInChildren<SpriteRenderer> ();
+		_layers = GetComponentsInChildren<SpriteRenderer> ();
 
-		for(int i = 0; i < m_layers.Length; i++) {
+		for(int i = 0; i < _layers.Length; i++) {
 			// Change layer sprite sorting order.
-			m_layers [i].sortingOrder = i - m_layers.Length;
+			_layers [i].sortingOrder = i - _layers.Length;
 		}
 	}
 
 	void Update () {
 		Vector3 povPosition = PointOfView != null ? PointOfView.transform.position * LayerAcceleration : Vector3.zero;
 
-		if (m_lastPovPosition != povPosition) {
+		if (_lastPovPosition != povPosition) {
 
-			for (int i = 0; i < m_layers.Length; i++) {
-				var layer = m_layers [i];
+			for (int i = 0; i < _layers.Length; i++) {
+				var layer = _layers [i];
 					var newPosition = (povPosition * -1);
 
 				// Layers nearest of point of view move faster.
@@ -37,7 +36,7 @@ public class ParallaxScrolling : MonoBehaviour {
 				layer.transform.position = new Vector2(newPosition.x * thisLayerMultiplier.x, newPosition.y * thisLayerMultiplier.y);
 			}
 
-			m_lastPovPosition = povPosition;
+			_lastPovPosition = povPosition;
 		}
 	}
 }

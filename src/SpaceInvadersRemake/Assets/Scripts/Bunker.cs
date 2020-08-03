@@ -1,24 +1,21 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
 
 public class Bunker : MonoBehaviour
 {
-    private SpriteBuilder m_spriteBuilder;
+    private SpriteBuilder _spriteBuilder;
     public int MaxShootSupportedInPoint = 4;
     public int HorizontalPixelsDestroyedPerShoot = 6;
     public int MinimumHitPixelsToBlockProjectile = 20;
 
     void Awake()
     {
-        m_spriteBuilder = GetComponent<SpriteBuilder>().Build();
+        _spriteBuilder = GetComponent<SpriteBuilder>().Build();
     }
 
     bool DestroyPoint(RaycastHit2D hit, bool isAlienTarget)
     {
         var point = hit.point;
-        var sprite = m_spriteBuilder.Sprite;
+        var sprite = _spriteBuilder.Sprite;
         var bunkerScale = sprite.rect.width;
         var spriteRect = sprite.rect;
         var translatedX = (point.x - transform.position.x) + .5f;
@@ -46,7 +43,7 @@ public class Bunker : MonoBehaviour
             }
         }
 
-        m_spriteBuilder.Rebuild();
+        _spriteBuilder.Rebuild();
 
         return hitPixelsCount >= MinimumHitPixelsToBlockProjectile;
     }
@@ -55,9 +52,9 @@ public class Bunker : MonoBehaviour
     {
         for (int pixelX = x - halfWidth; pixelX < x + halfWidth; pixelX++)
         {
-            if (hitPixelsCount < hitPixelsByShoot && m_spriteBuilder.HasColor(pixelX, pixelY))
+            if (hitPixelsCount < hitPixelsByShoot && _spriteBuilder.HasColor(pixelX, pixelY))
             {
-                m_spriteBuilder.ClearColor(pixelX, pixelY);
+                _spriteBuilder.ClearColor(pixelX, pixelY);
                 hitPixelsCount++;
             }
         }

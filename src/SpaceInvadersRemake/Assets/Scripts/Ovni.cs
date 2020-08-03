@@ -6,15 +6,13 @@ using Skahal.ParticleSystems;
 
 public class Ovni : MonoBehaviour
 {
-	private SpriteBuilder m_spriteBuilder;
-	private SpriteDestruction m_spriteDestruction;
-	private bool m_canMove;
-	private BoxCollider2D m_collider;
-	private AudioSource m_audioSource;
-	private LensFlare m_lensFlare;
-	private TrailRenderer m_trail;
-	private Vector3 m_currentVoyageStartPoint;
-	private Vector3 m_currentVoyageEndPoint;
+	private SpriteBuilder _spriteBuilder;
+	private SpriteDestruction _spriteDestruction;
+	private bool _canMove;
+	private BoxCollider2D _collider;
+	private AudioSource _audioSource;
+	private LensFlare _lensFlare;
+	private TrailRenderer _trail;
 
 	public float DeployInterval = 12f;
 	public float Speed = .1f;
@@ -31,22 +29,22 @@ public class Ovni : MonoBehaviour
 
 	void Start ()
 	{
-		m_spriteBuilder = GetComponentInChildren<SpriteBuilder> ();
-		m_spriteBuilder.Build ();
+		_spriteBuilder = GetComponentInChildren<SpriteBuilder> ();
+		_spriteBuilder.Build ();
 
-		m_spriteDestruction = GetComponentInChildren<SpriteDestruction> ();
-		m_collider = GetComponent<BoxCollider2D> ();
+		_spriteDestruction = GetComponentInChildren<SpriteDestruction> ();
+		_collider = GetComponent<BoxCollider2D> ();
 
-		m_audioSource = GetComponent<AudioSource> ();
-		m_lensFlare = GetComponent<LensFlare> ();
-		m_trail = GetComponentInChildren<TrailRenderer> ();
+		_audioSource = GetComponent<AudioSource> ();
+		_lensFlare = GetComponent<LensFlare> ();
+		_trail = GetComponentInChildren<TrailRenderer> ();
 
 		StartCoroutine (Deploy ());
 	}
 
 	void FixedUpdate ()
 	{
-		if (m_canMove && Cannon.Instance.CanInteract) {
+		if (_canMove && Cannon.Instance.CanInteract) {
 			transform.position += new Vector3 (Speed, 0, 0);
 
 			if ((Speed > 0 && transform.position.x > Game.Instance.RightBorder) 
@@ -58,13 +56,13 @@ public class Ovni : MonoBehaviour
 
 	IEnumerator Deploy ()
 	{	
-		m_collider.enabled = false;
-		m_canMove = false;
-		m_audioSource.Stop ();
+		_collider.enabled = false;
+		_canMove = false;
+		_audioSource.Stop ();
 
-		m_spriteBuilder.Show ();
-		m_lensFlare.enabled = true;
-		m_trail.enabled = true;
+		_spriteBuilder.Show ();
+		_lensFlare.enabled = true;
+		_trail.enabled = true;
 
 		transform.position = GetCurrentVoyageStartPoint ();
 
@@ -78,11 +76,11 @@ public class Ovni : MonoBehaviour
 		yield return new WaitForSeconds (DeployInterval * .9f);
 	
 		if (Cannon.Instance.CanInteract) {
-			m_audioSource.clip = MoveSound;
-			m_audioSource.Play ();
+			_audioSource.clip = MoveSound;
+			_audioSource.Play ();
 
-			m_canMove = true;
-			m_collider.enabled = true;
+			_canMove = true;
+			_collider.enabled = true;
 		} else {
 			Redeploy ();
 		}
@@ -105,9 +103,9 @@ public class Ovni : MonoBehaviour
 	}
 
 	void Redeploy() {
-		m_spriteBuilder.Hide ();
-		m_lensFlare.enabled = false;
-		m_trail.Reset (this);
+		_spriteBuilder.Hide ();
+		_lensFlare.enabled = false;
+		_trail.Reset (this);
 
 		Speed *= -1f;
 		StartCoroutine (Deploy ());
@@ -116,18 +114,18 @@ public class Ovni : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		 if (other.IsProjectile ()) {
-			m_lensFlare.enabled = false;
-			m_trail.enabled = false;
-			m_audioSource.Stop ();
-			m_audioSource.PlayOneShot (DieSound);
-			m_canMove = false;
+			_lensFlare.enabled = false;
+			_trail.enabled = false;
+			_audioSource.Stop ();
+			_audioSource.PlayOneShot (DieSound);
+			_canMove = false;
 			Score.Instance.Sum (gameObject);
 
 			Juiceness.Run ("OvniExplosion", () => {
 				GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();
 			});
 		
-			StartCoroutine (m_spriteDestruction.DestroySprite ());
+			StartCoroutine (_spriteDestruction.DestroySprite ());
 		}
 	}
 
@@ -136,7 +134,7 @@ public class Ovni : MonoBehaviour
 	}
 
 	void OnGameOver() {
-		m_canMove = false;
-		m_audioSource.Stop ();
+		_canMove = false;
+		_audioSource.Stop ();
 	}
 }

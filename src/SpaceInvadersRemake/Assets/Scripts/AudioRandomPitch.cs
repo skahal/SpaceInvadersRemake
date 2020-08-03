@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class AudioRandomPitch : MonoBehaviour {
 
-	private AudioSource m_audioSource;
+	private AudioSource _audioSource;
 
 	public bool RandomAtStart;
 	public float Low = .95f;
 	public float High = 1.05f;
 
 	void Awake() {
-		m_audioSource = GetComponent<AudioSource> ();
+		_audioSource = GetComponent<AudioSource> ();
 
 		if (RandomAtStart) {
 			RandomPitch ();
@@ -18,6 +17,6 @@ public class AudioRandomPitch : MonoBehaviour {
 	}
 
 	void RandomPitch() {
-		m_audioSource.pitch = Random.Range (Low, High);
+		_audioSource.pitch = Random.Range (Low, High);
 	}
 }

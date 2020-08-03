@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.Assertions;
 using Skahal.Camera;
 using Skahal.ParticleSystems;
 using Skahal.Threading;
 
 public class Projectile: MonoBehaviour
 {
-	private Vector2? m_target;
-	private BoxCollider2D m_collider;
-	private SpriteRenderer m_renderer;
-	private SpritePixel3DExplosion m_explosion;
-	private TrailRenderer m_trail;
-	private Light m_light;
+	private Vector2? _target;
+	private BoxCollider2D _collider;
+	private SpriteRenderer _renderer;
+	private SpritePixel3DExplosion _explosion;
+	private TrailRenderer _trail;
+	private Light _light;
 
 	public float Speed = -0.05f;
 	public string TargetTag = "Cannon";
@@ -34,36 +32,36 @@ public class Projectile: MonoBehaviour
 
 	public bool IsMoving { 
 		get {
-			return m_target != null;
+			return _target != null;
 		}
 	}
 
 	void Awake ()
 	{
-		m_collider = GetComponent<BoxCollider2D> ();
-		m_renderer = GetComponentInChildren <SpriteRenderer> ();
-		m_explosion = GetComponentInChildren<SpritePixel3DExplosion> ();
-		m_trail = GetComponentInChildren<TrailRenderer> ();
-		m_light = GetComponentInChildren<Light> ();
+		_collider = GetComponent<BoxCollider2D> ();
+		_renderer = GetComponentInChildren <SpriteRenderer> ();
+		_explosion = GetComponentInChildren<SpritePixel3DExplosion> ();
+		_trail = GetComponentInChildren<TrailRenderer> ();
+		_light = GetComponentInChildren<Light> ();
 		gameObject.SetActive (false);
 	}
 
 	public void Shoot (float x, float y)
 	{
-		if (m_target == null) {
-			m_target = new Vector2 (x, Speed > 0 ? 100 : -100);
+		if (_target == null) {
+			_target = new Vector2 (x, Speed > 0 ? 100 : -100);
 			transform.position = new Vector2 (x, y);
 			gameObject.SetActive (true);
-			m_collider.enabled = true;
-			m_renderer.enabled = true;
+			_collider.enabled = true;
+			_renderer.enabled = true;
 
-			if (m_trail != null && Juiceness.CanRun("ProjectileTrail")) {
-				m_trail.Reset (this);
-				m_trail.enabled = true;
+			if (_trail != null && Juiceness.CanRun("ProjectileTrail")) {
+				_trail.Reset (this);
+				_trail.enabled = true;
 			}
 
-			if(m_light != null && Juiceness.CanRun("ProjectileLight")) {
-				m_light.enabled = true;
+			if(_light != null && Juiceness.CanRun("ProjectileLight")) {
+				_light.enabled = true;
 			}
 
 		}
@@ -71,8 +69,8 @@ public class Projectile: MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if (m_target.HasValue && Cannon.Instance.CanInteract) {
-			transform.position = Vector2.Lerp (transform.position, m_target.Value, Time.fixedDeltaTime * Mathf.Abs (Speed));
+		if (_target.HasValue && Cannon.Instance.CanInteract) {
+			transform.position = Vector2.Lerp (transform.position, _target.Value, Time.fixedDeltaTime * Mathf.Abs (Speed));
 		}
 	}
 
@@ -109,20 +107,20 @@ public class Projectile: MonoBehaviour
 
 	public void DestroyIt ()
 	{		
-		if (m_renderer.enabled & gameObject.activeInHierarchy) {
+		if (_renderer.enabled & gameObject.activeInHierarchy) {
 			Juiceness.Run ("ProjectileExplosion", () => {
-				m_explosion.Explode ();
+				_explosion.Explode ();
 			});
 		}
 
-		m_collider.enabled = false;
-		m_renderer.enabled = false;
+		_collider.enabled = false;
+		_renderer.enabled = false;
 
-		if (m_trail != null) {
-			m_trail.enabled = false;	
-			m_light.enabled = false;
+		if (_trail != null) {
+			_trail.enabled = false;	
+			_light.enabled = false;
 		}
 
-		m_target = null;
+		_target = null;
 	}
 }

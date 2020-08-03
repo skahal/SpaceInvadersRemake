@@ -9,10 +9,10 @@ using Spine.Unity;
 /// </summary>
 public class Alien : ShooterBase
 {
-    private AliensWave m_wave;
-    private bool m_canShoot;
+    private AliensWave _wave;
+    private bool _canShoot;
     private SkeletonAnimation _animation;
-    private AudioSource m_audioSource;
+    private AudioSource _audioSource;
 
     public AudioClip DieAudio;
     public Vector3 OtherAlienHitShakeAmount = new Vector3(10f, 10, 10f);
@@ -21,19 +21,16 @@ public class Alien : ShooterBase
     [HideInInspector] public float AnimationSpeed = 1f;
     [HideInInspector] public bool IsAlive = true;
 
-    [SerializeField]
-    bool _canShoot = true;
-
     protected override void Awake()
     {
         base.Awake();
         _animation = GetComponent<SkeletonAnimation>();
-        m_audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Start()
     {
-        m_wave = gameObject.transform.parent.GetComponent<AliensWave>();
+        _wave = gameObject.transform.parent.GetComponent<AliensWave>();
         StartCoroutine(CanShootAgain());
     }
 
@@ -46,7 +43,7 @@ public class Alien : ShooterBase
     {
         if (other.IsAlienVerticalEdge())
         {
-            m_wave.Flip();
+            _wave.Flip();
         }
 
         if (other.IsProjectile())
@@ -78,7 +75,7 @@ public class Alien : ShooterBase
     {
         var result = false;
 
-        if (m_canShoot && Random.Range(0, 1) <= Game.Instance.AlienShootProbability)
+        if (_canShoot && Random.Range(0, 1) <= Game.Instance.AlienShootProbability)
         {
             var hit = Physics2D.LinecastAll(
                 transform.position,
@@ -90,9 +87,9 @@ public class Alien : ShooterBase
             result = aliensDownCount == 1;
         }
 
-        if (m_canShoot)
+        if (_canShoot)
         {
-            m_canShoot = false;
+            _canShoot = false;
             StartCoroutine(CanShootAgain());
         }
 
@@ -102,25 +99,22 @@ public class Alien : ShooterBase
     IEnumerator CanShootAgain()
     {
         yield return new WaitForSeconds(Random.Range(0, Game.Instance.AlienShootInterval));
-        m_canShoot = true;
+        _canShoot = true;
     }
 
     protected override void PerformShoot()
     {
-        if (_canShoot)
+        _animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
         {
-            _animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
-            {
-                base.PerformShoot();
-                _animation.state.SetAnimation(0, "Idle", true);
-            };
-        }
+            base.PerformShoot();
+            _animation.state.SetAnimation(0, "Idle", true);
+        };
     }
 
     public void Die()
     {
         Game.Instance.RaiseMessage("OnAlienHit", gameObject);
-        m_audioSource.PlayOneShot(DieAudio);
+        _audioSource.PlayOneShot(DieAudio);
         GetComponent<BoxCollider2D>().enabled = false;
         transform.Find("SkeletonUtility-Root").gameObject.SetActive(false);
         transform.Find("Body").gameObject.SetActive(false);
@@ -139,7 +133,7 @@ public class Alien : ShooterBase
 
     void CheckAliensAlive()
     {
-        var aliensAlive = m_wave.Aliens.Count(a => a.IsAlive) - 1;
+        var aliensAlive = _wave.Aliens.Count(a => a.IsAlive) - 1;
 
         if (aliensAlive == 0)
         {

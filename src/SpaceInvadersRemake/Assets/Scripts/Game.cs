@@ -5,9 +5,9 @@ using Skahal.Camera;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
-	private Bunkers m_bunkers;
-	private GameObject m_ovni;
-	private AudioSource m_audioSource;
+	private Bunkers _bunkers;
+	private GameObject _ovni;
+	private AudioSource _audioSource;
 
 	public static Game Instance;
 	public GameObject CannonPrefab;
@@ -41,9 +41,9 @@ public class Game : MonoBehaviour {
 		Instance = this;
 		Cursor.visible = false;
 		AliensWave = GameObject.FindGameObjectWithTag ("AliensWave").GetComponent<AliensWave>();
-		m_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
-		m_ovni = GameObject.Find ("Ovni");
-		m_audioSource = GetComponent<AudioSource> ();
+		_bunkers = GameObject.FindGameObjectWithTag ("Bunkers").GetComponent<Bunkers>();
+		_ovni = GameObject.Find ("Ovni");
+		_audioSource = GetComponent<AudioSource> ();
 
 		Setup ();
 	}
@@ -53,7 +53,7 @@ public class Game : MonoBehaviour {
 		Debug.Log ("Begin game setup...");
 		PlayerInput.DisableInput ();
 	
-		m_bunkers.Setup ();
+		_bunkers.Setup ();
 		AliensWave.Setup ();
 		SetupEdges ();
 		SetupCannon ();
@@ -169,15 +169,15 @@ public class Game : MonoBehaviour {
 			alien.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		}
 			
-		m_ovni.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
+		_ovni.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		Combo.Instance.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 		gameObject.SendMessage (message, sender, SendMessageOptions.DontRequireReceiver);
 	}
 
 	public void StartGameOver() {
 		IsGameOver = true;
-		m_audioSource.clip = GameOverSound;
-		m_audioSource.Play ();
+		_audioSource.clip = GameOverSound;
+		_audioSource.Play ();
 
 		PlayerInput.EnableInput ();
 		//TODO: Update this with https://github.com/Unity-Technologies/PostProcessing/releases

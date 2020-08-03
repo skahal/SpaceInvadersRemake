@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Skahal.Tweening;
 using Spine.Unity;
 

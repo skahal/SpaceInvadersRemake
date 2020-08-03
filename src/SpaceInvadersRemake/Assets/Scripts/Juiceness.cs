@@ -1,19 +1,18 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
 
 public class Juiceness : MonoBehaviour {
 
-	private static bool s_juicenessEnabled = true;
+	private static bool _juicenessEnabled = true;
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.J)) {
-			s_juicenessEnabled = !s_juicenessEnabled;
+			_juicenessEnabled = !_juicenessEnabled;
 		}
 	}
 
 	public static void Run(string name, Action juicenessAction, Action notJuicenessAction = null) {
-		if (s_juicenessEnabled) {
+		if (_juicenessEnabled) {
 			juicenessAction ();
 		} else if (notJuicenessAction != null) {
 			notJuicenessAction ();
@@ -21,7 +20,7 @@ public class Juiceness : MonoBehaviour {
 	}
 
 	public static YieldInstruction Run(string name, Func<YieldInstruction> juicenessAction, Func<YieldInstruction> notJuicenessAction = null) {
-		if (s_juicenessEnabled) {
+		if (_juicenessEnabled) {
 			return juicenessAction ();
 		} else if (notJuicenessAction == null) {
 			return new WaitForFixedUpdate();
@@ -32,6 +31,6 @@ public class Juiceness : MonoBehaviour {
 	}
 
 	public static bool CanRun(string name) {
-		return s_juicenessEnabled;
+		return _juicenessEnabled;
 	}
 }

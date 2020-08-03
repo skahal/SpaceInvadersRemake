@@ -11,13 +11,13 @@ using Skahal.Tweening;
 /// </summary>
 public class AliensWave : MonoBehaviour {
 
-	private bool m_moving;
-	private bool m_isFliping;
-	private float m_currentMoveDelay = 1.5f;
-	private int m_totalAliens;
-	private AudioSource m_audioSource;
-	private int m_currentAlienMoveSoundIndex;
-	private bool m_aliensDeployed = false;
+	private bool _moving;
+	private bool _isFliping;
+	private float _currentMoveDelay = 1.5f;
+	private int _totalAliens;
+	private AudioSource _audioSource;
+	private int _currentAlienMoveSoundIndex;
+	private bool _aliensDeployed = false;
 
 	public float Columns = 6;
 	public float Rows = 6;
@@ -38,7 +38,7 @@ public class AliensWave : MonoBehaviour {
 	[HideInInspector] public float Right;
 
 	void Awake() {
-		m_audioSource = GetComponent<AudioSource> ();
+		_audioSource = GetComponent<AudioSource> ();
 
 		if (AlienMoveSounds.Length == 0) {
 			Debug.LogError ("At least one AlienMoveSounds must be defined.");
@@ -98,23 +98,23 @@ public class AliensWave : MonoBehaviour {
 			}
 		}
 
-		m_totalAliens = Aliens.Count;
-		SetDelay (m_totalAliens);
+		_totalAliens = Aliens.Count;
+		SetDelay (_totalAliens);
 
 		yield return new WaitForEndOfFrame ();
 
-		m_aliensDeployed = true;
+		_aliensDeployed = true;
 	}
 
 	void FixedUpdate() {
-		if (Cannon.Instance.CanInteract && m_aliensDeployed) {
+		if (Cannon.Instance.CanInteract && _aliensDeployed) {
 			StartCoroutine (MoveAliens ());
 		}
 	}
 
 	IEnumerator MoveAliens() {
-		if (!m_moving) {
-			m_moving = true;
+		if (!_moving) {
+			_moving = true;
 
 			foreach (var alien in Aliens) {
 				alien.Move (MoveSize.x, 0);
@@ -122,8 +122,8 @@ public class AliensWave : MonoBehaviour {
 				
 			PlayAlienMoveSound ();
 
-			yield return new WaitForSeconds (m_currentMoveDelay);
-			m_moving = false;
+			yield return new WaitForSeconds (_currentMoveDelay);
+			_moving = false;
 		}
 
 		yield return null;
@@ -131,13 +131,13 @@ public class AliensWave : MonoBehaviour {
 
 	void PlayAlienMoveSound ()
 	{
-		m_audioSource.PlayOneShot (AlienMoveSounds[m_currentAlienMoveSoundIndex]);
-		m_currentAlienMoveSoundIndex = m_currentAlienMoveSoundIndex + 1 < AlienMoveSounds.Length ? m_currentAlienMoveSoundIndex + 1 : 0;
+		_audioSource.PlayOneShot (AlienMoveSounds[_currentAlienMoveSoundIndex]);
+		_currentAlienMoveSoundIndex = _currentAlienMoveSoundIndex + 1 < AlienMoveSounds.Length ? _currentAlienMoveSoundIndex + 1 : 0;
 	}
 
 	public void Flip() {
-		if (!m_isFliping) {
-			m_isFliping = true;
+		if (!_isFliping) {
+			_isFliping = true;
 			MoveSize.x *= -1;
 			transform.position = new Vector3 (transform.position.x, transform.position.y - MoveSize.y, 0);
 
@@ -146,8 +146,8 @@ public class AliensWave : MonoBehaviour {
 	}
 
 	IEnumerator EndFlip() {
-		yield return new WaitForSeconds (m_currentMoveDelay * Columns);
-		m_isFliping = false;
+		yield return new WaitForSeconds (_currentMoveDelay * Columns);
+		_isFliping = false;
 	}
 
 	void OnAlienDie(int aliensAlive) {

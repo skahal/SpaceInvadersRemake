@@ -4,9 +4,9 @@ using System.Linq;
 
 [RequireComponent(typeof(SpriteBuilder))]
 public class SpritePixel3DExplosion : MonoBehaviour {
-	private SpriteRenderer m_spriteRenderer;
-	private SpriteBuilder m_spriteBuilder;
-	private GameObject m_pixels3DContainer;
+	private SpriteRenderer _spriteRenderer;
+	private SpriteBuilder _spriteBuilder;
+	private GameObject _pixels3DContainer;
 
 	public Vector3 Scale = new Vector3 (0.021f, 0.021f, 0.021f);
 	public GameObject Pixel3DPrefab;
@@ -35,22 +35,22 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 	}
 
 	public void Voxelate() {
-		if (m_pixels3DContainer == null) {
-			m_spriteRenderer = GetComponent<SpriteRenderer> ();
-			m_spriteBuilder = GetComponent<SpriteBuilder> ();
-			m_spriteBuilder.Build ();
-			var pixels = m_spriteBuilder.ToPixels ();
-			m_spriteRenderer.enabled = false;
+		if (_pixels3DContainer == null) {
+			_spriteRenderer = GetComponent<SpriteRenderer> ();
+			_spriteBuilder = GetComponent<SpriteBuilder> ();
+			_spriteBuilder.Build ();
+			var pixels = _spriteBuilder.ToPixels ();
+			_spriteRenderer.enabled = false;
 
 			var localScale = transform.localScale;
 			var tempScale = new Vector3 (Scale.x * localScale.x, Scale.y * localScale.y, Scale.z * localScale.z);
-			var rect = m_spriteBuilder.Sprite.rect;
+			var rect = _spriteBuilder.Sprite.rect;
 			var halfWidth = (rect.width / 2) * tempScale.x;
 			var halfHeight = (rect.height / 2) * tempScale.y;
-			m_pixels3DContainer = new GameObject ("Pixels3DContainer");
+			_pixels3DContainer = new GameObject ("Pixels3DContainer");
 
 			if (KeepContainerParent) {
-				m_pixels3DContainer.transform.parent = transform;
+				_pixels3DContainer.transform.parent = transform;
 			}
 
 			foreach (var p in pixels) {
@@ -65,7 +65,7 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 					pixel3D.transform.localScale = new Vector3(tempScale.x, tempScale.y, tempScale.z + luminance * ZScaleByColorLuminance);
 					var cubeRenderer = pixel3D.GetComponent<MeshRenderer> ();
 					cubeRenderer.material.color = p.Color;
-					pixel3D.transform.parent = m_pixels3DContainer.transform;
+					pixel3D.transform.parent = _pixels3DContainer.transform;
 				}
 			}
 		}
@@ -76,7 +76,7 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 		Voxelate ();
 		var index = 0;
 
-		foreach (Transform child in m_pixels3DContainer.transform) {
+		foreach (Transform child in _pixels3DContainer.transform) {
 			if (index % ColliderEveryVoxel == 0) {
 				child.GetComponent<BoxCollider> ().enabled = true;
 			}
@@ -94,8 +94,8 @@ public class SpritePixel3DExplosion : MonoBehaviour {
 	IEnumerator StartTimeToLife() {
 		yield return new WaitForSeconds (TimeToLife);
 
-		GameObject.Destroy (m_pixels3DContainer);
-		m_pixels3DContainer = null;
+		GameObject.Destroy (_pixels3DContainer);
+		_pixels3DContainer = null;
 	}
 
 	IEnumerator StartAutoExplode() {

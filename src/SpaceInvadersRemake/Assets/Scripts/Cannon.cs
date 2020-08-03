@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class Cannon: ShooterBase {
-	private bool m_touchingEdge;
-	private SpriteRenderer m_renderer;
-	private AudioSource m_audioSource;
+	private bool _touchingEdge;
+	private SpriteRenderer _renderer;
+	private AudioSource _audioSource;
 
 	public static Cannon Instance;
 	public float Speed = .1f;
@@ -21,8 +21,8 @@ public class Cannon: ShooterBase {
 		Instance = this;
 	
 		base.Awake ();
-		m_renderer = GetComponentInChildren<SpriteRenderer> ();
-		m_audioSource = GetComponent<AudioSource> ();
+		_renderer = GetComponentInChildren<SpriteRenderer> ();
+		_audioSource = GetComponent<AudioSource> ();
 
 		StartCoroutine (Spawn ());
 	}
@@ -36,11 +36,11 @@ public class Cannon: ShooterBase {
 		var flashes = SpawnTime / SpawnFlashTime;
 
 		for (int i = 0; i < flashes; i++) {
-			m_renderer.enabled = !m_renderer.enabled;
+			_renderer.enabled = !_renderer.enabled;
 			yield return new WaitForSeconds (SpawnFlashTime);
 		}
 
-		m_renderer.enabled = true;
+		_renderer.enabled = true;
 
 		if (Lifes > 0) {
 			CanInteract = true;
@@ -68,7 +68,7 @@ public class Cannon: ShooterBase {
 
 		// If is touching edge and is trying to move to edge direction again, 
 		// abort the movement.
-		if (m_touchingEdge && direction > 0 == x > 0)
+		if (_touchingEdge && direction > 0 == x > 0)
 			return transform.position;
 
 		direction *= Speed;
@@ -85,12 +85,12 @@ public class Cannon: ShooterBase {
 	{
 		base.PerformShoot ();
 		SendMessage ("RandomPitch");
-		m_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
+		_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsVerticalEdge()) {
-			m_touchingEdge = true;
+			_touchingEdge = true;
 		}
 		else if (other.IsProjectile()) {
 			var projectile = other.GetComponent<Projectile> ();
@@ -106,7 +106,7 @@ public class Cannon: ShooterBase {
 
 	void OnTriggerExit2D(Collider2D collider) {
 		if (collider.IsVerticalEdge()) {
-			m_touchingEdge = false;
+			_touchingEdge = false;
 		}
 	}
 
@@ -118,7 +118,7 @@ public class Cannon: ShooterBase {
 		if (Lifes == 0) {
 			Game.Instance.StartGameOver ();
 		} else {
-			m_audioSource.PlayOneShot (LoseLifeAudio);
+			_audioSource.PlayOneShot (LoseLifeAudio);
 		}
 
 	}

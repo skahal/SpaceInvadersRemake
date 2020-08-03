@@ -1,33 +1,10 @@
-﻿using System.Collections;
-using UnityEngine;
-
-public class EmptyPlayerInputStrategy : IPlayerInputStrategy
+﻿public class EmptyPlayerInputStrategy : IPlayerInputStrategy
 {
-	public float HorizontalDirection
-	{
-		get {
-			return 0;
-		}
-	}
+    public float HorizontalDirection => 0;
 
-	public bool IsShooting
-	{
-		get {
-			return false;
-		}
-	}
+    public bool IsShooting => false;
 
-	public bool IsRestart
-	{
-		get {
-			return false;
-		}
-	}
+    public bool IsRestart => false;
 
-	public bool IsQuit
-	{
-		get {
-			return false;
-		}
-	}
+    public bool IsQuit => false;
 }

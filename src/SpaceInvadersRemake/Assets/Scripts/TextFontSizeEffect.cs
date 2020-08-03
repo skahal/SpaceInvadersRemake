@@ -6,8 +6,8 @@ using Skahal.Tweening;
 [RequireComponent(typeof(Text))]
 public class TextFontSizeEffect : MonoBehaviour {
 
-	private Text m_text;
-	private int m_originalFontSize;
+	private Text _text;
+	private int _originalFontSize;
 
 	public float Interval = 1f;
 	public iTween.EaseType Easing = iTween.EaseType.easeOutBack;
@@ -16,8 +16,8 @@ public class TextFontSizeEffect : MonoBehaviour {
 	public bool DestroyOnComplete = false;
 
 	void Awake() {
-		m_text = GetComponent<Text> ();
-		m_originalFontSize = m_text.fontSize;
+		_text = GetComponent<Text> ();
+		_originalFontSize = _text.fontSize;
 
 		Juiceness.Run (
 			"ChangeFontSizeEffect",
@@ -36,12 +36,12 @@ public class TextFontSizeEffect : MonoBehaviour {
 	}
 
 	void OnUpdate(float value) {
-		m_text.fontSize = Mathf.FloorToInt(m_originalFontSize * value);
+		_text.fontSize = Mathf.FloorToInt(_originalFontSize * value);
 	}
 
 	void OnComplete() {
 		if (DestroyOnComplete) {
-			m_text.fontSize = 0;
+			_text.fontSize = 0;
 			Destroy (gameObject);
 		}
 	}

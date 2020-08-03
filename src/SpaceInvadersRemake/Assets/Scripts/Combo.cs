@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Combo : MonoBehaviour {
 
-	private int m_hitsCount;
-	private Text m_text;
+	private int _hitsCount;
+	private Text _text;
 
 	public static Combo Instance;
 
@@ -19,19 +19,19 @@ public class Combo : MonoBehaviour {
 
 	void Awake () {
 		Instance = this;
-		m_text = GetComponent<Text> ();
+		_text = GetComponent<Text> ();
 	}
 	
 	public void OnProjectileHitAlien(GameObject target)
 	{
-		m_hitsCount++;
+		_hitsCount++;
 
-		if (m_hitsCount >= MinHits) {
-			var hitsToCount =  m_hitsCount - MinHits + 1;
+		if (_hitsCount >= MinHits) {
+			var hitsToCount =  _hitsCount - MinHits + 1;
 			var points = (PointsByHit * hitsToCount) * hitsToCount;
 
-			m_text.text = string.Format(TextFormat, m_hitsCount, points);
-			m_text.enabled = true;
+			_text.text = string.Format(TextFormat, _hitsCount, points);
+			_text.enabled = true;
 
 			iTweenHelper.ShakeRotation (
 				gameObject, 
@@ -44,11 +44,11 @@ public class Combo : MonoBehaviour {
 	}
 
 	void OnShakeComplete() {
-		m_text.enabled = false;
+		_text.enabled = false;
 	}
 
 	public void OnProjectileMissAlien(GameObject target)
 	{
-		m_hitsCount = 0;
+		_hitsCount = 0;
 	}
 }

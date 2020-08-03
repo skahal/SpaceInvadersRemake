@@ -3,71 +3,71 @@ using System.Collections;
 
 //[RequireComponent(typeof(SpriteRenderer))]
 public class SpriteBuilderFromMeshRenderer : MonoBehaviour {
-	private MeshRenderer m_renderer; 
-	private Texture2D m_texture;
-	private Texture2D m_originalTexture;
+	private MeshRenderer _renderer; 
+	private Texture2D _texture;
+	private Texture2D _originalTexture;
 
 	[HideInInspector] public Texture2D Texture;
 
 	void Awake() {
-		m_renderer = GetComponent<MeshRenderer>();
+		_renderer = GetComponent<MeshRenderer>();
 
-		if (m_renderer == null) {
-			m_renderer = GetComponentInChildren<MeshRenderer>();
+		if (_renderer == null) {
+			_renderer = GetComponentInChildren<MeshRenderer>();
 		}
 	}
 
 	public bool HasNoColor(int x, int y) {
-		return m_texture.GetPixel (x, y) == Color.clear;
+		return _texture.GetPixel (x, y) == Color.clear;
 	}
 
 	public bool HasColor(int x, int y) {
-		return m_texture.GetPixel (x, y) != Color.clear;
+		return _texture.GetPixel (x, y) != Color.clear;
 	}
 
 	public SpriteBuilderFromMeshRenderer ClearColor(int x, int y) {
-		m_texture.SetPixel (x, y, Color.clear);
+		_texture.SetPixel (x, y, Color.clear);
 
 		return this;
 	}
 
 	public SpriteBuilderFromMeshRenderer Hide() {
-		m_renderer.enabled = false;
+		_renderer.enabled = false;
 
 		return this;
 	}
 
 	public SpriteBuilderFromMeshRenderer Show() {
-		m_renderer.enabled = true;
+		_renderer.enabled = true;
 
 		return this;
 	}
 
 	public SpriteBuilderFromMeshRenderer Build() {
-		Texture = m_renderer.material.mainTexture as Texture2D;
+		Texture = _renderer.material.mainTexture as Texture2D;
 
 		if (Texture == null) {
 			Debug.LogError ("Null Texture for MeshRenderer");
 		}
 
-		if (m_originalTexture == null) {
-			m_originalTexture = Texture;
+		if (_originalTexture == null) {
+			_originalTexture = Texture;
 		}
 
-		m_texture = new Texture2D (m_originalTexture.width, m_originalTexture.height, TextureFormat.ARGB32, false);
-		m_texture.SetPixels32 (m_originalTexture.GetPixels32 ());
+		_texture = new Texture2D (_originalTexture.width, _originalTexture.height, TextureFormat.ARGB32, false);
+		_texture.SetPixels32 (_originalTexture.GetPixels32 ());
 		return Rebuild ();	
 	}
 
 	public SpriteBuilderFromMeshRenderer Rebuild() {
-		m_texture.Apply ();
+		_texture.Apply ();
 		//m_renderer.sprite = Sprite.Create (m_texture, Sprite.rect, new Vector2 (0.5f, 0.5f), Sprite.pixelsPerUnit);
-		m_renderer.material.mainTexture = m_texture;
+		_renderer.material.mainTexture = _texture;
 		return this;
 	}
 
 	public Pixel[] ToPixels() {
-		var rect = m_texture;
+		var rect = _texture;
 		int width = rect.width;
 		int height = rect.height;
 		var pixels = new Pixel[width * height];
@@ -79,7 +79,7 @@ public class SpriteBuilderFromMeshRenderer : MonoBehaviour {
 	
 		for(int x = left; x < right; x++) {
 			for(int y = top; y < bottom; y++) {
-				pixels[index++] = new Pixel(x - left, y - top, m_texture.GetPixel (x, y));
+				pixels[index++] = new Pixel(x - left, y - top, _texture.GetPixel (x, y));
 			}
 		}
 

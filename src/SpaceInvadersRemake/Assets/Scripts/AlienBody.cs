@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class AlienBody : MonoBehaviour {
-	private Alien m_alien;
+	private Alien _alien;
 
 	void Start() {
-		m_alien = transform.parent.GetComponent<Alien> ();
+		_alien = transform.parent.GetComponent<Alien> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -13,8 +12,8 @@ public class AlienBody : MonoBehaviour {
 			var projectile = other.GetComponent<Projectile> ();
 
 			if (projectile.IsTargetingAlien) {
-				Score.Instance.Sum (m_alien.gameObject);
-				m_alien.Die ();
+				Score.Instance.Sum (_alien.gameObject);
+				_alien.Die ();
 			}
 		}
 		else if (other.IsCannonZone ()) {
