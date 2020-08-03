@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6 aliens wave
   m_EditorClassIdentifier: 
   ForAliensAlive: 6
-  Delay: 0
+  Delay: 0.25
