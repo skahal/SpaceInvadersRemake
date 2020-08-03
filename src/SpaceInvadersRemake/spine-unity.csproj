@@ -412,6 +412,9 @@
     <Reference Include="GeneticSharp.Infrastructure.Framework">
       <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Libraries/GeneticSharp.Infrastructure.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Scripts/Skahal-Unity-Scripts/src/Editor/UnitTests/packages/RhinoMocks.3.6.1/lib/net/Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Library/PackageCache/com.unity.ads@3.4.5/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -426,9 +429,6 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>/Users/giacomelli/Projects/SpaceInvadersRemake/src/SpaceInvadersRemake/Assets/Scripts/Skahal-Unity-Scripts/src/Editor/UnitTests/packages/RhinoMocks.3.6.1/lib/net/Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>/Users/giacomelli/Projects/Unity/Editor/2019.4.1f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

@@ -11,7 +11,7 @@ public class Alien : ShooterBase
 {
     private AliensWave m_wave;
     private bool m_canShoot;
-    private SkeletonAnimation m_animation;
+    private SkeletonAnimation _animation;
     private AudioSource m_audioSource;
 
     public AudioClip DieAudio;
@@ -21,10 +21,13 @@ public class Alien : ShooterBase
     [HideInInspector] public float AnimationSpeed = 1f;
     [HideInInspector] public bool IsAlive = true;
 
+    [SerializeField]
+    bool _canShoot = true;
+
     protected override void Awake()
     {
         base.Awake();
-        m_animation = GetComponent<SkeletonAnimation>();
+        _animation = GetComponent<SkeletonAnimation>();
         m_audioSource = GetComponent<AudioSource>();
     }
 
@@ -104,11 +107,14 @@ public class Alien : ShooterBase
 
     protected override void PerformShoot()
     {
-        m_animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
+        if (_canShoot)
         {
-            base.PerformShoot();
-            m_animation.state.SetAnimation(0, "Idle", true);
-        };
+            _animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
+            {
+                base.PerformShoot();
+                _animation.state.SetAnimation(0, "Idle", true);
+            };
+        }
     }
 
     public void Die()

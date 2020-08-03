@@ -1,0 +1,167 @@
+
+skeleton.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Assets/ArmLeft
+  rotate: false
+  xy: 2, 65
+  size: 852, 694
+  orig: 852, 694
+  offset: 0, 0
+  index: -1
+Assets/ArmRight
+  rotate: false
+  xy: 2, 761
+  size: 915, 745
+  orig: 915, 745
+  offset: 0, 0
+  index: -1
+Assets/Eye
+  rotate: false
+  xy: 856, 144
+  size: 553, 553
+  orig: 553, 553
+  offset: 0, 0
+  index: -1
+Assets/HandLeftBigToe1
+  rotate: true
+  xy: 1914, 784
+  size: 165, 132
+  orig: 165, 132
+  offset: 0, 0
+  index: -1
+Assets/HandLeftBigToe2
+  rotate: false
+  xy: 1935, 317
+  size: 94, 76
+  orig: 94, 76
+  offset: 0, 0
+  index: -1
+Assets/HandLeftBigToe3
+  rotate: true
+  xy: 1835, 760
+  size: 138, 73
+  orig: 138, 73
+  offset: 0, 0
+  index: -1
+Assets/HandLeftRightFinger1
+  rotate: true
+  xy: 1941, 951
+  size: 187, 104
+  orig: 189, 104
+  offset: 0, 0
+  index: -1
+Assets/HandLeftRightFinger2
+  rotate: true
+  xy: 1877, 522
+  size: 99, 138
+  orig: 101, 186
+  offset: 0, 0
+  index: -1
+Assets/HandLeftRightFinger3
+  rotate: false
+  xy: 1963, 395
+  size: 77, 125
+  orig: 77, 125
+  offset: 0, 0
+  index: -1
+Assets/HandLefttLeftFinger1
+  rotate: false
+  xy: 1736, 1043
+  size: 203, 133
+  orig: 203, 133
+  offset: 0, 0
+  index: -1
+Assets/HandLefttLeftFinger2
+  rotate: false
+  xy: 1956, 1140
+  size: 87, 180
+  orig: 87, 180
+  offset: 0, 0
+  index: -1
+Assets/HandLefttLeftFinger3
+  rotate: true
+  xy: 1834, 430
+  size: 90, 127
+  orig: 90, 127
+  offset: 0, 0
+  index: -1
+Assets/HandRightBigToe1
+  rotate: false
+  xy: 1736, 900
+  size: 176, 141
+  orig: 176, 141
+  offset: 0, 0
+  index: -1
+Assets/HandRightBigToe2
+  rotate: false
+  xy: 1834, 347
+  size: 99, 81
+  orig: 99, 81
+  offset: 0, 0
+  index: -1
+Assets/HandRightBigToe3
+  rotate: false
+  xy: 1549, 619
+  size: 148, 78
+  orig: 148, 78
+  offset: 0, 0
+  index: -1
+Assets/HandRightLeftFinger1
+  rotate: false
+  xy: 1736, 1178
+  size: 218, 142
+  orig: 218, 142
+  offset: 0, 0
+  index: -1
+Assets/HandRightLeftFinger2
+  rotate: false
+  xy: 1736, 705
+  size: 97, 193
+  orig: 97, 193
+  offset: 0, 0
+  index: -1
+Assets/HandRightLeftFinger3
+  rotate: true
+  xy: 1736, 602
+  size: 101, 139
+  orig: 101, 139
+  offset: 0, 0
+  index: -1
+Assets/HandRightRightFinger1
+  rotate: false
+  xy: 1736, 1322
+  size: 275, 184
+  orig: 275, 185
+  offset: 0, 1
+  index: -1
+Assets/HandRightRightFinger2
+  rotate: false
+  xy: 1910, 623
+  size: 105, 159
+  orig: 140, 213
+  offset: 0, 3
+  index: -1
+Assets/HandRightRightFinger3
+  rotate: true
+  xy: 1411, 611
+  size: 86, 136
+  orig: 86, 136
+  offset: 0, 0
+  index: -1
+Assets/Head
+  rotate: true
+  xy: 919, 699
+  size: 807, 815
+  orig: 807, 815
+  offset: 0, 0
+  index: -1
+Assets/Jaw
+  rotate: true
+  xy: 1411, 2
+  size: 598, 421
+  orig: 598, 421
+  offset: 0, 0
+  index: -1
