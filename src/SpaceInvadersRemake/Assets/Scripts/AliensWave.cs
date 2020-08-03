@@ -155,11 +155,12 @@ public class AliensWave : MonoBehaviour {
 	}
 
 	void SetDelay(int aliensAlive) {
-		//if(AliensAliveMoveDelay.ContainsKey(aliensAlive)) {
-		//	m_currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
-		//	m_audioSource.PlayOneShot (AlienSpeedChangedSound);
-		//}
+        //if (AliensAliveMoveDelay.ContainsKey(aliensAlive))
+        //{
+        //    _currentMoveDelay = AliensAliveMoveDelay[aliensAlive];
+        //    _audioSource.PlayOneShot(AlienSpeedChangedSound);
+        //}
 
-		//Debug.LogFormat ("Move delay for {0} aliens alive is {1}", aliensAlive, m_currentMoveDelay);
-	}
+        //Debug.LogFormat("Move delay for {0} aliens alive is {1}", aliensAlive, _currentMoveDelay);
+    }
 }

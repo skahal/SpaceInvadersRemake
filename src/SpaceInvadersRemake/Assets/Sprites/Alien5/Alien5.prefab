@@ -473,12 +473,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e184171d6c38044c9bb3c6f66d3b68a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _kind: {fileID: 11400000, guid: a1fcb774b8fbc440bb5a1fd83af52d22, type: 2}
   DieAudio: {fileID: 8300000, guid: b679a62958f634dbf9d02b9d10e76827, type: 3}
   OtherAlienHitShakeAmount: {x: 75, y: 10, z: 10}
   Row: 0
   AnimationSpeed: 1
   IsAlive: 1
-  _canShoot: 0
 --- !u!114 &114623725452290478
 MonoBehaviour:
   m_ObjectHideFlags: 0

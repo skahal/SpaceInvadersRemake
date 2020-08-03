@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Skahal.Tweening;
 using Spine.Unity;
+using Skahal.SpaceInvadersRemake;
 
 /// <summary>
 /// Represents an individual alien.
@@ -13,6 +14,9 @@ public class Alien : ShooterBase
     private bool _canShoot;
     private SkeletonAnimation _animation;
     private AudioSource _audioSource;
+
+    [SerializeField]
+    AlienKind _kind;
 
     public AudioClip DieAudio;
     public Vector3 OtherAlienHitShakeAmount = new Vector3(10f, 10, 10f);
@@ -104,11 +108,16 @@ public class Alien : ShooterBase
 
     protected override void PerformShoot()
     {
-        _animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
+        if (_kind.ShootingAnimated)
         {
+            _animation.state.SetAnimation(0, "Shooting", false).Complete += (trackEntry) =>
+            {
+                base.PerformShoot();
+                _animation.state.SetAnimation(0, "Idle", true);
+            };
+        }
+        else
             base.PerformShoot();
-            _animation.state.SetAnimation(0, "Idle", true);
-        };
     }
 
     public void Die()
