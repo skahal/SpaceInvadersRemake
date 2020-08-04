@@ -51,17 +51,6 @@ namespace Skahal.SpaceInvadersRemake
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3b726f3b-4e96-48d8-b155-097dc327571b"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""e3a3e94f-ee07-4356-935f-061fd97e5208"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
@@ -75,6 +64,39 @@ namespace Skahal.SpaceInvadersRemake
                     ""name"": """",
                     ""id"": ""f3320c59-482e-4aae-8f51-9db826c1b494"",
                     ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3b726f3b-4e96-48d8-b155-097dc327571b"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2369f7f9-543c-402e-b250-6bf87119a3cd"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f535d49a-d28c-4586-bdd3-9ffe98222ce8"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
