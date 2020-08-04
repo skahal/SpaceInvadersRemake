@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Skahal.Camera;
 using UnityEngine.SceneManagement;
+using Skahal.SpaceInvadersRemake;
 
 public class Game : MonoBehaviour {
 	private Bunkers _bunkers;
@@ -33,6 +34,8 @@ public class Game : MonoBehaviour {
 	[HideInInspector] public float LeftBorder;
 	[HideInInspector] public float RightBorder;
 	[HideInInspector] public bool IsGameOver;
+
+	Controls _controls;
 
 	void Awake () {
 		LeftBorder = SHCameraHelper.GetLeftBorder ();
@@ -76,7 +79,11 @@ public class Game : MonoBehaviour {
 	IEnumerator EnableInput() {
 		Cannon.Instance.CanInteract = false;
 		yield return new WaitForSeconds (EnableInputDelay);
-		//PlayerInput.EnableInput ();
+
+		_controls = new Controls();
+		_controls.Global.Restart.performed += ctx => Restart();
+		_controls.Global.Quit.performed += ctx => Quit();
+		_controls.Enable();		
 		Cannon.Instance.CanInteract = true;
 	}
 

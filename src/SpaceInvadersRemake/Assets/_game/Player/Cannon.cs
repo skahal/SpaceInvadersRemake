@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 using Skahal.SpaceInvadersRemake;
-using static Skahal.SpaceInvadersRemake.Controls;
 
 public class Cannon: MonoBehaviour
 {
@@ -89,8 +87,13 @@ public class Cannon: MonoBehaviour
 	void Fire(CallbackContext ctx)
     {
 		Debug.Log("Fire");
-		if(!_projectile.IsMoving)
+
+		if (!_projectile.IsMoving)
+		{
 			_projectile.Shoot(transform.position.x, transform.position.y + (_projectile.Speed > 0 ? .5f : -.5f));
+			SendMessage("RandomPitch");
+				_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
+		}
 	}
 
 	public Vector3 GetNewPosition(float horizontalDirection)
@@ -107,18 +110,6 @@ public class Cannon: MonoBehaviour
 
 		return new Vector3 (x + direction, transform.position.y);
 	}
-
-	//protected override bool CanShoot ()
-	//{
-	//	return CanInteract && PlayerInput.Instance.IsShooting;
-	//}
-
-	//protected override void PerformShoot ()
-	//{
-	//	base.PerformShoot ();
-	//	SendMessage ("RandomPitch");
-	//	_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
-	//}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsVerticalEdge()) {
@@ -143,7 +134,7 @@ public class Cannon: MonoBehaviour
 	}
 
 	void LoseLife(int lifesLost = 1) {
-	//	Projectile.DestroyIt ();
+		_projectile.DestroyIt ();
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 

@@ -105,7 +105,7 @@ namespace Skahal.SpaceInvadersRemake
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Keyboard"",
+                    ""name"": ""Keyboard arrows"",
                     ""id"": ""2adf2e9a-fd16-4b0c-b7ec-d5004cf59aaa"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
@@ -130,6 +130,39 @@ namespace Skahal.SpaceInvadersRemake
                     ""name"": ""positive"",
                     ""id"": ""f2d82bed-5c82-46f3-ab24-ab2e9c54e0ff"",
                     ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Keyboard WASD"",
+                    ""id"": ""37beeea2-3bc4-4f4b-bcea-ded4debdceed"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""da4c770e-b192-42bc-b27a-5e76dcbeabbd"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a90ea3a5-deb1-4ef1-b4ca-984667187bb1"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -171,6 +204,63 @@ namespace Skahal.SpaceInvadersRemake
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Global"",
+            ""id"": ""c9e37f68-0bbc-46a5-92bd-4f01cdbbbbe1"",
+            ""actions"": [
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""8feead11-a070-4a7a-b8fc-78151a477210"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""767cfa91-dcd9-46f9-83d4-5650bc7e1b64"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ed4594ba-9ea6-4731-af5d-b127ee475324"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d02cdeed-d34b-435a-be54-7a6eb6ec0d05"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e9a12c1-01c4-4de4-836b-9723237c9698"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -179,6 +269,10 @@ namespace Skahal.SpaceInvadersRemake
             m_Cannon = asset.FindActionMap("Cannon", throwIfNotFound: true);
             m_Cannon_Fire = m_Cannon.FindAction("Fire", throwIfNotFound: true);
             m_Cannon_Move = m_Cannon.FindAction("Move", throwIfNotFound: true);
+            // Global
+            m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
+            m_Global_Restart = m_Global.FindAction("Restart", throwIfNotFound: true);
+            m_Global_Quit = m_Global.FindAction("Quit", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -265,10 +359,56 @@ namespace Skahal.SpaceInvadersRemake
             }
         }
         public CannonActions @Cannon => new CannonActions(this);
+
+        // Global
+        private readonly InputActionMap m_Global;
+        private IGlobalActions m_GlobalActionsCallbackInterface;
+        private readonly InputAction m_Global_Restart;
+        private readonly InputAction m_Global_Quit;
+        public struct GlobalActions
+        {
+            private @Controls m_Wrapper;
+            public GlobalActions(@Controls wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Restart => m_Wrapper.m_Global_Restart;
+            public InputAction @Quit => m_Wrapper.m_Global_Quit;
+            public InputActionMap Get() { return m_Wrapper.m_Global; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(GlobalActions set) { return set.Get(); }
+            public void SetCallbacks(IGlobalActions instance)
+            {
+                if (m_Wrapper.m_GlobalActionsCallbackInterface != null)
+                {
+                    @Restart.started -= m_Wrapper.m_GlobalActionsCallbackInterface.OnRestart;
+                    @Restart.performed -= m_Wrapper.m_GlobalActionsCallbackInterface.OnRestart;
+                    @Restart.canceled -= m_Wrapper.m_GlobalActionsCallbackInterface.OnRestart;
+                    @Quit.started -= m_Wrapper.m_GlobalActionsCallbackInterface.OnQuit;
+                    @Quit.performed -= m_Wrapper.m_GlobalActionsCallbackInterface.OnQuit;
+                    @Quit.canceled -= m_Wrapper.m_GlobalActionsCallbackInterface.OnQuit;
+                }
+                m_Wrapper.m_GlobalActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @Restart.started += instance.OnRestart;
+                    @Restart.performed += instance.OnRestart;
+                    @Restart.canceled += instance.OnRestart;
+                    @Quit.started += instance.OnQuit;
+                    @Quit.performed += instance.OnQuit;
+                    @Quit.canceled += instance.OnQuit;
+                }
+            }
+        }
+        public GlobalActions @Global => new GlobalActions(this);
         public interface ICannonActions
         {
             void OnFire(InputAction.CallbackContext context);
             void OnMove(InputAction.CallbackContext context);
+        }
+        public interface IGlobalActions
+        {
+            void OnRestart(InputAction.CallbackContext context);
+            void OnQuit(InputAction.CallbackContext context);
         }
     }
 }
