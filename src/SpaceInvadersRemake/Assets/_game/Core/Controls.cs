@@ -105,6 +105,17 @@ namespace Skahal.SpaceInvadersRemake
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""ee937a20-baa0-4ca8-bf51-aa6853910160"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""Keyboard arrows"",
                     ""id"": ""2adf2e9a-fd16-4b0c-b7ec-d5004cf59aaa"",
                     ""path"": ""1DAxis"",
