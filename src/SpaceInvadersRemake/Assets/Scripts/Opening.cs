@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Skahal.Threading;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Opening : MonoBehaviour {
 	public float DelaytoLoadLevel = 8f;
@@ -12,7 +13,7 @@ public class Opening : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.anyKey) {
+		if (Keyboard.current.anyKey.wasPressedThisFrame) {
 			SceneManager.LoadScene("Main");
 		}
 	}
