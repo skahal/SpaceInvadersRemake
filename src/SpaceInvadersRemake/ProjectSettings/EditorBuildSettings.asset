@@ -7,7 +7,13 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Opening.unity
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Main.unity
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Test.unity
+    guid: 00000000000000000000000000000000
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: cd717fcc55be9495590f29bd24d06cd7,
+      type: 2}

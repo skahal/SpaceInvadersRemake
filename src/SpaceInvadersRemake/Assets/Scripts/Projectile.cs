@@ -55,12 +55,12 @@ public class Projectile: MonoBehaviour
 			_collider.enabled = true;
 			_renderer.enabled = true;
 
-			if (_trail != null && Juiceness.CanRun("ProjectileTrail")) {
+			if (_trail != null) {
 				_trail.Reset (this);
 				_trail.enabled = true;
 			}
 
-			if(_light != null && Juiceness.CanRun("ProjectileLight")) {
+			if(_light != null) {
 				_light.enabled = true;
 			}
 
@@ -79,16 +79,12 @@ public class Projectile: MonoBehaviour
 		if (other.CompareTag (TargetTag) || other.IsOvni()) {
 			DestroyIt ();
 
-			Juiceness.Run ("ProjectileCameraShake", () => {
-				SHCameraHelper.Shake(CameraShakeTime, CameraShakeAmount);
-			});
-
-			Juiceness.Run ("ProjectileCameraFlash", () => {
-				Camera.main.backgroundColor = CameraFlashColor;
-				SHCoroutine.StartEndOfFrame(() => {
-					Camera.main.backgroundColor = Color.black;
-				});
-			});
+			SHCameraHelper.Shake(CameraShakeTime, CameraShakeAmount);
+			
+			Camera.main.backgroundColor = CameraFlashColor;
+			SHCoroutine.StartEndOfFrame(() => {
+				Camera.main.backgroundColor = Color.black;
+			});			
 
 			Game.Instance.RaiseMessage ("OnProjectileHit" + TargetTag, gameObject);
 		}
@@ -97,9 +93,7 @@ public class Projectile: MonoBehaviour
 			Game.Instance.RaiseMessage ("OnProjectileMiss" + TargetTag, gameObject);
 		}
 		else if (other.IsProjectile ()) {
-			Juiceness.Run ("ProjectileDetroyProjectile", () => {
-				DestroyIt ();
-			});
+			DestroyIt ();
 
 			Game.Instance.RaiseMessage ("OnProjectileMiss" + TargetTag, gameObject);
 		}
@@ -108,9 +102,7 @@ public class Projectile: MonoBehaviour
 	public void DestroyIt ()
 	{		
 		if (_renderer.enabled & gameObject.activeInHierarchy) {
-			Juiceness.Run ("ProjectileExplosion", () => {
-				_explosion.Explode ();
-			});
+			_explosion.Explode();
 		}
 
 		_collider.enabled = false;

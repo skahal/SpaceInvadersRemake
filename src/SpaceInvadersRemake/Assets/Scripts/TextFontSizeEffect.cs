@@ -19,20 +19,16 @@ public class TextFontSizeEffect : MonoBehaviour {
 		_text = GetComponent<Text> ();
 		_originalFontSize = _text.fontSize;
 
-		Juiceness.Run (
-			"ChangeFontSizeEffect",
-			() => {
-				iTweenHelper.ValueTo(
-					gameObject,
-					iT.ValueTo.from, From,
-					iT.ValueTo.to, To,
-					iT.ValueTo.time, Interval,
-					iT.ValueTo.easetype, Easing, 
-					iT.ValueTo.looptype, iTween.LoopType.none,
-					iT.ValueTo.onupdate, "OnUpdate",
-					iT.ValueTo.oncomplete, "OnComplete"
-				);
-			});
+		iTweenHelper.ValueTo(
+			gameObject,
+			iT.ValueTo.from, From,
+			iT.ValueTo.to, To,
+			iT.ValueTo.time, Interval,
+			iT.ValueTo.easetype, Easing, 
+			iT.ValueTo.looptype, iTween.LoopType.none,
+			iT.ValueTo.onupdate, "OnUpdate",
+			iT.ValueTo.oncomplete, "OnComplete"
+		);
 	}
 
 	void OnUpdate(float value) {

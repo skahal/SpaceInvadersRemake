@@ -25,16 +25,15 @@ public class Bunkers : MonoBehaviour {
 			var bunker = Instantiate (BunkerPrefab, new Vector2 (transform.position.x + i * distance, transform.position.y), Quaternion.identity) as GameObject;
 			bunker.transform.parent = transform;
 
-			if (Juiceness.CanRun ("DeployBunkersAnimation")) {
-				iTweenHelper.ScaleFrom (
-					bunker, 
-					iT.ScaleFrom.scale, DeployFromScale,
-					iT.ScaleFrom.easetype, DeployEasyType,
-					iT.ScaleFrom.time, DeployEasyTime
-				);
+			iTweenHelper.ScaleFrom (
+				bunker, 
+				iT.ScaleFrom.scale, DeployFromScale,
+				iT.ScaleFrom.easetype, DeployEasyType,
+				iT.ScaleFrom.time, DeployEasyTime
+			);
 
-				yield return new WaitForSeconds(DeployInterval);
-			}
+			yield return new WaitForSeconds(DeployInterval);
+			
 		}
 	}
 

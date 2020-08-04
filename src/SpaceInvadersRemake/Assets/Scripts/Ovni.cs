@@ -121,9 +121,7 @@ public class Ovni : MonoBehaviour
 			_canMove = false;
 			Score.Instance.Sum (gameObject);
 
-			Juiceness.Run ("OvniExplosion", () => {
-				GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();
-			});
+			GetComponentInChildren<SpritePixel3DExplosion> ().Explode ();
 		
 			StartCoroutine (_spriteDestruction.DestroySprite ());
 		}

@@ -89,15 +89,13 @@ public class AliensWave : MonoBehaviour {
 				alien.transform.parent = gameObject.transform;
 				Aliens.Add (alien);
 
-				if (Juiceness.CanRun ("DeployAliensAnimation")) {
-					iTweenHelper.MoveFrom (
-						alienGO, 
-						iT.MoveFrom.position, AlienDeployStartPosition,
-						iT.MoveFrom.easetype, AlienDeployEasyType,
-						iT.MoveFrom.time, AlienDeployEasyTime
-					);
-					yield return new WaitForSeconds (AlienDeployInterval);
-				}
+				iTweenHelper.MoveFrom(
+					alienGO,
+					iT.MoveFrom.position, AlienDeployStartPosition,
+					iT.MoveFrom.easetype, AlienDeployEasyType,
+					iT.MoveFrom.time, AlienDeployEasyTime
+				);
+				yield return new WaitForSeconds(AlienDeployInterval);
 			}
 		}
 

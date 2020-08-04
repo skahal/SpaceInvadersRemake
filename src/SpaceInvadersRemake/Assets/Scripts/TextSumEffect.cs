@@ -18,30 +18,23 @@ public class TextSumEffect : MonoBehaviour {
 
 	void Update ()
 	{
-		Juiceness.Run (
-			"TextSumEffect",
-			() => {
-				_currentDisplayValue = Mathf.CeilToInt (Mathf.Lerp (_currentDisplayValue, _value, Interval));
-				_text.text = string.Format(Format, _currentDisplayValue);
-			},
-			() => {
-				_text.text = string.Format(Format, _value);
-			});
+		_currentDisplayValue = Mathf.CeilToInt (Mathf.Lerp (_currentDisplayValue, _value, Interval));
+		_text.text = string.Format(Format, _currentDisplayValue);
+		_text.text = string.Format(Format, _value);
 	}
 
 
 	public void Sum(int value) {
 		_value += value;
 
-		Juiceness.Run ("TextSumEffect", () => {
-			var currentColor = _text.color;
+		var currentColor = _text.color;
 
-			var colorChange = value * ColorFactor;
-			currentColor.r += colorChange;
-			currentColor.g -= colorChange;
-			currentColor.b -= colorChange;
+		var colorChange = value * ColorFactor;
+		currentColor.r += colorChange;
+		currentColor.g -= colorChange;
+		currentColor.b -= colorChange;
 
-			_text.color = currentColor;
-		});
+		_text.color = currentColor;
+		
 	}
 }

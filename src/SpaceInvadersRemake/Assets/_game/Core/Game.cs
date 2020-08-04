@@ -51,7 +51,7 @@ public class Game : MonoBehaviour {
 	void Setup()
 	{
 		Debug.Log ("Begin game setup...");
-		PlayerInput.DisableInput ();
+		//PlayerInput.DisableInput ();
 	
 		_bunkers.Setup ();
 		AliensWave.Setup ();
@@ -76,7 +76,7 @@ public class Game : MonoBehaviour {
 	IEnumerator EnableInput() {
 		Cannon.Instance.CanInteract = false;
 		yield return new WaitForSeconds (EnableInputDelay);
-		PlayerInput.EnableInput ();
+		//PlayerInput.EnableInput ();
 		Cannon.Instance.CanInteract = true;
 	}
 
@@ -122,25 +122,22 @@ public class Game : MonoBehaviour {
 	{
 		var cannon = Instantiate (CannonPrefab, CannonDeployPosition, Quaternion.identity) as GameObject;
 		ParallaxScrolling.Instance.PointOfView = cannon;
-	}
-		
-	void Update() {
-		if (PlayerInput.Instance.IsRestart) {
-			Restart ();
-		} else if (PlayerInput.Instance.IsQuit) {
-			Application.Quit ();
-		}
+	}	
+
+	public void Restart ()
+	{
+		//PlayerInput.DisableInput ();
+		SceneManager.LoadScene("Main");
 	}
 
-	static void Restart ()
-	{
-		PlayerInput.DisableInput ();
-		SceneManager.LoadScene("Main");
+	public void Quit()
+    {
+		Application.Quit();
 	}
 
 	public void NextLevel ()
 	{
-		PlayerInput.DisableInput ();
+		//PlayerInput.DisableInput ();
 		PlayerPrefs.SetInt ("Score", Score.Instance.Points);
 		PlayerPrefs.SetInt ("Lifes", Cannon.Instance.Lifes);
 		PlayerPrefs.SetInt ("WaveNumber", WaveNumber);
@@ -148,7 +145,7 @@ public class Game : MonoBehaviour {
 	}
 
 	void OnSpawnBegin() {
-		PlayerInput.DisableInput ();
+		//PlayerInput.DisableInput ();
 		LifesText.enabled = true;
 		RefreshLifes ();
 	}
@@ -159,7 +156,7 @@ public class Game : MonoBehaviour {
 
 	void OnSpawnEnd() {
 		LifesText.enabled = false;
-		PlayerInput.EnableInput ();
+		//PlayerInput.EnableInput ();
 	}
 
 	public void RaiseMessage(string message, GameObject sender = null) {
@@ -179,7 +176,7 @@ public class Game : MonoBehaviour {
 		_audioSource.clip = GameOverSound;
 		_audioSource.Play ();
 
-		PlayerInput.EnableInput ();
+		//PlayerInput.EnableInput ();
 		//TODO: Update this with https://github.com/Unity-Technologies/PostProcessing/releases
 		// Camera.main.GetComponent<ColorCorrectionCurves> ().enabled = true;
 		RaiseMessage("OnGameOver");

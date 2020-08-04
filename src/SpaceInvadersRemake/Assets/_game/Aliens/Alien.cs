@@ -128,10 +128,7 @@ public class Alien : ShooterBase
         transform.Find("SkeletonUtility-Root").gameObject.SetActive(false);
         transform.Find("Body").gameObject.SetActive(false);
 
-        Juiceness.Run("AlienExplosion", () =>
-        {
-            GetComponentInChildren<SpritePixel3DExplosion>().Explode();
-        });
+        GetComponentInChildren<SpritePixel3DExplosion>().Explode();
 
         CheckAliensAlive();
 
@@ -158,12 +155,9 @@ public class Alien : ShooterBase
     {
         if (sender != gameObject)
         {
-            Juiceness.Run("OtherAlienHit", () =>
-            {
-                iTweenHelper.ShakeRotation(
+            iTweenHelper.ShakeRotation(
                     gameObject,
                     iT.ShakeRotation.amount, OtherAlienHitShakeAmount);
-            });
         }
     }
 }

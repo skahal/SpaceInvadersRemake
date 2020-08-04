@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
+using static UnityEngine.InputSystem.InputAction;
+using Skahal.SpaceInvadersRemake;
+using static Skahal.SpaceInvadersRemake.Controls;
 
-public class Cannon: ShooterBase {
+public class Cannon: MonoBehaviour
+{
 	private bool _touchingEdge;
 	private SpriteRenderer _renderer;
 	private AudioSource _audioSource;
+	Projectile _projectile;
 
 	public static Cannon Instance;
 	public float Speed = .1f;
@@ -14,20 +20,39 @@ public class Cannon: ShooterBase {
 	public AudioClip LoseLifeAudio;
 	public AudioClip ShootAudio;
 	public float ShootAudioVolume = .5f;
+	
+	Controls _controls;
 
 	[HideInInspector] public bool CanInteract;
 
-	protected override void Awake () {
+	protected void Awake () {
 		Instance = this;
-	
-		base.Awake ();
+
+		_projectile = transform.Find("Projectile").GetComponent<Projectile>();
+		_projectile.transform.parent = null;
+
 		_renderer = GetComponentInChildren<SpriteRenderer> ();
 		_audioSource = GetComponent<AudioSource> ();
 
 		StartCoroutine (Spawn ());
+
+		_controls = new Controls();
 	}
 
-	private IEnumerator Spawn () {
+    private void OnEnable()
+    {		
+		_controls.Cannon.Fire.performed += Fire;
+		_controls.Enable();
+	}
+
+    private void OnDisable()
+    {
+		_controls.Cannon.Fire.performed -= Fire;
+		_controls.Disable();
+	}
+
+
+    private IEnumerator Spawn () {
 		CanInteract = false;
 		Game.Instance.RaiseMessage ("OnSpawnBegin");
 
@@ -48,17 +73,24 @@ public class Cannon: ShooterBase {
 		} 
 	}
 
-	protected override void FixedUpdate ()
-	{
-		base.FixedUpdate ();
-		Move ();
-	}
+    private void FixedUpdate()
+    {
+		Move();   
+    }
 
-	void Move ()
+    void Move ()
 	{
-		if (CanInteract) {
-			transform.position = GetNewPosition (PlayerInput.Instance.HorizontalDirection);
-		}
+        if (CanInteract)
+        {
+            transform.position = GetNewPosition(_controls.Cannon.Move.ReadValue<float>());
+        }
+    }
+
+	void Fire(CallbackContext ctx)
+    {
+		Debug.Log("Fire");
+		if(!_projectile.IsMoving)
+			_projectile.Shoot(transform.position.x, transform.position.y + (_projectile.Speed > 0 ? .5f : -.5f));
 	}
 
 	public Vector3 GetNewPosition(float horizontalDirection)
@@ -76,17 +108,17 @@ public class Cannon: ShooterBase {
 		return new Vector3 (x + direction, transform.position.y);
 	}
 
-	protected override bool CanShoot ()
-	{
-		return CanInteract && PlayerInput.Instance.IsShooting;
-	}
+	//protected override bool CanShoot ()
+	//{
+	//	return CanInteract && PlayerInput.Instance.IsShooting;
+	//}
 
-	protected override void PerformShoot ()
-	{
-		base.PerformShoot ();
-		SendMessage ("RandomPitch");
-		_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
-	}
+	//protected override void PerformShoot ()
+	//{
+	//	base.PerformShoot ();
+	//	SendMessage ("RandomPitch");
+	//	_audioSource.PlayOneShot (ShootAudio, ShootAudioVolume);
+	//}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.IsVerticalEdge()) {
@@ -111,7 +143,7 @@ public class Cannon: ShooterBase {
 	}
 
 	void LoseLife(int lifesLost = 1) {
-		Projectile.DestroyIt ();
+	//	Projectile.DestroyIt ();
 		Lifes -= lifesLost;
 		StartCoroutine (Spawn ());
 
