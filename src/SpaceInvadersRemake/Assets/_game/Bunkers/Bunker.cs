@@ -67,6 +67,8 @@ namespace Skahal.SpaceInvadersRemake
             if (other.IsProjectile())
             {
                 var projectile = other.GetComponent<Projectile>();
+
+                // For this to work it is necessary that the configuration "Queries Starts In Colliders" enabled on Physics 2D (project settings).
                 var hit = Physics2D.CircleCast(transform.position, 1f, Vector3.zero, 1f, LayerMask.GetMask("Projectile"));
 
                 if (DestroyPoint(hit, projectile.IsTargetingAlien))
