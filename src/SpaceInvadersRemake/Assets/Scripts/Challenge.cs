@@ -1,23 +1,28 @@
 ﻿using UnityEngine;
 
-public class Challenge : MonoBehaviour {
-	public ChallengeProperty AlienShootInterval;
-	public ChallengeProperty AlienShootProbability;
-	public ChallengeProperty OvniSpeed;
+namespace Skahal.SpaceInvadersRemake
+{
+	public class Challenge : MonoBehaviour
+	{
+		public ChallengeProperty AlienShootInterval;
+		public ChallengeProperty AlienShootProbability;
+		public ChallengeProperty OvniSpeed;
 
-	void Start() {
-		var game = Game.Instance;
-		var ovni = Ovni.Instance;
-		var level = game.WaveNumber - 1;
+		void Start()
+		{
+			var game = Game.Instance;
+			var ovni = Ovni.Instance;
+			var level = game.WaveNumber - 1;
 
-		game.AlienShootInterval = AlienShootInterval.GetLevelValue (level);
-		game.AlienShootProbability = AlienShootProbability.GetLevelValue (level);
-		ovni.Speed = OvniSpeed.GetLevelValue (level);
+			game.AlienShootInterval = AlienShootInterval.GetLevelValue(level);
+			game.AlienShootProbability = AlienShootProbability.GetLevelValue(level);
+			ovni.Speed = OvniSpeed.GetLevelValue(level);
 
-		Debug.LogFormat (
-			"Challenge changed to AlienShootInterval:{0}|AlienShootProbability:{1}|OvniSpeed:{2}",
-			game.AlienShootInterval,
-			game.AlienShootProbability,
-			ovni.Speed);
+			Debug.LogFormat(
+				"Challenge changed to AlienShootInterval:{0}|AlienShootProbability:{1}|OvniSpeed:{2}",
+				game.AlienShootInterval,
+				game.AlienShootProbability,
+				ovni.Speed);
+		}
 	}
 }
